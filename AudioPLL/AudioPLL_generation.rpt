@@ -1,0 +1,30 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate "D:\Documents\nav docs\FPGA\AudioPLL.qsys" --block-symbol-file --output-directory="D:\Documents\nav docs\FPGA\AudioPLL" --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading FPGA/AudioPLL.qsys
+Progress: Reading input file
+Progress: Adding audio_pll_0 [altera_up_avalon_audio_pll 17.1]
+Progress: Parameterizing module audio_pll_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate "D:\Documents\nav docs\FPGA\AudioPLL.qsys" --synthesis=VERILOG --output-directory="D:\Documents\nav docs\FPGA\AudioPLL\synthesis" --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading FPGA/AudioPLL.qsys
+Progress: Reading input file
+Progress: Adding audio_pll_0 [altera_up_avalon_audio_pll 17.1]
+Progress: Parameterizing module audio_pll_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: AudioPLL: Generating AudioPLL "AudioPLL" for QUARTUS_SYNTH
+Info: audio_pll_0: "AudioPLL" instantiated altera_up_avalon_audio_pll "audio_pll_0"
+Info: audio_pll: "audio_pll_0" instantiated altera_pll "audio_pll"
+Info: reset_from_locked: "audio_pll_0" instantiated altera_up_avalon_reset_from_locked_signal "reset_from_locked"
+Info: AudioPLL: Done "AudioPLL" with 4 modules, 5 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

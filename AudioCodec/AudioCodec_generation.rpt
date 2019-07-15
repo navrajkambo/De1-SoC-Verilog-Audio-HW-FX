@@ -1,0 +1,29 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate "D:\Documents\nav docs\FPGA\AudioCodec.qsys" --block-symbol-file --output-directory="D:\Documents\nav docs\FPGA\AudioCodec" --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading FPGA/AudioCodec.qsys
+Progress: Reading input file
+Progress: Adding audio_0 [altera_up_avalon_audio 17.1]
+Progress: Parameterizing module audio_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate "D:\Documents\nav docs\FPGA\AudioCodec.qsys" --synthesis=VERILOG --output-directory="D:\Documents\nav docs\FPGA\AudioCodec\synthesis" --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading FPGA/AudioCodec.qsys
+Progress: Reading input file
+Progress: Adding audio_0 [altera_up_avalon_audio 17.1]
+Progress: Parameterizing module audio_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: AudioCodec: Generating AudioCodec "AudioCodec" for QUARTUS_SYNTH
+Info: audio_0: Starting Generation of Audio Controller
+Info: audio_0: "AudioCodec" instantiated altera_up_avalon_audio "audio_0"
+Info: AudioCodec: Done "AudioCodec" with 2 modules, 7 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

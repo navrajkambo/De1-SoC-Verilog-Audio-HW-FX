@@ -1,0 +1,29 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate "D:\Documents\nav docs\FPGA\AVConfig.qsys" --block-symbol-file --output-directory="D:\Documents\nav docs\FPGA\AVConfig" --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading FPGA/AVConfig.qsys
+Progress: Reading input file
+Progress: Adding audio_and_video_config_0 [altera_up_avalon_audio_and_video_config 17.1]
+Progress: Parameterizing module audio_and_video_config_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate "D:\Documents\nav docs\FPGA\AVConfig.qsys" --synthesis=VERILOG --output-directory="D:\Documents\nav docs\FPGA\AVConfig\synthesis" --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading FPGA/AVConfig.qsys
+Progress: Reading input file
+Progress: Adding audio_and_video_config_0 [altera_up_avalon_audio_and_video_config 17.1]
+Progress: Parameterizing module audio_and_video_config_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: AVConfig: Generating AVConfig "AVConfig" for QUARTUS_SYNTH
+Info: audio_and_video_config_0: Starting Generation of Audio and Video Config
+Info: audio_and_video_config_0: "AVConfig" instantiated altera_up_avalon_audio_and_video_config "audio_and_video_config_0"
+Info: AVConfig: Done "AVConfig" with 2 modules, 16 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

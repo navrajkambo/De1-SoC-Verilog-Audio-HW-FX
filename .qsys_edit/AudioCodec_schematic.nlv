@@ -1,0 +1,13 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst AudioCodec -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst AudioCodec.audio_0 -pg 1 -lvl 1 -y 30
+preplace netloc EXPORT<net_container>AudioCodec</net_container>(SLAVE)audio_0.external_interface,(SLAVE)AudioCodec.external_interface) 1 0 1 NJ
+preplace netloc EXPORT<net_container>AudioCodec</net_container>(SLAVE)audio_0.avalon_right_channel_sink,(SLAVE)AudioCodec.avalon_right_channel_sink) 1 0 1 NJ
+preplace netloc EXPORT<net_container>AudioCodec</net_container>(SLAVE)audio_0.clk,(SLAVE)AudioCodec.clk) 1 0 1 NJ
+preplace netloc EXPORT<net_container>AudioCodec</net_container>(SLAVE)AudioCodec.reset,(SLAVE)audio_0.reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>AudioCodec</net_container>(MASTER)audio_0.avalon_right_channel_source,(MASTER)AudioCodec.avalon_right_channel_source) 1 1 1 NJ
+preplace netloc EXPORT<net_container>AudioCodec</net_container>(MASTER)audio_0.avalon_left_channel_source,(MASTER)AudioCodec.avalon_left_channel_source) 1 1 1 NJ
+preplace netloc EXPORT<net_container>AudioCodec</net_container>(SLAVE)AudioCodec.avalon_left_channel_sink,(SLAVE)audio_0.avalon_left_channel_sink) 1 0 1 NJ
+levelinfo -pg 1 0 170 760
+levelinfo -hier AudioCodec 180 210 560
