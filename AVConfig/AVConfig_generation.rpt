@@ -1,6 +1,6 @@
 Info: Starting: Create block symbol file (.bsf)
-Info: qsys-generate "D:\Documents\nav docs\FPGA\AVConfig.qsys" --block-symbol-file --output-directory="D:\Documents\nav docs\FPGA\AVConfig" --family="Cyclone V" --part=5CSEMA5F31C6
-Progress: Loading FPGA/AVConfig.qsys
+Info: qsys-generate D:\Documents\GitHub\De1-SoC-Verilog-Audio-Loopback\AVConfig.qsys --block-symbol-file --output-directory=D:\Documents\GitHub\De1-SoC-Verilog-Audio-Loopback\AVConfig --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading De1-SoC-Verilog-Audio-Loopback/AVConfig.qsys
 Progress: Reading input file
 Progress: Adding audio_and_video_config_0 [altera_up_avalon_audio_and_video_config 17.1]
 Progress: Parameterizing module audio_and_video_config_0
@@ -12,8 +12,8 @@ Info: qsys-generate succeeded.
 Info: Finished: Create block symbol file (.bsf)
 Info: 
 Info: Starting: Create HDL design files for synthesis
-Info: qsys-generate "D:\Documents\nav docs\FPGA\AVConfig.qsys" --synthesis=VERILOG --output-directory="D:\Documents\nav docs\FPGA\AVConfig\synthesis" --family="Cyclone V" --part=5CSEMA5F31C6
-Progress: Loading FPGA/AVConfig.qsys
+Info: qsys-generate D:\Documents\GitHub\De1-SoC-Verilog-Audio-Loopback\AVConfig.qsys --synthesis=VERILOG --output-directory=D:\Documents\GitHub\De1-SoC-Verilog-Audio-Loopback\AVConfig\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading De1-SoC-Verilog-Audio-Loopback/AVConfig.qsys
 Progress: Reading input file
 Progress: Adding audio_and_video_config_0 [altera_up_avalon_audio_and_video_config 17.1]
 Progress: Parameterizing module audio_and_video_config_0

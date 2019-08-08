@@ -4,6 +4,7 @@
 // Altera DE1-SoC, System Verilog
 // Basic audio hardware loopback in verilog using Altera University IP catalog
 // So that you can you can add your own DSP hardware in-between ADC and DAC
+// 16-Bit audio
  
 // I/O assignments
 module AudioFX(
@@ -26,7 +27,7 @@ module AudioFX(
 	FPGA_I2C_SCLK,
 	GPIO_0
 	);
-
+	parameter DATA_W = 16;
 	// signals				
 	input [9:0] SW;
 	input CLOCK_50;
@@ -42,19 +43,19 @@ module AudioFX(
 	output AUD_DACDAT;
 	output FPGA_I2C_SCLK;
 	output [9:0] LEDR;
-	output [23:0] GPIO_0;
+	output [DATA_W-1:0] GPIO_0;
 	
 	// registers
 	reg [22:0] count;
 	
 	// logic & wires
 	logic reset_out;
-	logic [1:0][23:0] DAC_Data, ADC_Data;
+	logic [1:0][DATA_W-1:0] DAC_Data, ADC_Data;
 	logic [1:0] DAC_Ready, ADC_Ready, DAC_Valid, ADC_Valid;
 	
 	// These signals are for the Avalon Bus (not used in streaming interface)
 	//  (Therefore, I just made random signals for to satify I/O)
-	logic [31:0] i2c_data = 32'd0, i2c_address = 32'd0;
+	logic [31:0] i2c_data = 32'd0, i2c_read_data = 32'd0;
 	logic [3:0] i2c_byte_enable = 4'b1111;
 	logic i2c_read=0, i2c_write = 0, i2c_waitrequest;
 	
@@ -67,7 +68,7 @@ module AudioFX(
 		.audio_clk_clk      (AUD_XCK),      //    audio_clk.clk
 		.reset_source_reset (reset_out)  // reset_source.reset
 	);
-	// Audio Config (24bit audio, you can change this with QSYS)
+	// Audio Config (16bit audio, you can change this with QSYS)
 	AVConfig u1 (
 		.clk         (CLOCK_50),         //                    clk.clk
 		.reset       (~KEY[0]),       //                  reset.reset
@@ -105,7 +106,7 @@ module AudioFX(
 	);
 	
 	// Useful for signal tap or scope debugging and
-	assign GPIO_0[23:0] = DAC_Data[0];
+	assign GPIO_0[DATA_W-1:0] = DAC_Data[0];
 	
 	// Logic for blinking LED on Switch 0
 	always@(posedge(CLOCK_50)) begin
@@ -132,6 +133,7 @@ module AudioFX(
 			ADC_Ready[1] <= DAC_Ready[0];
 			LEDR[9] <= 1;
 		end else begin
+			// Normal operation
 			LEDR[9] <= 0;
 			DAC_Data[0] <= ADC_Data[0];
 			DAC_Data[1] <= ADC_Data[1];
@@ -139,25 +141,6 @@ module AudioFX(
 			DAC_Valid[1] <= ADC_Valid[1];
 			ADC_Ready[0] <= DAC_Ready[0];
 			ADC_Ready[1] <= DAC_Ready[1];
-			/*
-			if(SW[1] == 1) begin
-				LEDR[1] <= 1;
-				DAC_Data[0] <= ADC_Data[0];
-				DAC_Data[1] <= ADC_Data[1];
-				DAC_Valid[0] <= ADC_Valid[0];
-				DAC_Valid[1] <= ADC_Valid[1];
-				ADC_Ready[0] <= DAC_Ready[0];
-				ADC_Ready[1] <= DAC_Ready[1];
-			end else begin
-				LEDR[1] <= 0;
-				DAC_Data[0] <= ADC_Data[1];
-				DAC_Data[1] <= ADC_Data[0];
-				DAC_Valid[0] <= ADC_Valid[1];
-				DAC_Valid[1] <= ADC_Valid[0];
-				ADC_Ready[0] <= DAC_Ready[1];
-				ADC_Ready[1] <= DAC_Ready[0];
-			end
-			*/
 		end
 	end
 	

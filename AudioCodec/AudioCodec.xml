@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2019.07.14.19:18:10"
- outputDirectory="D:/Documents/nav docs/FPGA/AudioCodec/">
+ date="2019.08.08.14:02:38"
+ outputDirectory="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioCodec/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -68,7 +68,7 @@
        name="to_dac_left_channel_data"
        direction="input"
        role="data"
-       width="24" />
+       width="16" />
    <port
        name="to_dac_left_channel_valid"
        direction="input"
@@ -102,7 +102,7 @@
        name="from_adc_left_channel_data"
        direction="output"
        role="data"
-       width="24" />
+       width="16" />
    <port
        name="from_adc_left_channel_valid"
        direction="output"
@@ -126,7 +126,7 @@
        name="to_dac_right_channel_data"
        direction="input"
        role="data"
-       width="24" />
+       width="16" />
    <port
        name="to_dac_right_channel_valid"
        direction="input"
@@ -160,7 +160,7 @@
        name="from_adc_right_channel_data"
        direction="output"
        role="data"
-       width="24" />
+       width="16" />
    <port
        name="from_adc_right_channel_valid"
        direction="output"
@@ -190,13 +190,13 @@
  </perimeter>
  <entity
    path=""
-   parameterizationKey="AudioCodec:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=5CSEMA5F31C6,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=6,AUTO_GENERATION_ID=1563157089,AUTO_UNIQUE_ID=(altera_up_avalon_audio:17.1:AUTO_CLK_CLOCK_RATE=0,AUTO_DEVICE_FAMILY=Cyclone V,audio_in=true,audio_out=true,avalon_bus_type=Streaming,dw=24)"
+   parameterizationKey="AudioCodec:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=5CSEMA5F31C6,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=6,AUTO_GENERATION_ID=1565298157,AUTO_UNIQUE_ID=(altera_up_avalon_audio:17.1:AUTO_CLK_CLOCK_RATE=0,AUTO_DEVICE_FAMILY=Cyclone V,audio_in=true,audio_out=true,avalon_bus_type=Streaming,dw=16)"
    instancePathKey="AudioCodec"
    kind="AudioCodec"
    version="1.0"
    name="AudioCodec">
   <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
-  <parameter name="AUTO_GENERATION_ID" value="1563157089" />
+  <parameter name="AUTO_GENERATION_ID" value="1565298157" />
   <parameter name="AUTO_DEVICE" value="5CSEMA5F31C6" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
@@ -205,31 +205,32 @@
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
   <generatedFiles>
    <file
-       path="D:/Documents/nav docs/FPGA/AudioCodec/synthesis/AudioCodec.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioCodec/synthesis/AudioCodec.v"
        type="VERILOG" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="D:/Documents/nav docs/FPGA/AudioCodec/synthesis/submodules/altera_up_audio_bit_counter.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioCodec/synthesis/submodules/altera_up_audio_bit_counter.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/AudioCodec/synthesis/submodules/altera_up_audio_in_deserializer.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioCodec/synthesis/submodules/altera_up_audio_in_deserializer.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/AudioCodec/synthesis/submodules/altera_up_audio_out_serializer.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioCodec/synthesis/submodules/altera_up_audio_out_serializer.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/AudioCodec/synthesis/submodules/altera_up_clock_edge.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioCodec/synthesis/submodules/altera_up_clock_edge.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/AudioCodec/synthesis/submodules/altera_up_sync_fifo.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioCodec/synthesis/submodules/altera_up_sync_fifo.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/AudioCodec/synthesis/submodules/AudioCodec_audio_0.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioCodec/synthesis/submodules/AudioCodec_audio_0.v"
        type="VERILOG" />
   </childGeneratedFiles>
   <sourceFiles>
-   <file path="D:/Documents/nav docs/FPGA/AudioCodec.qsys" />
+   <file
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioCodec.qsys" />
   </sourceFiles>
   <childSourceFiles>
    <file
@@ -267,35 +268,35 @@
  </entity>
  <entity
    path="submodules/"
-   parameterizationKey="altera_up_avalon_audio:17.1:AUTO_CLK_CLOCK_RATE=0,AUTO_DEVICE_FAMILY=Cyclone V,audio_in=true,audio_out=true,avalon_bus_type=Streaming,dw=24"
+   parameterizationKey="altera_up_avalon_audio:17.1:AUTO_CLK_CLOCK_RATE=0,AUTO_DEVICE_FAMILY=Cyclone V,audio_in=true,audio_out=true,avalon_bus_type=Streaming,dw=16"
    instancePathKey="AudioCodec:.:audio_0"
    kind="altera_up_avalon_audio"
    version="17.1"
    name="AudioCodec_audio_0">
   <parameter name="AUTO_CLK_CLOCK_RATE" value="0" />
-  <parameter name="dw" value="24" />
+  <parameter name="dw" value="16" />
   <parameter name="avalon_bus_type" value="Streaming" />
   <parameter name="audio_in" value="true" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
   <parameter name="audio_out" value="true" />
   <generatedFiles>
    <file
-       path="D:/Documents/nav docs/FPGA/AudioCodec/synthesis/submodules/altera_up_audio_bit_counter.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioCodec/synthesis/submodules/altera_up_audio_bit_counter.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/AudioCodec/synthesis/submodules/altera_up_audio_in_deserializer.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioCodec/synthesis/submodules/altera_up_audio_in_deserializer.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/AudioCodec/synthesis/submodules/altera_up_audio_out_serializer.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioCodec/synthesis/submodules/altera_up_audio_out_serializer.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/AudioCodec/synthesis/submodules/altera_up_clock_edge.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioCodec/synthesis/submodules/altera_up_clock_edge.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/AudioCodec/synthesis/submodules/altera_up_sync_fifo.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioCodec/synthesis/submodules/altera_up_sync_fifo.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/AudioCodec/synthesis/submodules/AudioCodec_audio_0.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioCodec/synthesis/submodules/AudioCodec_audio_0.v"
        type="VERILOG" />
   </generatedFiles>
   <childGeneratedFiles/>

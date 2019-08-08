@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2019.08.06.21:47:07"
+ date="2019.08.08.14:04:05"
  outputDirectory="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AudioCodec/">
  <perimeter>
   <parameter
@@ -68,7 +68,7 @@
        name="to_dac_left_channel_data"
        direction="input"
        role="data"
-       width="24" />
+       width="16" />
    <port
        name="to_dac_left_channel_valid"
        direction="input"
@@ -102,7 +102,7 @@
        name="from_adc_left_channel_data"
        direction="output"
        role="data"
-       width="24" />
+       width="16" />
    <port
        name="from_adc_left_channel_valid"
        direction="output"
@@ -126,7 +126,7 @@
        name="to_dac_right_channel_data"
        direction="input"
        role="data"
-       width="24" />
+       width="16" />
    <port
        name="to_dac_right_channel_valid"
        direction="input"
@@ -160,7 +160,7 @@
        name="from_adc_right_channel_data"
        direction="output"
        role="data"
-       width="24" />
+       width="16" />
    <port
        name="from_adc_right_channel_valid"
        direction="output"
@@ -190,13 +190,13 @@
  </perimeter>
  <entity
    path=""
-   parameterizationKey="AudioCodec:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=5CSEMA5F31C6,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=6,AUTO_GENERATION_ID=1565153225,AUTO_UNIQUE_ID=(altera_up_avalon_audio:17.1:AUTO_CLK_CLOCK_RATE=0,AUTO_DEVICE_FAMILY=Cyclone V,audio_in=true,audio_out=true,avalon_bus_type=Streaming,dw=24)"
+   parameterizationKey="AudioCodec:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=5CSEMA5F31C6,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=6,AUTO_GENERATION_ID=1565298243,AUTO_UNIQUE_ID=(altera_up_avalon_audio:17.1:AUTO_CLK_CLOCK_RATE=0,AUTO_DEVICE_FAMILY=Cyclone V,audio_in=true,audio_out=true,avalon_bus_type=Streaming,dw=16)"
    instancePathKey="AudioCodec"
    kind="AudioCodec"
    version="1.0"
    name="AudioCodec">
   <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
-  <parameter name="AUTO_GENERATION_ID" value="1565153225" />
+  <parameter name="AUTO_GENERATION_ID" value="1565298243" />
   <parameter name="AUTO_DEVICE" value="5CSEMA5F31C6" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
@@ -268,13 +268,13 @@
  </entity>
  <entity
    path="submodules/"
-   parameterizationKey="altera_up_avalon_audio:17.1:AUTO_CLK_CLOCK_RATE=0,AUTO_DEVICE_FAMILY=Cyclone V,audio_in=true,audio_out=true,avalon_bus_type=Streaming,dw=24"
+   parameterizationKey="altera_up_avalon_audio:17.1:AUTO_CLK_CLOCK_RATE=0,AUTO_DEVICE_FAMILY=Cyclone V,audio_in=true,audio_out=true,avalon_bus_type=Streaming,dw=16"
    instancePathKey="AudioCodec:.:audio_0"
    kind="altera_up_avalon_audio"
    version="17.1"
    name="AudioCodec_audio_0">
   <parameter name="AUTO_CLK_CLOCK_RATE" value="0" />
-  <parameter name="dw" value="24" />
+  <parameter name="dw" value="16" />
   <parameter name="avalon_bus_type" value="Streaming" />
   <parameter name="audio_in" value="true" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />

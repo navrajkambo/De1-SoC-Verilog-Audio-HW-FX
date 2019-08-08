@@ -26,8 +26,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 72)
 		(input)
-		(text "to_dac_left_channel_data[23..0]" (rect 0 0 127 12)(font "Arial" (font_size 8)))
-		(text "to_dac_left_channel_data[23..0]" (rect 4 61 190 72)(font "Arial" (font_size 8)))
+		(text "to_dac_left_channel_data[15..0]" (rect 0 0 126 12)(font "Arial" (font_size 8)))
+		(text "to_dac_left_channel_data[15..0]" (rect 4 61 190 72)(font "Arial" (font_size 8)))
 		(line (pt 0 72)(pt 176 72)(line_width 3))
 	)
 	(port
@@ -47,8 +47,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 144)
 		(input)
-		(text "to_dac_right_channel_data[23..0]" (rect 0 0 132 12)(font "Arial" (font_size 8)))
-		(text "to_dac_right_channel_data[23..0]" (rect 4 133 196 144)(font "Arial" (font_size 8)))
+		(text "to_dac_right_channel_data[15..0]" (rect 0 0 130 12)(font "Arial" (font_size 8)))
+		(text "to_dac_right_channel_data[15..0]" (rect 4 133 196 144)(font "Arial" (font_size 8)))
 		(line (pt 0 144)(pt 176 144)(line_width 3))
 	)
 	(port
@@ -117,8 +117,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 464 88)
 		(output)
-		(text "from_adc_left_channel_data[23..0]" (rect 0 0 140 12)(font "Arial" (font_size 8)))
-		(text "from_adc_left_channel_data[23..0]" (rect 288 77 486 88)(font "Arial" (font_size 8)))
+		(text "from_adc_left_channel_data[15..0]" (rect 0 0 139 12)(font "Arial" (font_size 8)))
+		(text "from_adc_left_channel_data[15..0]" (rect 290 77 488 88)(font "Arial" (font_size 8)))
 		(line (pt 464 88)(pt 272 88)(line_width 3))
 	)
 	(port
@@ -138,8 +138,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 464 160)
 		(output)
-		(text "from_adc_right_channel_data[23..0]" (rect 0 0 145 12)(font "Arial" (font_size 8)))
-		(text "from_adc_right_channel_data[23..0]" (rect 283 149 487 160)(font "Arial" (font_size 8)))
+		(text "from_adc_right_channel_data[15..0]" (rect 0 0 143 12)(font "Arial" (font_size 8)))
+		(text "from_adc_right_channel_data[15..0]" (rect 285 149 489 160)(font "Arial" (font_size 8)))
 		(line (pt 464 160)(pt 272 160)(line_width 3))
 	)
 	(port

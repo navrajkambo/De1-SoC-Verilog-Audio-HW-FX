@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="1c46ceb2fef4bb8c5289"/>
+    <hash md5_digest_80b="9679eec2749e0bcd013d"/>
   </project>
   <file_info>
     <file device="5CSEMA5F31C6" path="AudioFX.sof" usercode="0xFFFFFFFF"/>
@@ -74,22 +74,22 @@
   <sld_infos>
     <sld_info hpath="AVConfig:u1" name="u1">
       <assignment_values>
-        <assignment_value text="QSYS_NAME AVConfig HAS_SOPCINFO 1 GENERATION_ID 1563157052"/>
-        <assignment_value text="QSYS_NAME AVConfig HAS_SOPCINFO 1 GENERATION_ID 1565153198"/>
+        <assignment_value text="QSYS_NAME AVConfig HAS_SOPCINFO 1 GENERATION_ID 1565298079"/>
+        <assignment_value text="QSYS_NAME AVConfig HAS_SOPCINFO 1 GENERATION_ID 1565298216"/>
       </assignment_values>
       <parameters/>
     </sld_info>
     <sld_info hpath="AudioCodec:u2" name="u2">
       <assignment_values>
-        <assignment_value text="QSYS_NAME AudioCodec HAS_SOPCINFO 1 GENERATION_ID 1563157089"/>
-        <assignment_value text="QSYS_NAME AudioCodec HAS_SOPCINFO 1 GENERATION_ID 1565153225"/>
+        <assignment_value text="QSYS_NAME AudioCodec HAS_SOPCINFO 1 GENERATION_ID 1565298157"/>
+        <assignment_value text="QSYS_NAME AudioCodec HAS_SOPCINFO 1 GENERATION_ID 1565298243"/>
       </assignment_values>
       <parameters/>
     </sld_info>
     <sld_info hpath="AudioPLL:u0" name="u0">
       <assignment_values>
         <assignment_value text="QSYS_NAME AudioPLL HAS_SOPCINFO 1 GENERATION_ID 1563131095"/>
-        <assignment_value text="QSYS_NAME AudioPLL HAS_SOPCINFO 1 GENERATION_ID 1565153212"/>
+        <assignment_value text="QSYS_NAME AudioPLL HAS_SOPCINFO 1 GENERATION_ID 1565298230"/>
       </assignment_values>
       <parameters/>
     </sld_info>

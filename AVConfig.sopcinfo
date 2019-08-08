@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="AVConfig" kind="AVConfig" version="1.0" fabric="QSYS">
  <!-- Format version 17.1 590 (Future versions may contain additional information.) -->
- <!-- 2019.08.06.21:46:39 -->
+ <!-- 2019.08.08.14:03:36 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1565153198</value>
+  <value>1565298216</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -176,7 +176,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="bit_length">
    <type>int</type>
-   <value>24</value>
+   <value>16</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>

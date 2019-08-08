@@ -2,9 +2,9 @@
 # 
 preplace inst AVConfig.audio_and_video_config_0 -pg 1 -lvl 1 -y 30
 preplace inst AVConfig -pg 1 -lvl 1 -y 40 -regy -20
-preplace netloc EXPORT<net_container>AVConfig</net_container>(SLAVE)AVConfig.clk,(SLAVE)audio_and_video_config_0.clk) 1 0 1 NJ
-preplace netloc EXPORT<net_container>AVConfig</net_container>(SLAVE)AVConfig.reset,(SLAVE)audio_and_video_config_0.reset) 1 0 1 NJ
-preplace netloc EXPORT<net_container>AVConfig</net_container>(SLAVE)audio_and_video_config_0.external_interface,(SLAVE)AVConfig.external_interface) 1 0 1 NJ
+preplace netloc EXPORT<net_container>AVConfig</net_container>(SLAVE)audio_and_video_config_0.reset,(SLAVE)AVConfig.reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>AVConfig</net_container>(SLAVE)audio_and_video_config_0.clk,(SLAVE)AVConfig.clk) 1 0 1 NJ
+preplace netloc EXPORT<net_container>AVConfig</net_container>(SLAVE)AVConfig.external_interface,(SLAVE)audio_and_video_config_0.external_interface) 1 0 1 NJ
 preplace netloc EXPORT<net_container>AVConfig</net_container>(SLAVE)AVConfig.avalon_av_config_slave,(SLAVE)audio_and_video_config_0.avalon_av_config_slave) 1 0 1 NJ
 levelinfo -pg 1 0 150 380
 levelinfo -hier AVConfig 160 190 360

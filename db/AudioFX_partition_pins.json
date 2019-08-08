@@ -84,38 +84,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "GPIO_0[16]",
-					"strict" : false
-				},
-				{
-					"name" : "GPIO_0[17]",
-					"strict" : false
-				},
-				{
-					"name" : "GPIO_0[18]",
-					"strict" : false
-				},
-				{
-					"name" : "GPIO_0[19]",
-					"strict" : false
-				},
-				{
-					"name" : "GPIO_0[20]",
-					"strict" : false
-				},
-				{
-					"name" : "GPIO_0[21]",
-					"strict" : false
-				},
-				{
-					"name" : "GPIO_0[22]",
-					"strict" : false
-				},
-				{
-					"name" : "GPIO_0[23]",
-					"strict" : false
-				},
-				{
 					"name" : "AUD_BCLK",
 					"strict" : false
 				},

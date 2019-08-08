@@ -82,7 +82,7 @@
   <parameter name="AUTO_CLK_CLOCK_RATE" value="0" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
   <parameter name="audio_in" value="Line In to ADC" />
-  <parameter name="bit_length" value="24" />
+  <parameter name="bit_length" value="16" />
   <parameter name="board" value="DE1-SoC" />
   <parameter name="d5m_resolution" value="2592 x 1944" />
   <parameter name="dac_enable" value="true" />

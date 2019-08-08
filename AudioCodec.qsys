@@ -120,7 +120,7 @@
   <parameter name="audio_in" value="true" />
   <parameter name="audio_out" value="true" />
   <parameter name="avalon_bus_type" value="Streaming" />
-  <parameter name="dw" value="24" />
+  <parameter name="dw" value="16" />
  </module>
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
