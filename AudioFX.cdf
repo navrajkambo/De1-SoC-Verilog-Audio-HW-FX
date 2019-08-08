@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSEMA5F31) Path("D:/Documents/nav docs/FPGA/") File("AudioFX.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSEMA5F31) Path("D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/") File("AudioFX.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

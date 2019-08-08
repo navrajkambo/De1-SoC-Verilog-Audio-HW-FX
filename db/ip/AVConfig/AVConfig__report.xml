@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2019.07.14.20:35:27"
- outputDirectory="D:/Documents/nav docs/FPGA/db/ip/AVConfig/">
+ date="2019.08.06.21:46:40"
+ outputDirectory="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -117,13 +117,13 @@
  </perimeter>
  <entity
    path=""
-   parameterizationKey="AVConfig:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=5CSEMA5F31C6,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=6,AUTO_GENERATION_ID=1563161725,AUTO_UNIQUE_ID=(altera_up_avalon_audio_and_video_config:17.1:AUTO_CLK_CLOCK_RATE=0,AUTO_DEVICE_FAMILY=Cyclone V,audio_in=Line In to ADC,bit_length=24,board=DE1-SoC,bosr=250fs/256fs,d5m_resolution=2592 x 1944,dac_enable=true,data_format=Left Justified,device=On-Board Peripherals,eai=true,exposure=false,line_in_bypass=false,mic_attenuation=-6dB,mic_bypass=false,sampling_rate=48 kHz,sr_register=0,video_format=NTSC)"
+   parameterizationKey="AVConfig:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=5CSEMA5F31C6,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=6,AUTO_GENERATION_ID=1565153198,AUTO_UNIQUE_ID=(altera_up_avalon_audio_and_video_config:17.1:AUTO_CLK_CLOCK_RATE=0,AUTO_DEVICE_FAMILY=Cyclone V,audio_in=Line In to ADC,bit_length=24,board=DE1-SoC,bosr=250fs/256fs,d5m_resolution=2592 x 1944,dac_enable=true,data_format=Left Justified,device=On-Board Peripherals,eai=true,exposure=false,line_in_bypass=false,mic_attenuation=-6dB,mic_bypass=false,sampling_rate=48 kHz,sr_register=0,video_format=NTSC)"
    instancePathKey="AVConfig"
    kind="AVConfig"
    version="1.0"
    name="AVConfig">
   <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
-  <parameter name="AUTO_GENERATION_ID" value="1563161725" />
+  <parameter name="AUTO_GENERATION_ID" value="1565153198" />
   <parameter name="AUTO_DEVICE" value="5CSEMA5F31C6" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
@@ -132,58 +132,59 @@
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
   <generatedFiles>
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/AVConfig.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/AVConfig.v"
        type="VERILOG" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/altera_up_av_config_serial_bus_controller.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/altera_up_av_config_serial_bus_controller.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/altera_up_slow_clock_generator.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/altera_up_slow_clock_generator.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/altera_up_av_config_auto_init.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/altera_up_av_config_auto_init.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_dc2.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_dc2.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_d5m.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_d5m.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_lcm.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_lcm.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ltm.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ltm.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ob_de1_soc.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ob_de1_soc.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ob_de2_115.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ob_de2_115.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ob_de2i_150.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ob_de2i_150.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ob_de10_standard.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ob_de10_standard.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ob_audio.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ob_audio.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ob_adv7180.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ob_adv7180.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ob_adv7181.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ob_adv7181.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/AVConfig_audio_and_video_config_0.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/AVConfig_audio_and_video_config_0.v"
        type="VERILOG" />
   </childGeneratedFiles>
   <sourceFiles>
-   <file path="D:/Documents/nav docs/FPGA/AVConfig.qsys" />
+   <file
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AVConfig.qsys" />
   </sourceFiles>
   <childSourceFiles>
    <file
@@ -264,49 +265,49 @@
   <parameter name="board" value="DE1-SoC" />
   <generatedFiles>
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/altera_up_av_config_serial_bus_controller.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/altera_up_av_config_serial_bus_controller.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/altera_up_slow_clock_generator.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/altera_up_slow_clock_generator.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/altera_up_av_config_auto_init.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/altera_up_av_config_auto_init.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_dc2.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_dc2.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_d5m.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_d5m.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_lcm.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_lcm.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ltm.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ltm.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ob_de1_soc.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ob_de1_soc.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ob_de2_115.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ob_de2_115.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ob_de2i_150.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ob_de2i_150.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ob_de10_standard.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ob_de10_standard.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ob_audio.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ob_audio.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ob_adv7180.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ob_adv7180.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ob_adv7181.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/altera_up_av_config_auto_init_ob_adv7181.v"
        type="VERILOG" />
    <file
-       path="D:/Documents/nav docs/FPGA/db/ip/AVConfig/submodules/AVConfig_audio_and_video_config_0.v"
+       path="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/submodules/AVConfig_audio_and_video_config_0.v"
        type="VERILOG" />
   </generatedFiles>
   <childGeneratedFiles/>

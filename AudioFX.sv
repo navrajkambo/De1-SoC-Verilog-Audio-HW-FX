@@ -133,14 +133,12 @@ module AudioFX(
 			LEDR[9] <= 1;
 		end else begin
 			LEDR[9] <= 0;
-			// Swap L-R audio channels
 			DAC_Data[0] <= ADC_Data[0];
 			DAC_Data[1] <= ADC_Data[1];
 			DAC_Valid[0] <= ADC_Valid[0];
 			DAC_Valid[1] <= ADC_Valid[1];
 			ADC_Ready[0] <= DAC_Ready[0];
 			ADC_Ready[1] <= DAC_Ready[1];
-			
 			/*
 			if(SW[1] == 1) begin
 				LEDR[1] <= 1;

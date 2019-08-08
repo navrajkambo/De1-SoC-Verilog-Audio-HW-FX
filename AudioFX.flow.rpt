@@ -1,5 +1,5 @@
 Flow report for AudioFX
-Sun Jul 14 20:38:14 2019
+Tue Aug 06 21:49:36 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sun Jul 14 20:37:57 2019       ;
+; Flow Status                     ; Successful - Tue Aug 06 21:49:17 2019       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; AudioFX                                     ;
 ; Top-level Entity Name           ; AudioFX                                     ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/14/2019 20:35:04 ;
+; Start date & time ; 08/06/2019 21:46:17 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; AudioFX             ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+------------------+
 ; Assignment Name                     ; Value                                                                                                                                                                        ; Default Value ; Entity Name ; Section Id       ;
 +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+------------------+
-; COMPILER_SIGNATURE_ID               ; 246744081017341.156316170411184                                                                                                                                              ; --            ; --          ; --               ;
+; COMPILER_SIGNATURE_ID               ; 246744081017341.156515317608032                                                                                                                                              ; --            ; --          ; --               ;
 ; ENABLE_SIGNALTAP                    ; On                                                                                                                                                                           ; --            ; --          ; --               ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                                                                                                                                           ; --            ; --          ; --               ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                                                                                                                                            ; --            ; --          ; --               ;
@@ -142,11 +142,11 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:01:22     ; 1.0                     ; 4969 MB             ; 00:02:39                           ;
-; Fitter                    ; 00:01:12     ; 1.1                     ; 6755 MB             ; 00:02:07                           ;
-; Assembler                 ; 00:00:12     ; 1.0                     ; 4862 MB             ; 00:00:11                           ;
-; TimeQuest Timing Analyzer ; 00:00:16     ; 1.3                     ; 5238 MB             ; 00:00:19                           ;
-; Total                     ; 00:03:02     ; --                      ; --                  ; 00:05:16                           ;
+; Analysis & Synthesis      ; 00:01:20     ; 1.0                     ; 4954 MB             ; 00:02:30                           ;
+; Fitter                    ; 00:01:17     ; 1.1                     ; 6755 MB             ; 00:02:10                           ;
+; Assembler                 ; 00:00:15     ; 1.0                     ; 4866 MB             ; 00:00:12                           ;
+; TimeQuest Timing Analyzer ; 00:00:17     ; 1.3                     ; 5237 MB             ; 00:00:19                           ;
+; Total                     ; 00:03:09     ; --                      ; --                  ; 00:05:11                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
