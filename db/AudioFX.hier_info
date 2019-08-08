@@ -68,20 +68,34 @@ SW[9] => DAC_Valid.OUTPUTSELECT
 SW[9] => ADC_Ready.OUTPUTSELECT
 SW[9] => ADC_Ready.OUTPUTSELECT
 SW[9] => LEDR[9]~reg0.DATAIN
-KEY[0] => _.IN1
-KEY[0] => _.IN1
-KEY[0] => _.IN1
+KEY[0] => KEY[0].IN1
 KEY[1] => ~NO_FANOUT~
 KEY[2] => ~NO_FANOUT~
 KEY[3] => ~NO_FANOUT~
-CLOCK_50 => CLOCK_50.IN3
+CLOCK_50 => CLOCK_50.IN5
 AUD_ADCDAT => AUD_ADCDAT.IN1
-AUD_BCLK <> AudioCodec:u2.AUD_BCLK
-AUD_ADCLRCK <> AudioCodec:u2.AUD_ADCLRCK
-AUD_DACLRCK <> AudioCodec:u2.AUD_DACLRCK
-FPGA_I2C_SDAT <> AVConfig:u1.I2C_SDAT
+AUD_BCLK <> AudioCodec:u3.AUD_BCLK
+AUD_ADCLRCK <> AudioCodec:u3.AUD_ADCLRCK
+AUD_DACLRCK <> AudioCodec:u3.AUD_DACLRCK
+FPGA_I2C_SDAT <> AVConfig:u2.I2C_SDAT
+DRAM_DQ[0] <> sdram_controller:u4.data
+DRAM_DQ[1] <> sdram_controller:u4.data
+DRAM_DQ[2] <> sdram_controller:u4.data
+DRAM_DQ[3] <> sdram_controller:u4.data
+DRAM_DQ[4] <> sdram_controller:u4.data
+DRAM_DQ[5] <> sdram_controller:u4.data
+DRAM_DQ[6] <> sdram_controller:u4.data
+DRAM_DQ[7] <> sdram_controller:u4.data
+DRAM_DQ[8] <> sdram_controller:u4.data
+DRAM_DQ[9] <> sdram_controller:u4.data
+DRAM_DQ[10] <> sdram_controller:u4.data
+DRAM_DQ[11] <> sdram_controller:u4.data
+DRAM_DQ[12] <> sdram_controller:u4.data
+DRAM_DQ[13] <> sdram_controller:u4.data
+DRAM_DQ[14] <> sdram_controller:u4.data
+DRAM_DQ[15] <> sdram_controller:u4.data
 AUD_XCK <= AudioPLL:u0.audio_clk_clk
-AUD_DACDAT <= AudioCodec:u2.AUD_DACDAT
+AUD_DACDAT <= AudioCodec:u3.AUD_DACDAT
 LEDR[0] <= LEDR[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 LEDR[1] <= <GND>
 LEDR[2] <= <GND>
@@ -92,7 +106,7 @@ LEDR[6] <= <GND>
 LEDR[7] <= <GND>
 LEDR[8] <= <GND>
 LEDR[9] <= LEDR[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-FPGA_I2C_SCLK <= AVConfig:u1.I2C_SCLK
+FPGA_I2C_SCLK <= AVConfig:u2.I2C_SCLK
 GPIO_0[0] <= DAC_Data[0][0].DB_MAX_OUTPUT_PORT_TYPE
 GPIO_0[1] <= DAC_Data[0][1].DB_MAX_OUTPUT_PORT_TYPE
 GPIO_0[2] <= DAC_Data[0][2].DB_MAX_OUTPUT_PORT_TYPE
@@ -109,6 +123,29 @@ GPIO_0[12] <= DAC_Data[0][12].DB_MAX_OUTPUT_PORT_TYPE
 GPIO_0[13] <= DAC_Data[0][13].DB_MAX_OUTPUT_PORT_TYPE
 GPIO_0[14] <= DAC_Data[0][14].DB_MAX_OUTPUT_PORT_TYPE
 GPIO_0[15] <= DAC_Data[0][15].DB_MAX_OUTPUT_PORT_TYPE
+DRAM_ADDR[0] <= sdram_controller:u4.addr
+DRAM_ADDR[1] <= sdram_controller:u4.addr
+DRAM_ADDR[2] <= sdram_controller:u4.addr
+DRAM_ADDR[3] <= sdram_controller:u4.addr
+DRAM_ADDR[4] <= sdram_controller:u4.addr
+DRAM_ADDR[5] <= sdram_controller:u4.addr
+DRAM_ADDR[6] <= sdram_controller:u4.addr
+DRAM_ADDR[7] <= sdram_controller:u4.addr
+DRAM_ADDR[8] <= sdram_controller:u4.addr
+DRAM_ADDR[9] <= sdram_controller:u4.addr
+DRAM_ADDR[10] <= sdram_controller:u4.addr
+DRAM_ADDR[11] <= sdram_controller:u4.addr
+DRAM_ADDR[12] <= sdram_controller:u4.addr
+DRAM_BA[0] <= sdram_controller:u4.bank_addr
+DRAM_BA[1] <= sdram_controller:u4.bank_addr
+DRAM_CAS_N <= sdram_controller:u4.cas_n
+DRAM_RAS_N <= sdram_controller:u4.ras_n
+DRAM_CLK <= SDRAMPLL:u1.sdram_clk_clk
+DRAM_CKE <= sdram_controller:u4.clock_enable
+DRAM_CS_N <= sdram_controller:u4.cs_n
+DRAM_WE_N <= sdram_controller:u4.we_n
+DRAM_UDQM <= sdram_controller:u4.data_mask_high
+DRAM_LDQM <= sdram_controller:u4.data_mask_low
 
 
 |AudioFX|AudioPLL:u0
@@ -309,7 +346,212 @@ locked => reset.DATAIN
 reset <= locked.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|AudioFX|AVConfig:u1
+|AudioFX|SDRAMPLL:u1
+ref_clk_clk => ref_clk_clk.IN1
+ref_reset_reset => ref_reset_reset.IN1
+reset_source_reset <= SDRAMPLL_sys_sdram_pll_0:sys_sdram_pll_0.reset_source_reset
+sdram_clk_clk <= SDRAMPLL_sys_sdram_pll_0:sys_sdram_pll_0.sdram_clk_clk
+sys_clk_clk <= SDRAMPLL_sys_sdram_pll_0:sys_sdram_pll_0.sys_clk_clk
+
+
+|AudioFX|SDRAMPLL:u1|SDRAMPLL_sys_sdram_pll_0:sys_sdram_pll_0
+ref_clk_clk => ref_clk_clk.IN1
+ref_reset_reset => ref_reset_reset.IN1
+sys_clk_clk <= SDRAMPLL_sys_sdram_pll_0_sys_pll:sys_pll.outclk_0
+sdram_clk_clk <= SDRAMPLL_sys_sdram_pll_0_sys_pll:sys_pll.outclk_1
+reset_source_reset <= altera_up_avalon_reset_from_locked_signal:reset_from_locked.reset
+
+
+|AudioFX|SDRAMPLL:u1|SDRAMPLL_sys_sdram_pll_0:sys_sdram_pll_0|SDRAMPLL_sys_sdram_pll_0_sys_pll:sys_pll
+refclk => refclk.IN1
+rst => rst.IN1
+outclk_0 <= altera_pll:altera_pll_i.outclk
+outclk_1 <= altera_pll:altera_pll_i.outclk
+locked <= altera_pll:altera_pll_i.locked
+
+
+|AudioFX|SDRAMPLL:u1|SDRAMPLL_sys_sdram_pll_0:sys_sdram_pll_0|SDRAMPLL_sys_sdram_pll_0_sys_pll:sys_pll|altera_pll:altera_pll_i
+refclk => general[0].gpll.I_REFCLK
+refclk => general[1].gpll.I_REFCLK
+refclk1 => ~NO_FANOUT~
+fbclk => ~NO_FANOUT~
+rst => general[0].gpll.I_RST
+rst => general[1].gpll.I_RST
+phase_en => ~NO_FANOUT~
+updn => ~NO_FANOUT~
+num_phase_shifts[0] => ~NO_FANOUT~
+num_phase_shifts[1] => ~NO_FANOUT~
+num_phase_shifts[2] => ~NO_FANOUT~
+scanclk => ~NO_FANOUT~
+cntsel[0] => ~NO_FANOUT~
+cntsel[1] => ~NO_FANOUT~
+cntsel[2] => ~NO_FANOUT~
+cntsel[3] => ~NO_FANOUT~
+cntsel[4] => ~NO_FANOUT~
+reconfig_to_pll[0] => ~NO_FANOUT~
+reconfig_to_pll[1] => ~NO_FANOUT~
+reconfig_to_pll[2] => ~NO_FANOUT~
+reconfig_to_pll[3] => ~NO_FANOUT~
+reconfig_to_pll[4] => ~NO_FANOUT~
+reconfig_to_pll[5] => ~NO_FANOUT~
+reconfig_to_pll[6] => ~NO_FANOUT~
+reconfig_to_pll[7] => ~NO_FANOUT~
+reconfig_to_pll[8] => ~NO_FANOUT~
+reconfig_to_pll[9] => ~NO_FANOUT~
+reconfig_to_pll[10] => ~NO_FANOUT~
+reconfig_to_pll[11] => ~NO_FANOUT~
+reconfig_to_pll[12] => ~NO_FANOUT~
+reconfig_to_pll[13] => ~NO_FANOUT~
+reconfig_to_pll[14] => ~NO_FANOUT~
+reconfig_to_pll[15] => ~NO_FANOUT~
+reconfig_to_pll[16] => ~NO_FANOUT~
+reconfig_to_pll[17] => ~NO_FANOUT~
+reconfig_to_pll[18] => ~NO_FANOUT~
+reconfig_to_pll[19] => ~NO_FANOUT~
+reconfig_to_pll[20] => ~NO_FANOUT~
+reconfig_to_pll[21] => ~NO_FANOUT~
+reconfig_to_pll[22] => ~NO_FANOUT~
+reconfig_to_pll[23] => ~NO_FANOUT~
+reconfig_to_pll[24] => ~NO_FANOUT~
+reconfig_to_pll[25] => ~NO_FANOUT~
+reconfig_to_pll[26] => ~NO_FANOUT~
+reconfig_to_pll[27] => ~NO_FANOUT~
+reconfig_to_pll[28] => ~NO_FANOUT~
+reconfig_to_pll[29] => ~NO_FANOUT~
+reconfig_to_pll[30] => ~NO_FANOUT~
+reconfig_to_pll[31] => ~NO_FANOUT~
+reconfig_to_pll[32] => ~NO_FANOUT~
+reconfig_to_pll[33] => ~NO_FANOUT~
+reconfig_to_pll[34] => ~NO_FANOUT~
+reconfig_to_pll[35] => ~NO_FANOUT~
+reconfig_to_pll[36] => ~NO_FANOUT~
+reconfig_to_pll[37] => ~NO_FANOUT~
+reconfig_to_pll[38] => ~NO_FANOUT~
+reconfig_to_pll[39] => ~NO_FANOUT~
+reconfig_to_pll[40] => ~NO_FANOUT~
+reconfig_to_pll[41] => ~NO_FANOUT~
+reconfig_to_pll[42] => ~NO_FANOUT~
+reconfig_to_pll[43] => ~NO_FANOUT~
+reconfig_to_pll[44] => ~NO_FANOUT~
+reconfig_to_pll[45] => ~NO_FANOUT~
+reconfig_to_pll[46] => ~NO_FANOUT~
+reconfig_to_pll[47] => ~NO_FANOUT~
+reconfig_to_pll[48] => ~NO_FANOUT~
+reconfig_to_pll[49] => ~NO_FANOUT~
+reconfig_to_pll[50] => ~NO_FANOUT~
+reconfig_to_pll[51] => ~NO_FANOUT~
+reconfig_to_pll[52] => ~NO_FANOUT~
+reconfig_to_pll[53] => ~NO_FANOUT~
+reconfig_to_pll[54] => ~NO_FANOUT~
+reconfig_to_pll[55] => ~NO_FANOUT~
+reconfig_to_pll[56] => ~NO_FANOUT~
+reconfig_to_pll[57] => ~NO_FANOUT~
+reconfig_to_pll[58] => ~NO_FANOUT~
+reconfig_to_pll[59] => ~NO_FANOUT~
+reconfig_to_pll[60] => ~NO_FANOUT~
+reconfig_to_pll[61] => ~NO_FANOUT~
+reconfig_to_pll[62] => ~NO_FANOUT~
+reconfig_to_pll[63] => ~NO_FANOUT~
+extswitch => ~NO_FANOUT~
+adjpllin => ~NO_FANOUT~
+cclk => ~NO_FANOUT~
+outclk[0] <= general[0].gpll.O_OUTCLK
+outclk[1] <= general[1].gpll.O_OUTCLK
+fboutclk <= general[0].gpll.O_FBOUTCLK
+locked <= general[0].gpll.LOCKED
+phase_done <= <GND>
+reconfig_from_pll[0] <= <GND>
+reconfig_from_pll[1] <= <GND>
+reconfig_from_pll[2] <= <GND>
+reconfig_from_pll[3] <= <GND>
+reconfig_from_pll[4] <= <GND>
+reconfig_from_pll[5] <= <GND>
+reconfig_from_pll[6] <= <GND>
+reconfig_from_pll[7] <= <GND>
+reconfig_from_pll[8] <= <GND>
+reconfig_from_pll[9] <= <GND>
+reconfig_from_pll[10] <= <GND>
+reconfig_from_pll[11] <= <GND>
+reconfig_from_pll[12] <= <GND>
+reconfig_from_pll[13] <= <GND>
+reconfig_from_pll[14] <= <GND>
+reconfig_from_pll[15] <= <GND>
+reconfig_from_pll[16] <= <GND>
+reconfig_from_pll[17] <= <GND>
+reconfig_from_pll[18] <= <GND>
+reconfig_from_pll[19] <= <GND>
+reconfig_from_pll[20] <= <GND>
+reconfig_from_pll[21] <= <GND>
+reconfig_from_pll[22] <= <GND>
+reconfig_from_pll[23] <= <GND>
+reconfig_from_pll[24] <= <GND>
+reconfig_from_pll[25] <= <GND>
+reconfig_from_pll[26] <= <GND>
+reconfig_from_pll[27] <= <GND>
+reconfig_from_pll[28] <= <GND>
+reconfig_from_pll[29] <= <GND>
+reconfig_from_pll[30] <= <GND>
+reconfig_from_pll[31] <= <GND>
+reconfig_from_pll[32] <= <GND>
+reconfig_from_pll[33] <= <GND>
+reconfig_from_pll[34] <= <GND>
+reconfig_from_pll[35] <= <GND>
+reconfig_from_pll[36] <= <GND>
+reconfig_from_pll[37] <= <GND>
+reconfig_from_pll[38] <= <GND>
+reconfig_from_pll[39] <= <GND>
+reconfig_from_pll[40] <= <GND>
+reconfig_from_pll[41] <= <GND>
+reconfig_from_pll[42] <= <GND>
+reconfig_from_pll[43] <= <GND>
+reconfig_from_pll[44] <= <GND>
+reconfig_from_pll[45] <= <GND>
+reconfig_from_pll[46] <= <GND>
+reconfig_from_pll[47] <= <GND>
+reconfig_from_pll[48] <= <GND>
+reconfig_from_pll[49] <= <GND>
+reconfig_from_pll[50] <= <GND>
+reconfig_from_pll[51] <= <GND>
+reconfig_from_pll[52] <= <GND>
+reconfig_from_pll[53] <= <GND>
+reconfig_from_pll[54] <= <GND>
+reconfig_from_pll[55] <= <GND>
+reconfig_from_pll[56] <= <GND>
+reconfig_from_pll[57] <= <GND>
+reconfig_from_pll[58] <= <GND>
+reconfig_from_pll[59] <= <GND>
+reconfig_from_pll[60] <= <GND>
+reconfig_from_pll[61] <= <GND>
+reconfig_from_pll[62] <= <GND>
+reconfig_from_pll[63] <= <GND>
+activeclk <= <GND>
+clkbad[0] <= <GND>
+clkbad[1] <= <GND>
+phout[0] <= <GND>
+phout[1] <= <GND>
+phout[2] <= <GND>
+phout[3] <= <GND>
+phout[4] <= <GND>
+phout[5] <= <GND>
+phout[6] <= <GND>
+phout[7] <= <GND>
+lvds_clk[0] <= <GND>
+lvds_clk[1] <= <GND>
+loaden[0] <= <GND>
+loaden[1] <= <GND>
+extclk_out[0] <= <GND>
+extclk_out[1] <= <GND>
+cascade_out[0] <= <GND>
+cascade_out[1] <= <GND>
+zdbfbclk <> <GND>
+
+
+|AudioFX|SDRAMPLL:u1|SDRAMPLL_sys_sdram_pll_0:sys_sdram_pll_0|altera_up_avalon_reset_from_locked_signal:reset_from_locked
+locked => reset.DATAIN
+reset <= locked.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AudioFX|AVConfig:u2
 address[0] => address[0].IN1
 address[1] => address[1].IN1
 byteenable[0] => byteenable[0].IN1
@@ -389,7 +631,7 @@ I2C_SCLK <= AVConfig_audio_and_video_config_0:audio_and_video_config_0.I2C_SCLK
 reset => reset.IN1
 
 
-|AudioFX|AVConfig:u1|AVConfig_audio_and_video_config_0:audio_and_video_config_0
+|AudioFX|AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0
 clk => clk.IN2
 reset => internal_reset.IN1
 address[0] => Equal0.IN1
@@ -525,7 +767,7 @@ I2C_SCEN <= altera_up_av_config_serial_bus_controller:Serial_Bus_Controller.seri
 I2C_SCLK <= altera_up_av_config_serial_bus_controller:Serial_Bus_Controller.serial_clk
 
 
-|AudioFX|AVConfig:u1|AVConfig_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init:AV_Config_Auto_Init
+|AudioFX|AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init:AV_Config_Auto_Init
 clk => auto_init_error~reg0.CLK
 clk => auto_init_complete~reg0.CLK
 clk => rom_address[0]~reg0.CLK
@@ -667,7 +909,7 @@ auto_init_complete <= auto_init_complete~reg0.DB_MAX_OUTPUT_PORT_TYPE
 auto_init_error <= auto_init_error~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|AudioFX|AVConfig:u1|AVConfig_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de1_soc:Auto_Init_OB_Devices_ROM
+|AudioFX|AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de1_soc:Auto_Init_OB_Devices_ROM
 rom_address[0] => rom_address[0].IN2
 rom_address[1] => rom_address[1].IN2
 rom_address[2] => rom_address[2].IN2
@@ -703,7 +945,7 @@ rom_data[25] <= rom_data.DB_MAX_OUTPUT_PORT_TYPE
 rom_data[26] <= rom_data.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|AudioFX|AVConfig:u1|AVConfig_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de1_soc:Auto_Init_OB_Devices_ROM|altera_up_av_config_auto_init_ob_audio:Auto_Init_Audio_ROM
+|AudioFX|AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de1_soc:Auto_Init_OB_Devices_ROM|altera_up_av_config_auto_init_ob_audio:Auto_Init_Audio_ROM
 rom_address[0] => Decoder0.IN5
 rom_address[1] => Decoder0.IN4
 rom_address[2] => Decoder0.IN3
@@ -739,7 +981,7 @@ rom_data[25] <= <GND>
 rom_data[26] <= <GND>
 
 
-|AudioFX|AVConfig:u1|AVConfig_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de1_soc:Auto_Init_OB_Devices_ROM|altera_up_av_config_auto_init_ob_adv7180:Auto_Init_Video_ROM
+|AudioFX|AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init_ob_de1_soc:Auto_Init_OB_Devices_ROM|altera_up_av_config_auto_init_ob_adv7180:Auto_Init_Video_ROM
 rom_address[0] => Ram0.RADDR
 rom_address[1] => Ram0.RADDR1
 rom_address[2] => Ram0.RADDR2
@@ -775,7 +1017,7 @@ rom_data[25] <= Ram0.DATAOUT22
 rom_data[26] <= Ram0.DATAOUT23
 
 
-|AudioFX|AVConfig:u1|AVConfig_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_serial_bus_controller:Serial_Bus_Controller
+|AudioFX|AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_serial_bus_controller:Serial_Bus_Controller
 clk => clk.IN1
 reset => reset.IN1
 start_transfer => always1.IN1
@@ -926,7 +1168,7 @@ data_out[26] <= shiftreg_data[26].DB_MAX_OUTPUT_PORT_TYPE
 transfer_complete <= transfer_complete~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|AudioFX|AVConfig:u1|AVConfig_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_serial_bus_controller:Serial_Bus_Controller|altera_up_slow_clock_generator:Serial_Config_Clock_Generator
+|AudioFX|AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_serial_bus_controller:Serial_Bus_Controller|altera_up_slow_clock_generator:Serial_Config_Clock_Generator
 clk => middle_of_low_level~reg0.CLK
 clk => middle_of_high_level~reg0.CLK
 clk => falling_edge~reg0.CLK
@@ -977,7 +1219,7 @@ middle_of_high_level <= middle_of_high_level~reg0.DB_MAX_OUTPUT_PORT_TYPE
 middle_of_low_level <= middle_of_low_level~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|AudioFX|AudioCodec:u2
+|AudioFX|AudioCodec:u3
 to_dac_left_channel_data[0] => to_dac_left_channel_data[0].IN1
 to_dac_left_channel_data[1] => to_dac_left_channel_data[1].IN1
 to_dac_left_channel_data[2] => to_dac_left_channel_data[2].IN1
@@ -1059,7 +1301,7 @@ AUD_DACLRCK => AUD_DACLRCK.IN1
 reset => reset.IN1
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0
 clk => clk.IN5
 reset => reset.IN5
 from_adc_left_channel_ready => comb.IN1
@@ -1141,7 +1383,7 @@ to_dac_right_channel_ready <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
 AUD_DACDAT <= altera_up_audio_out_serializer:Audio_Out_Serializer.serial_audio_out_data
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_clock_edge:Bit_Clock_Edges
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_clock_edge:Bit_Clock_Edges
 clk => last_test_clk.CLK
 clk => cur_test_clk.CLK
 reset => ~NO_FANOUT~
@@ -1150,7 +1392,7 @@ rising_edge <= rising_edge.DB_MAX_OUTPUT_PORT_TYPE
 falling_edge <= falling_edge.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_clock_edge:ADC_Left_Right_Clock_Edges
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_clock_edge:ADC_Left_Right_Clock_Edges
 clk => last_test_clk.CLK
 clk => cur_test_clk.CLK
 reset => ~NO_FANOUT~
@@ -1159,7 +1401,7 @@ rising_edge <= rising_edge.DB_MAX_OUTPUT_PORT_TYPE
 falling_edge <= falling_edge.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_clock_edge:DAC_Left_Right_Clock_Edges
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_clock_edge:DAC_Left_Right_Clock_Edges
 clk => last_test_clk.CLK
 clk => cur_test_clk.CLK
 reset => ~NO_FANOUT~
@@ -1168,7 +1410,7 @@ rising_edge <= rising_edge.DB_MAX_OUTPUT_PORT_TYPE
 falling_edge <= falling_edge.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer
 clk => clk.IN3
 reset => reset.IN3
 bit_clk_rising_edge => bit_clk_rising_edge.IN1
@@ -1230,7 +1472,7 @@ right_channel_data[14] <= altera_up_sync_fifo:Audio_In_Right_Channel_FIFO.read_d
 right_channel_data[15] <= altera_up_sync_fifo:Audio_In_Right_Channel_FIFO.read_data
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_audio_bit_counter:Audio_Out_Bit_Counter
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_audio_bit_counter:Audio_Out_Bit_Counter
 clk => counting~reg0.CLK
 clk => bit_counter[0].CLK
 clk => bit_counter[1].CLK
@@ -1251,7 +1493,7 @@ left_right_clk_falling_edge => reset_bit_counter.IN1
 counting <= counting~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Left_Channel_FIFO
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Left_Channel_FIFO
 clk => clk.IN1
 reset => reset.IN1
 write_en => write_en.IN1
@@ -1299,7 +1541,7 @@ read_data[14] <= scfifo:Sync_FIFO.q
 read_data[15] <= scfifo:Sync_FIFO.q
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Left_Channel_FIFO|scfifo:Sync_FIFO
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Left_Channel_FIFO|scfifo:Sync_FIFO
 data[0] => scfifo_9ba1:auto_generated.data[0]
 data[1] => scfifo_9ba1:auto_generated.data[1]
 data[2] => scfifo_9ba1:auto_generated.data[2]
@@ -1352,7 +1594,7 @@ usedw[5] <= scfifo_9ba1:auto_generated.usedw[5]
 usedw[6] <= scfifo_9ba1:auto_generated.usedw[6]
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated
 clock => a_dpfifo_s2a1:dpfifo.clock
 data[0] => a_dpfifo_s2a1:dpfifo.data[0]
 data[1] => a_dpfifo_s2a1:dpfifo.data[1]
@@ -1400,7 +1642,7 @@ usedw[6] <= a_dpfifo_s2a1:dpfifo.usedw[6]
 wrreq => a_dpfifo_s2a1:dpfifo.wreq
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo
 clock => altsyncram_r3i1:FIFOram.clock0
 clock => cntr_h2b:rd_ptr_msb.clock
 clock => cntr_u27:usedw_counter.clock
@@ -1521,7 +1763,7 @@ wreq => _.IN0
 wreq => wait_state.IN1
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|altsyncram_r3i1:FIFOram
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|altsyncram_r3i1:FIFOram
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -1844,7 +2086,7 @@ wren_a => ram_block1a15.PORTAWE
 wren_a => ram_block1a15.ENA0
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cmpr_6l8:almost_full_comparer
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cmpr_6l8:almost_full_comparer
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[0].IN0
 dataa[1] => data_wire[0].IN0
@@ -1862,7 +2104,7 @@ datab[5] => data_wire[2].IN1
 datab[6] => data_wire[3].IN1
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cmpr_6l8:three_comparison
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cmpr_6l8:three_comparison
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[0].IN0
 dataa[1] => data_wire[0].IN0
@@ -1880,7 +2122,7 @@ datab[5] => data_wire[2].IN1
 datab[6] => data_wire[3].IN1
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_h2b:rd_ptr_msb
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_h2b:rd_ptr_msb
 clock => counter_reg_bit[5].CLK
 clock => counter_reg_bit[4].CLK
 clock => counter_reg_bit[3].CLK
@@ -1903,7 +2145,7 @@ sclr => counter_reg_bit[1].SCLR
 sclr => counter_reg_bit[0].SCLR
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_u27:usedw_counter
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_u27:usedw_counter
 clock => counter_reg_bit[6].CLK
 clock => counter_reg_bit[5].CLK
 clock => counter_reg_bit[4].CLK
@@ -1931,7 +2173,7 @@ updown => updown_other_bits.IN1
 updown => counter_comb_bita0.DATAF
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_i2b:wr_ptr
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_i2b:wr_ptr
 clock => counter_reg_bit[6].CLK
 clock => counter_reg_bit[5].CLK
 clock => counter_reg_bit[4].CLK
@@ -1957,7 +2199,7 @@ sclr => counter_reg_bit[1].SCLR
 sclr => counter_reg_bit[0].SCLR
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Right_Channel_FIFO
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Right_Channel_FIFO
 clk => clk.IN1
 reset => reset.IN1
 write_en => write_en.IN1
@@ -2005,7 +2247,7 @@ read_data[14] <= scfifo:Sync_FIFO.q
 read_data[15] <= scfifo:Sync_FIFO.q
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Right_Channel_FIFO|scfifo:Sync_FIFO
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Right_Channel_FIFO|scfifo:Sync_FIFO
 data[0] => scfifo_9ba1:auto_generated.data[0]
 data[1] => scfifo_9ba1:auto_generated.data[1]
 data[2] => scfifo_9ba1:auto_generated.data[2]
@@ -2058,7 +2300,7 @@ usedw[5] <= scfifo_9ba1:auto_generated.usedw[5]
 usedw[6] <= scfifo_9ba1:auto_generated.usedw[6]
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated
 clock => a_dpfifo_s2a1:dpfifo.clock
 data[0] => a_dpfifo_s2a1:dpfifo.data[0]
 data[1] => a_dpfifo_s2a1:dpfifo.data[1]
@@ -2106,7 +2348,7 @@ usedw[6] <= a_dpfifo_s2a1:dpfifo.usedw[6]
 wrreq => a_dpfifo_s2a1:dpfifo.wreq
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo
 clock => altsyncram_r3i1:FIFOram.clock0
 clock => cntr_h2b:rd_ptr_msb.clock
 clock => cntr_u27:usedw_counter.clock
@@ -2227,7 +2469,7 @@ wreq => _.IN0
 wreq => wait_state.IN1
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|altsyncram_r3i1:FIFOram
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|altsyncram_r3i1:FIFOram
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -2550,7 +2792,7 @@ wren_a => ram_block1a15.PORTAWE
 wren_a => ram_block1a15.ENA0
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cmpr_6l8:almost_full_comparer
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cmpr_6l8:almost_full_comparer
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[0].IN0
 dataa[1] => data_wire[0].IN0
@@ -2568,7 +2810,7 @@ datab[5] => data_wire[2].IN1
 datab[6] => data_wire[3].IN1
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cmpr_6l8:three_comparison
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cmpr_6l8:three_comparison
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[0].IN0
 dataa[1] => data_wire[0].IN0
@@ -2586,7 +2828,7 @@ datab[5] => data_wire[2].IN1
 datab[6] => data_wire[3].IN1
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_h2b:rd_ptr_msb
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_h2b:rd_ptr_msb
 clock => counter_reg_bit[5].CLK
 clock => counter_reg_bit[4].CLK
 clock => counter_reg_bit[3].CLK
@@ -2609,7 +2851,7 @@ sclr => counter_reg_bit[1].SCLR
 sclr => counter_reg_bit[0].SCLR
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_u27:usedw_counter
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_u27:usedw_counter
 clock => counter_reg_bit[6].CLK
 clock => counter_reg_bit[5].CLK
 clock => counter_reg_bit[4].CLK
@@ -2637,7 +2879,7 @@ updown => updown_other_bits.IN1
 updown => counter_comb_bita0.DATAF
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_i2b:wr_ptr
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_i2b:wr_ptr
 clock => counter_reg_bit[6].CLK
 clock => counter_reg_bit[5].CLK
 clock => counter_reg_bit[4].CLK
@@ -2663,7 +2905,7 @@ sclr => counter_reg_bit[1].SCLR
 sclr => counter_reg_bit[0].SCLR
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer
 clk => clk.IN2
 reset => reset.IN2
 bit_clk_rising_edge => ~NO_FANOUT~
@@ -2740,7 +2982,7 @@ right_channel_fifo_write_space[7] <= right_channel_fifo_write_space[7]~reg0.DB_M
 serial_audio_out_data <= serial_audio_out_data~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO
 clk => clk.IN1
 reset => reset.IN1
 write_en => write_en.IN1
@@ -2788,7 +3030,7 @@ read_data[14] <= scfifo:Sync_FIFO.q
 read_data[15] <= scfifo:Sync_FIFO.q
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO
 data[0] => scfifo_9ba1:auto_generated.data[0]
 data[1] => scfifo_9ba1:auto_generated.data[1]
 data[2] => scfifo_9ba1:auto_generated.data[2]
@@ -2841,7 +3083,7 @@ usedw[5] <= scfifo_9ba1:auto_generated.usedw[5]
 usedw[6] <= scfifo_9ba1:auto_generated.usedw[6]
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated
 clock => a_dpfifo_s2a1:dpfifo.clock
 data[0] => a_dpfifo_s2a1:dpfifo.data[0]
 data[1] => a_dpfifo_s2a1:dpfifo.data[1]
@@ -2889,7 +3131,7 @@ usedw[6] <= a_dpfifo_s2a1:dpfifo.usedw[6]
 wrreq => a_dpfifo_s2a1:dpfifo.wreq
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo
 clock => altsyncram_r3i1:FIFOram.clock0
 clock => cntr_h2b:rd_ptr_msb.clock
 clock => cntr_u27:usedw_counter.clock
@@ -3010,7 +3252,7 @@ wreq => _.IN0
 wreq => wait_state.IN1
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|altsyncram_r3i1:FIFOram
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|altsyncram_r3i1:FIFOram
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -3333,7 +3575,7 @@ wren_a => ram_block1a15.PORTAWE
 wren_a => ram_block1a15.ENA0
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cmpr_6l8:almost_full_comparer
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cmpr_6l8:almost_full_comparer
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[0].IN0
 dataa[1] => data_wire[0].IN0
@@ -3351,7 +3593,7 @@ datab[5] => data_wire[2].IN1
 datab[6] => data_wire[3].IN1
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cmpr_6l8:three_comparison
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cmpr_6l8:three_comparison
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[0].IN0
 dataa[1] => data_wire[0].IN0
@@ -3369,7 +3611,7 @@ datab[5] => data_wire[2].IN1
 datab[6] => data_wire[3].IN1
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_h2b:rd_ptr_msb
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_h2b:rd_ptr_msb
 clock => counter_reg_bit[5].CLK
 clock => counter_reg_bit[4].CLK
 clock => counter_reg_bit[3].CLK
@@ -3392,7 +3634,7 @@ sclr => counter_reg_bit[1].SCLR
 sclr => counter_reg_bit[0].SCLR
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_u27:usedw_counter
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_u27:usedw_counter
 clock => counter_reg_bit[6].CLK
 clock => counter_reg_bit[5].CLK
 clock => counter_reg_bit[4].CLK
@@ -3420,7 +3662,7 @@ updown => updown_other_bits.IN1
 updown => counter_comb_bita0.DATAF
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_i2b:wr_ptr
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_i2b:wr_ptr
 clock => counter_reg_bit[6].CLK
 clock => counter_reg_bit[5].CLK
 clock => counter_reg_bit[4].CLK
@@ -3446,7 +3688,7 @@ sclr => counter_reg_bit[1].SCLR
 sclr => counter_reg_bit[0].SCLR
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO
 clk => clk.IN1
 reset => reset.IN1
 write_en => write_en.IN1
@@ -3494,7 +3736,7 @@ read_data[14] <= scfifo:Sync_FIFO.q
 read_data[15] <= scfifo:Sync_FIFO.q
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO
 data[0] => scfifo_9ba1:auto_generated.data[0]
 data[1] => scfifo_9ba1:auto_generated.data[1]
 data[2] => scfifo_9ba1:auto_generated.data[2]
@@ -3547,7 +3789,7 @@ usedw[5] <= scfifo_9ba1:auto_generated.usedw[5]
 usedw[6] <= scfifo_9ba1:auto_generated.usedw[6]
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated
 clock => a_dpfifo_s2a1:dpfifo.clock
 data[0] => a_dpfifo_s2a1:dpfifo.data[0]
 data[1] => a_dpfifo_s2a1:dpfifo.data[1]
@@ -3595,7 +3837,7 @@ usedw[6] <= a_dpfifo_s2a1:dpfifo.usedw[6]
 wrreq => a_dpfifo_s2a1:dpfifo.wreq
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo
 clock => altsyncram_r3i1:FIFOram.clock0
 clock => cntr_h2b:rd_ptr_msb.clock
 clock => cntr_u27:usedw_counter.clock
@@ -3716,7 +3958,7 @@ wreq => _.IN0
 wreq => wait_state.IN1
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|altsyncram_r3i1:FIFOram
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|altsyncram_r3i1:FIFOram
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -4039,7 +4281,7 @@ wren_a => ram_block1a15.PORTAWE
 wren_a => ram_block1a15.ENA0
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cmpr_6l8:almost_full_comparer
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cmpr_6l8:almost_full_comparer
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[0].IN0
 dataa[1] => data_wire[0].IN0
@@ -4057,7 +4299,7 @@ datab[5] => data_wire[2].IN1
 datab[6] => data_wire[3].IN1
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cmpr_6l8:three_comparison
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cmpr_6l8:three_comparison
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[0].IN0
 dataa[1] => data_wire[0].IN0
@@ -4075,7 +4317,7 @@ datab[5] => data_wire[2].IN1
 datab[6] => data_wire[3].IN1
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_h2b:rd_ptr_msb
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_h2b:rd_ptr_msb
 clock => counter_reg_bit[5].CLK
 clock => counter_reg_bit[4].CLK
 clock => counter_reg_bit[3].CLK
@@ -4098,7 +4340,7 @@ sclr => counter_reg_bit[1].SCLR
 sclr => counter_reg_bit[0].SCLR
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_u27:usedw_counter
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_u27:usedw_counter
 clock => counter_reg_bit[6].CLK
 clock => counter_reg_bit[5].CLK
 clock => counter_reg_bit[4].CLK
@@ -4126,7 +4368,7 @@ updown => updown_other_bits.IN1
 updown => counter_comb_bita0.DATAF
 
 
-|AudioFX|AudioCodec:u2|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_i2b:wr_ptr
+|AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|altera_up_sync_fifo:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_i2b:wr_ptr
 clock => counter_reg_bit[6].CLK
 clock => counter_reg_bit[5].CLK
 clock => counter_reg_bit[4].CLK
@@ -4150,5 +4392,368 @@ sclr => counter_reg_bit[3].SCLR
 sclr => counter_reg_bit[2].SCLR
 sclr => counter_reg_bit[1].SCLR
 sclr => counter_reg_bit[0].SCLR
+
+
+|AudioFX|sdram_controller:u4
+wr_addr[0] => haddr_r.DATAB
+wr_addr[1] => haddr_r.DATAB
+wr_addr[2] => haddr_r.DATAB
+wr_addr[3] => haddr_r.DATAB
+wr_addr[4] => haddr_r.DATAB
+wr_addr[5] => haddr_r.DATAB
+wr_addr[6] => haddr_r.DATAB
+wr_addr[7] => haddr_r.DATAB
+wr_addr[8] => haddr_r.DATAB
+wr_addr[9] => haddr_r.DATAB
+wr_addr[10] => haddr_r.DATAB
+wr_addr[11] => haddr_r.DATAB
+wr_addr[12] => haddr_r.DATAB
+wr_addr[13] => haddr_r.DATAB
+wr_addr[14] => haddr_r.DATAB
+wr_addr[15] => haddr_r.DATAB
+wr_addr[16] => haddr_r.DATAB
+wr_addr[17] => haddr_r.DATAB
+wr_addr[18] => haddr_r.DATAB
+wr_addr[19] => haddr_r.DATAB
+wr_addr[20] => haddr_r.DATAB
+wr_addr[21] => haddr_r.DATAB
+wr_addr[22] => haddr_r.DATAB
+wr_addr[23] => haddr_r.DATAB
+wr_data[0] => wr_data_r.DATAB
+wr_data[1] => wr_data_r.DATAB
+wr_data[2] => wr_data_r.DATAB
+wr_data[3] => wr_data_r.DATAB
+wr_data[4] => wr_data_r.DATAB
+wr_data[5] => wr_data_r.DATAB
+wr_data[6] => wr_data_r.DATAB
+wr_data[7] => wr_data_r.DATAB
+wr_data[8] => wr_data_r.DATAB
+wr_data[9] => wr_data_r.DATAB
+wr_data[10] => wr_data_r.DATAB
+wr_data[11] => wr_data_r.DATAB
+wr_data[12] => wr_data_r.DATAB
+wr_data[13] => wr_data_r.DATAB
+wr_data[14] => wr_data_r.DATAB
+wr_data[15] => wr_data_r.DATAB
+wr_enable => wr_data_r.OUTPUTSELECT
+wr_enable => wr_data_r.OUTPUTSELECT
+wr_enable => wr_data_r.OUTPUTSELECT
+wr_enable => wr_data_r.OUTPUTSELECT
+wr_enable => wr_data_r.OUTPUTSELECT
+wr_enable => wr_data_r.OUTPUTSELECT
+wr_enable => wr_data_r.OUTPUTSELECT
+wr_enable => wr_data_r.OUTPUTSELECT
+wr_enable => wr_data_r.OUTPUTSELECT
+wr_enable => wr_data_r.OUTPUTSELECT
+wr_enable => wr_data_r.OUTPUTSELECT
+wr_enable => wr_data_r.OUTPUTSELECT
+wr_enable => wr_data_r.OUTPUTSELECT
+wr_enable => wr_data_r.OUTPUTSELECT
+wr_enable => wr_data_r.OUTPUTSELECT
+wr_enable => wr_data_r.OUTPUTSELECT
+wr_enable => haddr_r.OUTPUTSELECT
+wr_enable => haddr_r.OUTPUTSELECT
+wr_enable => haddr_r.OUTPUTSELECT
+wr_enable => haddr_r.OUTPUTSELECT
+wr_enable => haddr_r.OUTPUTSELECT
+wr_enable => haddr_r.OUTPUTSELECT
+wr_enable => haddr_r.OUTPUTSELECT
+wr_enable => haddr_r.OUTPUTSELECT
+wr_enable => haddr_r.OUTPUTSELECT
+wr_enable => haddr_r.OUTPUTSELECT
+wr_enable => haddr_r.OUTPUTSELECT
+wr_enable => haddr_r.OUTPUTSELECT
+wr_enable => haddr_r.OUTPUTSELECT
+wr_enable => haddr_r.OUTPUTSELECT
+wr_enable => haddr_r.OUTPUTSELECT
+wr_enable => haddr_r.OUTPUTSELECT
+wr_enable => haddr_r.OUTPUTSELECT
+wr_enable => haddr_r.OUTPUTSELECT
+wr_enable => haddr_r.OUTPUTSELECT
+wr_enable => haddr_r.OUTPUTSELECT
+wr_enable => haddr_r.OUTPUTSELECT
+wr_enable => haddr_r.OUTPUTSELECT
+wr_enable => haddr_r.OUTPUTSELECT
+wr_enable => haddr_r.OUTPUTSELECT
+wr_enable => next.DATAA
+wr_enable => next.DATAA
+wr_enable => command_nxt.DATAA
+rd_addr[0] => haddr_r.DATAB
+rd_addr[1] => haddr_r.DATAB
+rd_addr[2] => haddr_r.DATAB
+rd_addr[3] => haddr_r.DATAB
+rd_addr[4] => haddr_r.DATAB
+rd_addr[5] => haddr_r.DATAB
+rd_addr[6] => haddr_r.DATAB
+rd_addr[7] => haddr_r.DATAB
+rd_addr[8] => haddr_r.DATAB
+rd_addr[9] => haddr_r.DATAB
+rd_addr[10] => haddr_r.DATAB
+rd_addr[11] => haddr_r.DATAB
+rd_addr[12] => haddr_r.DATAB
+rd_addr[13] => haddr_r.DATAB
+rd_addr[14] => haddr_r.DATAB
+rd_addr[15] => haddr_r.DATAB
+rd_addr[16] => haddr_r.DATAB
+rd_addr[17] => haddr_r.DATAB
+rd_addr[18] => haddr_r.DATAB
+rd_addr[19] => haddr_r.DATAB
+rd_addr[20] => haddr_r.DATAB
+rd_addr[21] => haddr_r.DATAB
+rd_addr[22] => haddr_r.DATAB
+rd_addr[23] => haddr_r.DATAB
+rd_data[0] <= rd_data_r[0].DB_MAX_OUTPUT_PORT_TYPE
+rd_data[1] <= rd_data_r[1].DB_MAX_OUTPUT_PORT_TYPE
+rd_data[2] <= rd_data_r[2].DB_MAX_OUTPUT_PORT_TYPE
+rd_data[3] <= rd_data_r[3].DB_MAX_OUTPUT_PORT_TYPE
+rd_data[4] <= rd_data_r[4].DB_MAX_OUTPUT_PORT_TYPE
+rd_data[5] <= rd_data_r[5].DB_MAX_OUTPUT_PORT_TYPE
+rd_data[6] <= rd_data_r[6].DB_MAX_OUTPUT_PORT_TYPE
+rd_data[7] <= rd_data_r[7].DB_MAX_OUTPUT_PORT_TYPE
+rd_data[8] <= rd_data_r[8].DB_MAX_OUTPUT_PORT_TYPE
+rd_data[9] <= rd_data_r[9].DB_MAX_OUTPUT_PORT_TYPE
+rd_data[10] <= rd_data_r[10].DB_MAX_OUTPUT_PORT_TYPE
+rd_data[11] <= rd_data_r[11].DB_MAX_OUTPUT_PORT_TYPE
+rd_data[12] <= rd_data_r[12].DB_MAX_OUTPUT_PORT_TYPE
+rd_data[13] <= rd_data_r[13].DB_MAX_OUTPUT_PORT_TYPE
+rd_data[14] <= rd_data_r[14].DB_MAX_OUTPUT_PORT_TYPE
+rd_data[15] <= rd_data_r[15].DB_MAX_OUTPUT_PORT_TYPE
+rd_ready <= rd_ready_r.DB_MAX_OUTPUT_PORT_TYPE
+rd_enable => haddr_r.OUTPUTSELECT
+rd_enable => haddr_r.OUTPUTSELECT
+rd_enable => haddr_r.OUTPUTSELECT
+rd_enable => haddr_r.OUTPUTSELECT
+rd_enable => haddr_r.OUTPUTSELECT
+rd_enable => haddr_r.OUTPUTSELECT
+rd_enable => haddr_r.OUTPUTSELECT
+rd_enable => haddr_r.OUTPUTSELECT
+rd_enable => haddr_r.OUTPUTSELECT
+rd_enable => haddr_r.OUTPUTSELECT
+rd_enable => haddr_r.OUTPUTSELECT
+rd_enable => haddr_r.OUTPUTSELECT
+rd_enable => haddr_r.OUTPUTSELECT
+rd_enable => haddr_r.OUTPUTSELECT
+rd_enable => haddr_r.OUTPUTSELECT
+rd_enable => haddr_r.OUTPUTSELECT
+rd_enable => haddr_r.OUTPUTSELECT
+rd_enable => haddr_r.OUTPUTSELECT
+rd_enable => haddr_r.OUTPUTSELECT
+rd_enable => haddr_r.OUTPUTSELECT
+rd_enable => haddr_r.OUTPUTSELECT
+rd_enable => haddr_r.OUTPUTSELECT
+rd_enable => haddr_r.OUTPUTSELECT
+rd_enable => haddr_r.OUTPUTSELECT
+rd_enable => next.OUTPUTSELECT
+rd_enable => next.OUTPUTSELECT
+rd_enable => command_nxt.OUTPUTSELECT
+busy <= busy~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rst_n => state.OUTPUTSELECT
+rst_n => state.OUTPUTSELECT
+rst_n => state.OUTPUTSELECT
+rst_n => state.OUTPUTSELECT
+rst_n => state.OUTPUTSELECT
+rst_n => command.OUTPUTSELECT
+rst_n => command.OUTPUTSELECT
+rst_n => command.OUTPUTSELECT
+rst_n => command.OUTPUTSELECT
+rst_n => command.OUTPUTSELECT
+rst_n => command.OUTPUTSELECT
+rst_n => command.OUTPUTSELECT
+rst_n => command.OUTPUTSELECT
+rst_n => state_cnt.OUTPUTSELECT
+rst_n => state_cnt.OUTPUTSELECT
+rst_n => state_cnt.OUTPUTSELECT
+rst_n => state_cnt.OUTPUTSELECT
+rst_n => haddr_r.OUTPUTSELECT
+rst_n => haddr_r.OUTPUTSELECT
+rst_n => haddr_r.OUTPUTSELECT
+rst_n => haddr_r.OUTPUTSELECT
+rst_n => haddr_r.OUTPUTSELECT
+rst_n => haddr_r.OUTPUTSELECT
+rst_n => haddr_r.OUTPUTSELECT
+rst_n => haddr_r.OUTPUTSELECT
+rst_n => haddr_r.OUTPUTSELECT
+rst_n => haddr_r.OUTPUTSELECT
+rst_n => haddr_r.OUTPUTSELECT
+rst_n => haddr_r.OUTPUTSELECT
+rst_n => haddr_r.OUTPUTSELECT
+rst_n => haddr_r.OUTPUTSELECT
+rst_n => haddr_r.OUTPUTSELECT
+rst_n => haddr_r.OUTPUTSELECT
+rst_n => haddr_r.OUTPUTSELECT
+rst_n => haddr_r.OUTPUTSELECT
+rst_n => haddr_r.OUTPUTSELECT
+rst_n => haddr_r.OUTPUTSELECT
+rst_n => haddr_r.OUTPUTSELECT
+rst_n => haddr_r.OUTPUTSELECT
+rst_n => haddr_r.OUTPUTSELECT
+rst_n => haddr_r.OUTPUTSELECT
+rst_n => wr_data_r.OUTPUTSELECT
+rst_n => wr_data_r.OUTPUTSELECT
+rst_n => wr_data_r.OUTPUTSELECT
+rst_n => wr_data_r.OUTPUTSELECT
+rst_n => wr_data_r.OUTPUTSELECT
+rst_n => wr_data_r.OUTPUTSELECT
+rst_n => wr_data_r.OUTPUTSELECT
+rst_n => wr_data_r.OUTPUTSELECT
+rst_n => wr_data_r.OUTPUTSELECT
+rst_n => wr_data_r.OUTPUTSELECT
+rst_n => wr_data_r.OUTPUTSELECT
+rst_n => wr_data_r.OUTPUTSELECT
+rst_n => wr_data_r.OUTPUTSELECT
+rst_n => wr_data_r.OUTPUTSELECT
+rst_n => wr_data_r.OUTPUTSELECT
+rst_n => wr_data_r.OUTPUTSELECT
+rst_n => rd_data_r.OUTPUTSELECT
+rst_n => rd_data_r.OUTPUTSELECT
+rst_n => rd_data_r.OUTPUTSELECT
+rst_n => rd_data_r.OUTPUTSELECT
+rst_n => rd_data_r.OUTPUTSELECT
+rst_n => rd_data_r.OUTPUTSELECT
+rst_n => rd_data_r.OUTPUTSELECT
+rst_n => rd_data_r.OUTPUTSELECT
+rst_n => rd_data_r.OUTPUTSELECT
+rst_n => rd_data_r.OUTPUTSELECT
+rst_n => rd_data_r.OUTPUTSELECT
+rst_n => rd_data_r.OUTPUTSELECT
+rst_n => rd_data_r.OUTPUTSELECT
+rst_n => rd_data_r.OUTPUTSELECT
+rst_n => rd_data_r.OUTPUTSELECT
+rst_n => rd_data_r.OUTPUTSELECT
+rst_n => busy.OUTPUTSELECT
+rst_n => refresh_cnt.OUTPUTSELECT
+rst_n => refresh_cnt.OUTPUTSELECT
+rst_n => refresh_cnt.OUTPUTSELECT
+rst_n => refresh_cnt.OUTPUTSELECT
+rst_n => refresh_cnt.OUTPUTSELECT
+rst_n => refresh_cnt.OUTPUTSELECT
+rst_n => refresh_cnt.OUTPUTSELECT
+rst_n => refresh_cnt.OUTPUTSELECT
+rst_n => refresh_cnt.OUTPUTSELECT
+rst_n => refresh_cnt.OUTPUTSELECT
+rst_n => rd_ready_r.ENA
+clk => refresh_cnt[0].CLK
+clk => refresh_cnt[1].CLK
+clk => refresh_cnt[2].CLK
+clk => refresh_cnt[3].CLK
+clk => refresh_cnt[4].CLK
+clk => refresh_cnt[5].CLK
+clk => refresh_cnt[6].CLK
+clk => refresh_cnt[7].CLK
+clk => refresh_cnt[8].CLK
+clk => refresh_cnt[9].CLK
+clk => rd_ready_r.CLK
+clk => busy~reg0.CLK
+clk => rd_data_r[0].CLK
+clk => rd_data_r[1].CLK
+clk => rd_data_r[2].CLK
+clk => rd_data_r[3].CLK
+clk => rd_data_r[4].CLK
+clk => rd_data_r[5].CLK
+clk => rd_data_r[6].CLK
+clk => rd_data_r[7].CLK
+clk => rd_data_r[8].CLK
+clk => rd_data_r[9].CLK
+clk => rd_data_r[10].CLK
+clk => rd_data_r[11].CLK
+clk => rd_data_r[12].CLK
+clk => rd_data_r[13].CLK
+clk => rd_data_r[14].CLK
+clk => rd_data_r[15].CLK
+clk => wr_data_r[0].CLK
+clk => wr_data_r[1].CLK
+clk => wr_data_r[2].CLK
+clk => wr_data_r[3].CLK
+clk => wr_data_r[4].CLK
+clk => wr_data_r[5].CLK
+clk => wr_data_r[6].CLK
+clk => wr_data_r[7].CLK
+clk => wr_data_r[8].CLK
+clk => wr_data_r[9].CLK
+clk => wr_data_r[10].CLK
+clk => wr_data_r[11].CLK
+clk => wr_data_r[12].CLK
+clk => wr_data_r[13].CLK
+clk => wr_data_r[14].CLK
+clk => wr_data_r[15].CLK
+clk => haddr_r[0].CLK
+clk => haddr_r[1].CLK
+clk => haddr_r[2].CLK
+clk => haddr_r[3].CLK
+clk => haddr_r[4].CLK
+clk => haddr_r[5].CLK
+clk => haddr_r[6].CLK
+clk => haddr_r[7].CLK
+clk => haddr_r[8].CLK
+clk => haddr_r[9].CLK
+clk => haddr_r[10].CLK
+clk => haddr_r[11].CLK
+clk => haddr_r[12].CLK
+clk => haddr_r[13].CLK
+clk => haddr_r[14].CLK
+clk => haddr_r[15].CLK
+clk => haddr_r[16].CLK
+clk => haddr_r[17].CLK
+clk => haddr_r[18].CLK
+clk => haddr_r[19].CLK
+clk => haddr_r[20].CLK
+clk => haddr_r[21].CLK
+clk => haddr_r[22].CLK
+clk => haddr_r[23].CLK
+clk => state_cnt[0].CLK
+clk => state_cnt[1].CLK
+clk => state_cnt[2].CLK
+clk => state_cnt[3].CLK
+clk => command[0].CLK
+clk => command[1].CLK
+clk => command[2].CLK
+clk => command[3].CLK
+clk => command[4].CLK
+clk => command[5].CLK
+clk => command[6].CLK
+clk => command[7].CLK
+clk => state[0].CLK
+clk => state[1].CLK
+clk => state[2].CLK
+clk => state[3].CLK
+clk => state[4].CLK
+addr[0] <= addr.DB_MAX_OUTPUT_PORT_TYPE
+addr[1] <= addr.DB_MAX_OUTPUT_PORT_TYPE
+addr[2] <= addr.DB_MAX_OUTPUT_PORT_TYPE
+addr[3] <= addr.DB_MAX_OUTPUT_PORT_TYPE
+addr[4] <= addr.DB_MAX_OUTPUT_PORT_TYPE
+addr[5] <= addr.DB_MAX_OUTPUT_PORT_TYPE
+addr[6] <= addr.DB_MAX_OUTPUT_PORT_TYPE
+addr[7] <= addr.DB_MAX_OUTPUT_PORT_TYPE
+addr[8] <= addr.DB_MAX_OUTPUT_PORT_TYPE
+addr[9] <= addr.DB_MAX_OUTPUT_PORT_TYPE
+addr[10] <= addr.DB_MAX_OUTPUT_PORT_TYPE
+addr[11] <= addr.DB_MAX_OUTPUT_PORT_TYPE
+addr[12] <= addr.DB_MAX_OUTPUT_PORT_TYPE
+bank_addr[0] <= bank_addr.DB_MAX_OUTPUT_PORT_TYPE
+bank_addr[1] <= bank_addr.DB_MAX_OUTPUT_PORT_TYPE
+data[0] <> data[0]
+data[1] <> data[1]
+data[2] <> data[2]
+data[3] <> data[3]
+data[4] <> data[4]
+data[5] <> data[5]
+data[6] <> data[6]
+data[7] <> data[7]
+data[8] <> data[8]
+data[9] <> data[9]
+data[10] <> data[10]
+data[11] <> data[11]
+data[12] <> data[12]
+data[13] <> data[13]
+data[14] <> data[14]
+data[15] <> data[15]
+clock_enable <= command[7].DB_MAX_OUTPUT_PORT_TYPE
+cs_n <= command[6].DB_MAX_OUTPUT_PORT_TYPE
+ras_n <= command[5].DB_MAX_OUTPUT_PORT_TYPE
+cas_n <= command[4].DB_MAX_OUTPUT_PORT_TYPE
+we_n <= command[3].DB_MAX_OUTPUT_PORT_TYPE
+data_mask_low <= state[4].DB_MAX_OUTPUT_PORT_TYPE
+data_mask_high <= state[4].DB_MAX_OUTPUT_PORT_TYPE
 
 
