@@ -1,4 +1,28 @@
 
+State Machine - |AudioFX|SampleStorage:RChan|state
+Name state.00111 state.00110 state.00101 state.00100 state.00011 state.00010 state.00001 state.00000 state.01000 
+state.00000 0 0 0 0 0 0 0 0 0 
+state.00001 0 0 0 0 0 0 1 1 0 
+state.00010 0 0 0 0 0 1 0 1 0 
+state.00011 0 0 0 0 1 0 0 1 0 
+state.00100 0 0 0 1 0 0 0 1 0 
+state.00101 0 0 1 0 0 0 0 1 0 
+state.00110 0 1 0 0 0 0 0 1 0 
+state.00111 1 0 0 0 0 0 0 1 0 
+state.01000 0 0 0 0 0 0 0 1 1 
+
+State Machine - |AudioFX|SampleStorage:LChan|state
+Name state.00111 state.00110 state.00101 state.00100 state.00011 state.00010 state.00001 state.00000 state.01000 
+state.00000 0 0 0 0 0 0 0 0 0 
+state.00001 0 0 0 0 0 0 1 1 0 
+state.00010 0 0 0 0 0 1 0 1 0 
+state.00011 0 0 0 0 1 0 0 1 0 
+state.00100 0 0 0 1 0 0 0 1 0 
+state.00101 0 0 1 0 0 0 0 1 0 
+state.00110 0 1 0 0 0 0 0 1 0 
+state.00111 1 0 0 0 0 0 0 1 0 
+state.01000 0 0 0 0 0 0 0 1 1 
+
 State Machine - |AudioFX|AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|s_serial_transfer
 Name s_serial_transfer.STATE_6_POST_READ s_serial_transfer.STATE_5_READ_TRANSFER s_serial_transfer.STATE_4_PRE_READ s_serial_transfer.STATE_3_POST_WRITE s_serial_transfer.STATE_2_WRITE_TRANSFER s_serial_transfer.STATE_1_PRE_WRITE s_serial_transfer.STATE_0_IDLE 
 s_serial_transfer.STATE_0_IDLE 0 0 0 0 0 0 0 

@@ -59,7 +59,7 @@ module AudioFX(
 	output AUD_DACDAT;
 	output FPGA_I2C_SCLK;
 	output [9:0] LEDR;
-	output [DATA_W-1:0] GPIO_0;
+	output [DATA_W+9:0] GPIO_0;
 	
 	output [12:0] DRAM_ADDR;
 	output [1:0] DRAM_BA;
@@ -73,7 +73,7 @@ module AudioFX(
 	
 	// logic & wires for ADC/DAC
 	logic [1:0] reset_out;
-	logic [1:0][DATA_W-1:0] DAC_Data, ADC_Data;
+	logic signed [1:0][DATA_W-1:0] DAC_Data, ADC_Data;
 	logic [1:0] DAC_Ready, ADC_Ready, DAC_Valid, ADC_Valid;
 	
 	// These signals are for the Avalon Bus (not used in streaming interface)
@@ -91,14 +91,17 @@ module AudioFX(
 	logic read_ready, busy, we, re;
 	logic CLOCK_50_D;
  	
+	// logic for Effects
+	logic signed [1:0][DATA_W-1:0] FX_AUD_OUT, Latched_Data;
+	
 	
 	
 	// instantiations
 	
 	// Audio PLL
 	AudioPLL u0 (
-		.ref_clk_clk        (CLOCK_50),        //      ref_clk.clk
-		.ref_reset_reset    (~KEY[0]),    //    ref_reset.reset
+		.ref_clk_clk        (CLOCK_50_D),        //      ref_clk.clk
+		.ref_reset_reset    (reset_out[1]),    //    ref_reset.reset
 		.audio_clk_clk      (AUD_XCK),      //    audio_clk.clk
 		.reset_source_reset (reset_out[0])  // reset_source.reset
 	);
@@ -112,8 +115,8 @@ module AudioFX(
 	);
 	// Audio Config (16bit audio, you can change this with QSYS)
 	AVConfig u2 (
-		.clk         (CLOCK_50),         //                    clk.clk
-		.reset       (~KEY[0]),       //                  reset.reset
+		.clk         (CLOCK_50_D),         //                    clk.clk
+		.reset       (reset_out[1]),       //                  reset.reset
 		.address     (i2c_read_data),     // avalon_av_config_slave.address
 		.byteenable  (i2c_byte_enable),  //                       .byteenable
 		.read        (i2c_read),        //                       .read
@@ -126,8 +129,8 @@ module AudioFX(
 	);
 	// Audio Codec
 	AudioCodec u3 (
-		.clk                          (CLOCK_50),                          //                         clk.clk
-		.reset                        (~KEY[0]),                        //                       reset.reset
+		.clk                          (CLOCK_50_D),                          //                         clk.clk
+		.reset                        (reset_out[1]),                        //                       reset.reset
 		.AUD_ADCDAT                   (AUD_ADCDAT),                   //          external_interface.ADCDAT
 		.AUD_ADCLRCK                  (AUD_ADCLRCK),                  //                            .ADCLRCK
 		.AUD_BCLK                     (AUD_BCLK),                     //                            .BCLK
@@ -159,8 +162,8 @@ module AudioFX(
 		.rd_enable(re),
 
 		.busy(busy), 
-		.rst_n(KEY[0]), 
-		.clk(CLOCK_50),
+		.rst_n(~reset_out[1]), 
+		.clk(CLOCK_50_D),
 
 		/* SDRAM SIDE */
 		.addr(DRAM_ADDR), 
@@ -174,11 +177,66 @@ module AudioFX(
 		.data_mask_low(DRAM_LDQM), 
 		.data_mask_high(DRAM_UDQM)
 	);
+	
+	//Left and Right channel effects
+	SampleStorage LChan(
+		.clk50(CLOCK_50_D),
+		.clk100(CLOCK_50_D),
+		.rst(reset_out[1]),
+		.idata(ADC_Data[0]),
+		.odata(FX_AUD_OUT[0]),
+		.iready(ADC_Ready[0]),
+		.ivalid(ADC_Valid[0]),
+		.oready(DAC_Ready[0]),
+		.ovalid(DAC_Valid[0]),
+		.read(read[0]),
+		.write(write[0]),
+		.read_ready(read_ready),
+		.raddr(raddr[0]),
+		.waddr(waddr[0]),
+		.wdata(wdata[0]),
+		.rdata(readdata),
+		.busy(busy),
+		.channel('0),
+		.lrclk(AUD_ADCLRCK)
+	);
+	SampleStorage RChan(
+		.clk50(CLOCK_50_D),
+		.clk100(CLOCK_50_D),
+		.rst(reset_out[1]),
+		.idata(ADC_Data[1]),
+		.odata(FX_AUD_OUT[1]),
+		.iready(ADC_Ready[1]),
+		.ivalid(ADC_Valid[1]),
+		.oready(DAC_Ready[1]),
+		.ovalid(DAC_Valid[1]),
+		.read(read[1]),
+		.write(write[1]),
+		.read_ready(read_ready),
+		.raddr(raddr[1]),
+		.waddr(waddr[1]),
+		.wdata(wdata[1]),
+		.rdata(readdata),
+		.busy(busy),
+		.channel('1),
+		.lrclk(~AUD_ADCLRCK)
+	);
+	
 	// Useful for signal tap or scope debugging and
 	assign GPIO_0[DATA_W-1:0] = DAC_Data[0];
+	assign GPIO_0[16] = busy;
+	assign GPIO_0[17] = read_ready;
+	assign GPIO_0[18] = ADC_Ready[0];
+	assign GPIO_0[19] = ADC_Valid[0];
+	assign GPIO_0[20] = DAC_Ready[0];
+	assign GPIO_0[21] = DAC_Valid[0];
+	assign GPIO_0[22] = ADC_Ready[1];
+	assign GPIO_0[23] = ADC_Valid[1];
+	assign GPIO_0[24] = DAC_Ready[1];
+	assign GPIO_0[25] = DAC_Valid[1];
 	
 	// Logic for blinking LED on Switch 0
-	always@(posedge(CLOCK_50)) begin
+	always@(posedge(CLOCK_50_D)) begin
 		if(SW[0]==1) begin
 			if(count ==0) begin
 				LEDR[0] <= ~LEDR[0];
@@ -190,14 +248,45 @@ module AudioFX(
 		end
 	end
 	
-	// Logic for not using SDRAM
-	always@(posedge CLOCK_50) begin
-		we <= 0;
-		re <= 0;
-		waddress = '0;
-		raddress = '0;
+	// Logic for using SDRAM
+	always@(posedge CLOCK_50_D) begin
+		if(ADC_Ready[0] && ADC_Valid[0])
+			Latched_Data[0] <= ADC_Data[0];
+		if(ADC_Ready[1] && ADC_Valid[1])
+			Latched_Data[1] <= ADC_Data[1];
+	end
+	always@(posedge CLOCK_50_D) begin
+		LEDR[1] = SW[1];
+		LEDR[9] = SW[9];
+		
+		if(SW[9]) begin
+			DAC_Data[0] <= '0;
+			DAC_Data[1] <= '0;
+		end else begin
+			if(SW[1]) begin
+				DAC_Data[0] <= Latched_Data[0] + (FX_AUD_OUT[0] >>> 2);
+				DAC_Data[1] <= Latched_Data[1] + (FX_AUD_OUT[1] >>> 2);
+			end else begin
+				DAC_Data[0] <= Latched_Data[0];
+				DAC_Data[1] <= Latched_Data[1];
+			end
+		end
+		if(AUD_ADCLRCK) begin
+			re <=	read[0];
+			we <=	write[0];
+			raddress <= raddr[0];
+			waddress <= waddr[0];
+			writedata <= wdata[0];
+		end else begin
+			re <=	read[1];
+			we <=	write[1];
+			raddress <= raddr[1];
+			waddress <= waddr[1];
+			writedata <= wdata[1];
+		end
 	end
 	
+	/*
 	// Basic tie-back for audio ADC -> DAC
 	always@(posedge(CLOCK_50)) begin
 		// Mute Condition using switch 9
@@ -220,5 +309,5 @@ module AudioFX(
 			ADC_Ready[1] <= DAC_Ready[1];
 		end
 	end
-	
+	*/
 endmodule
