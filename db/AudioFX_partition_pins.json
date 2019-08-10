@@ -16,6 +16,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "LEDR[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[3]",
+					"strict" : false
+				},
+				{
 					"name" : "LEDR[9]",
 					"strict" : false
 				},
@@ -125,6 +133,46 @@
 				},
 				{
 					"name" : "GPIO_0[25]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_0[26]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_0[27]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_0[28]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_0[29]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_0[30]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_0[31]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_0[32]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_0[33]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_0[34]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_0[35]",
 					"strict" : false
 				},
 				{

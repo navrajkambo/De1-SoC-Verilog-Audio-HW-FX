@@ -59,7 +59,7 @@ module AudioFX(
 	output AUD_DACDAT;
 	output FPGA_I2C_SCLK;
 	output [9:0] LEDR;
-	output [DATA_W+9:0] GPIO_0;
+	output [35:0] GPIO_0;
 	
 	output [12:0] DRAM_ADDR;
 	output [1:0] DRAM_BA;
@@ -90,6 +90,7 @@ module AudioFX(
 	logic [1:0] write, read;
 	logic read_ready, busy, we, re;
 	logic CLOCK_50_D;
+	logic [1:0][4:0] state;
  	
 	// logic for Effects
 	logic signed [1:0][DATA_W-1:0] FX_AUD_OUT, Latched_Data;
@@ -198,7 +199,8 @@ module AudioFX(
 		.rdata(readdata),
 		.busy(busy),
 		.channel('0),
-		.lrclk(AUD_ADCLRCK)
+		.lrclk(AUD_ADCLRCK),
+		.state(state[0])
 	);
 	SampleStorage RChan(
 		.clk50(CLOCK_50_D),
@@ -219,13 +221,16 @@ module AudioFX(
 		.rdata(readdata),
 		.busy(busy),
 		.channel('1),
-		.lrclk(~AUD_ADCLRCK)
+		.lrclk(~AUD_ADCLRCK),
+		.state(state[1])
 	);
 	
 	// Useful for signal tap or scope debugging and
-	assign GPIO_0[DATA_W-1:0] = DAC_Data[0];
+	assign GPIO_0[DATA_W-1:0] = readdata;
 	assign GPIO_0[16] = busy;
 	assign GPIO_0[17] = read_ready;
+	assign GPIO_0[26] = we;
+	assign GPIO_0[27] = re;
 	assign GPIO_0[18] = ADC_Ready[0];
 	assign GPIO_0[19] = ADC_Valid[0];
 	assign GPIO_0[20] = DAC_Ready[0];
@@ -234,6 +239,8 @@ module AudioFX(
 	assign GPIO_0[23] = ADC_Valid[1];
 	assign GPIO_0[24] = DAC_Ready[1];
 	assign GPIO_0[25] = DAC_Valid[1];
+	assign GPIO_0[31:28] = state[0];
+	assign GPIO_0[35:32] = state[1];
 	
 	// Logic for blinking LED on Switch 0
 	always@(posedge(CLOCK_50_D)) begin
@@ -247,6 +254,9 @@ module AudioFX(
 			count <= 1;
 		end
 	end
+	
+	assign LEDR[2] = (Latched_Data[0] && wdata[0]);
+	assign LEDR[3] = (Latched_Data[1] && wdata[1]); 
 	
 	// Logic for using SDRAM
 	always@(posedge CLOCK_50_D) begin
