@@ -88,7 +88,7 @@ module AudioFX(
 	logic [1:0][ADDR_W-1:0] waddr, raddr;
 	logic [1:0][DATA_W-1:0] wdata;
 	logic [ADDR_W-1:0] waddress, raddress;
-	logic [DATA_W-1:0] writedata, readdata;
+	logic signed [DATA_W-1:0] writedata, readdata;
 	logic [1:0] write, read;
 	logic read_ready, busy, we, re;
 	logic CLOCK_50_D;
@@ -209,7 +209,7 @@ module AudioFX(
 	SampleStorage LChan(
 		.clk50(CLOCK_50_D),
 		.rst(reset_out[1]),
-		.idata(D[0]),//.idata(ADC_Data[0]),//
+		.idata(ADC_Data[0]),//.idata(D[0]),//.idata(ADC_Data[0]),//
 		.odata(FX_AUD_OUT[0]),
 		.iready(ADC_Ready[0]),
 		.ivalid(ADC_Valid[0]),
@@ -230,7 +230,7 @@ module AudioFX(
 	SampleStorage RChan(
 		.clk50(CLOCK_50_D),
 		.rst(reset_out[1]),
-		.idata(D[1]),//.idata(ADC_Data[1]),//
+		.idata(ADC_Data[1]),//.idata(D[1]),//.idata(ADC_Data[1]),//
 		.odata(FX_AUD_OUT[1]),
 		.iready(ADC_Ready[1]),
 		.ivalid(ADC_Valid[1]),
@@ -303,8 +303,10 @@ module AudioFX(
 			DAC_Data[1] <= '0;
 		end else begin
 			if(SW[1]) begin
-				DAC_Data[0] <= Latched_Data[0] + (FX_AUD_OUT[0] >>> 2);
-				DAC_Data[1] <= Latched_Data[1] + (FX_AUD_OUT[1] >>> 2);
+				//DAC_Data[0] <= Latched_Data[0] + (FX_AUD_OUT[0] >>> 2);
+				//DAC_Data[1] <= Latched_Data[1] + (FX_AUD_OUT[1] >>> 2);
+				DAC_Data[0] <= (signed'(FX_AUD_OUT[0]) >>> 1);
+				DAC_Data[1] <= (signed'(FX_AUD_OUT[1]) >>> 1);
 			end else begin
 				DAC_Data[0] <= Latched_Data[0];
 				DAC_Data[1] <= Latched_Data[1];

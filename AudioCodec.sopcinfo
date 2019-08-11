@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="AudioCodec" kind="AudioCodec" version="1.0" fabric="QSYS">
  <!-- Format version 17.1 590 (Future versions may contain additional information.) -->
- <!-- 2019.08.10.18:25:40 -->
+ <!-- 2019.08.11.13:39:04 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1565486740</value>
+  <value>1565555944</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>

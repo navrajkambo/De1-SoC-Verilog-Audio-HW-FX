@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2019.08.10.18:25:14"
+ date="2019.08.11.13:38:39"
  outputDirectory="D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/ip/AVConfig/">
  <perimeter>
   <parameter
@@ -117,13 +117,13 @@
  </perimeter>
  <entity
    path=""
-   parameterizationKey="AVConfig:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=5CSEMA5F31C6,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=6,AUTO_GENERATION_ID=1565486713,AUTO_UNIQUE_ID=(altera_up_avalon_audio_and_video_config:17.1:AUTO_CLK_CLOCK_RATE=0,AUTO_DEVICE_FAMILY=Cyclone V,audio_in=Line In to ADC,bit_length=16,board=DE1-SoC,bosr=250fs/256fs,d5m_resolution=2592 x 1944,dac_enable=true,data_format=Left Justified,device=On-Board Peripherals,eai=true,exposure=false,line_in_bypass=false,mic_attenuation=-6dB,mic_bypass=false,sampling_rate=48 kHz,sr_register=0,video_format=NTSC)"
+   parameterizationKey="AVConfig:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=5CSEMA5F31C6,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=6,AUTO_GENERATION_ID=1565555917,AUTO_UNIQUE_ID=(altera_up_avalon_audio_and_video_config:17.1:AUTO_CLK_CLOCK_RATE=0,AUTO_DEVICE_FAMILY=Cyclone V,audio_in=Line In to ADC,bit_length=16,board=DE1-SoC,bosr=250fs/256fs,d5m_resolution=2592 x 1944,dac_enable=true,data_format=Left Justified,device=On-Board Peripherals,eai=true,exposure=false,line_in_bypass=false,mic_attenuation=-6dB,mic_bypass=false,sampling_rate=48 kHz,sr_register=0,video_format=NTSC)"
    instancePathKey="AVConfig"
    kind="AVConfig"
    version="1.0"
    name="AVConfig">
   <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
-  <parameter name="AUTO_GENERATION_ID" value="1565486713" />
+  <parameter name="AUTO_GENERATION_ID" value="1565555917" />
   <parameter name="AUTO_DEVICE" value="5CSEMA5F31C6" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />

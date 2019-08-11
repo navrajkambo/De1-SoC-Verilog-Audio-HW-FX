@@ -25,12 +25,12 @@ module SampleStorage (
 
 	input logic clk50, rst, busy, ivalid, oready, read_ready;
 	input logic signed [DATA_W-1:0]  idata;
-	input logic [DATA_W-1:0] rdata;
+	input logic signed [DATA_W-1:0] rdata;
 	input logic channel, lrclk;
 	
 	output logic ovalid, iready, read, write;
-	output logic signed[DATA_W-1:0]	odata;
-	output logic [DATA_W-1:0] wdata;
+	output logic signed [DATA_W-1:0]	odata;
+	output logic signed [DATA_W-1:0] wdata;
 	output logic [ADDR_W-1:0] waddr, raddr;
 	
 	logic signed [DATA_W-1:0] odata_next, wdata_next;
@@ -52,7 +52,7 @@ module SampleStorage (
 		if(rst) begin
 			wmax_next <= 0;
 		end else begin
-			if(waddress > 'd48000)
+			if(waddress >= 'd48000)
 				wmax_next <= 1;
 		end
 	end

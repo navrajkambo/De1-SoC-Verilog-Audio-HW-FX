@@ -1,5 +1,5 @@
 Analysis & Synthesis report for AudioFX
-Sat Aug 10 18:26:21 2019
+Sun Aug 11 13:39:45 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -93,13 +93,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Aug 10 18:26:20 2019       ;
+; Analysis & Synthesis Status     ; Successful - Sun Aug 11 13:39:45 2019       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; AudioFX                                     ;
 ; Top-level Entity Name           ; AudioFX                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 2982                                        ;
+; Total registers                 ; 3060                                        ;
 ; Total pins                      ; 144                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 1,990,656                                   ;
@@ -330,16 +330,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 1632           ;
+; Estimate of Logic utilization (ALMs needed) ; 1673           ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 1336           ;
+; Combinational ALUT usage for logic          ; 1310           ;
 ;     -- 7 input functions                    ; 11             ;
-;     -- 6 input functions                    ; 235            ;
-;     -- 5 input functions                    ; 307            ;
-;     -- 4 input functions                    ; 142            ;
-;     -- <=3 input functions                  ; 641            ;
+;     -- 6 input functions                    ; 241            ;
+;     -- 5 input functions                    ; 305            ;
+;     -- 4 input functions                    ; 138            ;
+;     -- <=3 input functions                  ; 615            ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 2982           ;
+; Dedicated logic registers                   ; 3060           ;
 ;                                             ;                ;
 ; I/O pins                                    ; 144            ;
 ; Total MLAB memory bits                      ; 0              ;
@@ -352,8 +352,8 @@ refer to the applicable agreement for further details.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 1695           ;
-; Total fan-out                               ; 22720          ;
-; Average fan-out                             ; 4.60           ;
+; Total fan-out                               ; 22905          ;
+; Average fan-out                             ; 4.58           ;
 +---------------------------------------------+----------------+
 
 
@@ -362,7 +362,7 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                 ; Entity Name                               ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+--------------+
-; |AudioFX                                                                                                                                ; 1336 (78)           ; 2982 (146)                ; 1990656           ; 0          ; 144  ; 0            ; |AudioFX                                                                                                                                                                                                                                                                                                                                            ; AudioFX                                   ; work         ;
+; |AudioFX                                                                                                                                ; 1310 (47)           ; 3060 (155)                ; 1990656           ; 0          ; 144  ; 0            ; |AudioFX                                                                                                                                                                                                                                                                                                                                            ; AudioFX                                   ; work         ;
 ;    |AVConfig:u2|                                                                                                                        ; 121 (0)             ; 107 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |AudioFX|AVConfig:u2                                                                                                                                                                                                                                                                                                                                ; AVConfig                                  ; AVConfig     ;
 ;       |AVConfig_audio_and_video_config_0:audio_and_video_config_0|                                                                      ; 121 (0)             ; 107 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |AudioFX|AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0                                                                                                                                                                                                                                                                     ; AVConfig_audio_and_video_config_0         ; AVConfig     ;
 ;          |altera_up_av_config_auto_init:AV_Config_Auto_Init|                                                                            ; 11 (11)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |AudioFX|AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init:AV_Config_Auto_Init                                                                                                                                                                                                                   ; altera_up_av_config_auto_init             ; AVConfig     ;
@@ -418,9 +418,9 @@ refer to the applicable agreement for further details.
 ;       |SDRAMPLL_sys_sdram_pll_0:sys_sdram_pll_0|                                                                                        ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |AudioFX|SDRAMPLL:u1|SDRAMPLL_sys_sdram_pll_0:sys_sdram_pll_0                                                                                                                                                                                                                                                                                       ; SDRAMPLL_sys_sdram_pll_0                  ; SDRAMPLL     ;
 ;          |SDRAMPLL_sys_sdram_pll_0_sys_pll:sys_pll|                                                                                     ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |AudioFX|SDRAMPLL:u1|SDRAMPLL_sys_sdram_pll_0:sys_sdram_pll_0|SDRAMPLL_sys_sdram_pll_0_sys_pll:sys_pll                                                                                                                                                                                                                                              ; SDRAMPLL_sys_sdram_pll_0_sys_pll          ; SDRAMPLL     ;
 ;             |altera_pll:altera_pll_i|                                                                                                   ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |AudioFX|SDRAMPLL:u1|SDRAMPLL_sys_sdram_pll_0:sys_sdram_pll_0|SDRAMPLL_sys_sdram_pll_0_sys_pll:sys_pll|altera_pll:altera_pll_i                                                                                                                                                                                                                      ; altera_pll                                ; work         ;
-;    |SampleStorage:LChan|                                                                                                                ; 90 (90)             ; 95 (95)                   ; 0                 ; 0          ; 0    ; 0            ; |AudioFX|SampleStorage:LChan                                                                                                                                                                                                                                                                                                                        ; SampleStorage                             ; work         ;
-;    |SampleStorage:RChan|                                                                                                                ; 90 (90)             ; 96 (96)                   ; 0                 ; 0          ; 0    ; 0            ; |AudioFX|SampleStorage:RChan                                                                                                                                                                                                                                                                                                                        ; SampleStorage                             ; work         ;
-;    |sdram_controller:u4|                                                                                                                ; 74 (74)             ; 68 (68)                   ; 0                 ; 0          ; 0    ; 0            ; |AudioFX|sdram_controller:u4                                                                                                                                                                                                                                                                                                                        ; sdram_controller                          ; work         ;
+;    |SampleStorage:LChan|                                                                                                                ; 86 (86)             ; 123 (123)                 ; 0                 ; 0          ; 0    ; 0            ; |AudioFX|SampleStorage:LChan                                                                                                                                                                                                                                                                                                                        ; SampleStorage                             ; work         ;
+;    |SampleStorage:RChan|                                                                                                                ; 86 (86)             ; 124 (124)                 ; 0                 ; 0          ; 0    ; 0            ; |AudioFX|SampleStorage:RChan                                                                                                                                                                                                                                                                                                                        ; SampleStorage                             ; work         ;
+;    |sdram_controller:u4|                                                                                                                ; 87 (87)             ; 81 (81)                   ; 0                 ; 0          ; 0    ; 0            ; |AudioFX|sdram_controller:u4                                                                                                                                                                                                                                                                                                                        ; sdram_controller                          ; work         ;
 ;    |sld_hub:auto_hub|                                                                                                                   ; 92 (1)              ; 91 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |AudioFX|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                                   ; altera_sld   ;
 ;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 91 (0)              ; 91 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |AudioFX|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input               ; altera_sld   ;
 ;          |alt_sld_fab:instrumentation_fabric|                                                                                           ; 91 (0)              ; 91 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |AudioFX|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                                                                                        ; alt_sld_fab                               ; alt_sld_fab  ;
@@ -653,33 +653,6 @@ Encoding Type:  One-Hot
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Register name                                                                                                                                              ; Reason for Removal                                                                                                                                ;
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; D[1][3]                                                                                                                                                    ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; D[1][4]                                                                                                                                                    ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; D[1][5]                                                                                                                                                    ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; D[1][6]                                                                                                                                                    ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; D[1][7]                                                                                                                                                    ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; D[1][8]                                                                                                                                                    ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; D[1][9]                                                                                                                                                    ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; D[1][10]                                                                                                                                                   ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; D[1][11]                                                                                                                                                   ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; D[1][12]                                                                                                                                                   ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; D[1][13]                                                                                                                                                   ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; D[1][14]                                                                                                                                                   ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; D[1][15]                                                                                                                                                   ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; D[0][2]                                                                                                                                                    ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; D[0][3]                                                                                                                                                    ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; D[0][4]                                                                                                                                                    ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; D[0][5]                                                                                                                                                    ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; D[0][6]                                                                                                                                                    ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; D[0][7]                                                                                                                                                    ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; D[0][8]                                                                                                                                                    ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; D[0][9]                                                                                                                                                    ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; D[0][10]                                                                                                                                                   ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; D[0][11]                                                                                                                                                   ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; D[0][12]                                                                                                                                                   ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; D[0][13]                                                                                                                                                   ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; D[0][14]                                                                                                                                                   ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; D[0][15]                                                                                                                                                   ; Stuck at GND due to stuck port data_in                                                                                                            ;
 ; SampleStorage:RChan|state[4]                                                                                                                               ; Stuck at GND due to stuck port data_in                                                                                                            ;
 ; SampleStorage:LChan|state[4]                                                                                                                               ; Stuck at GND due to stuck port data_in                                                                                                            ;
 ; AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|address_reg[8,16,17]                                                                ; Lost fanout                                                                                                                                       ;
@@ -692,37 +665,14 @@ Encoding Type:  One-Hot
 ; AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|data_reg[0..8]                                                                      ; Stuck at GND due to stuck port data_in                                                                                                            ;
 ; AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|address_reg[0..7]                                                                   ; Stuck at GND due to stuck port data_in                                                                                                            ;
 ; AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|control_reg[16,17]                                                                  ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; D[0][1]                                                                                                                                                    ; Merged with D[0][0]                                                                                                                               ;
-; D[1][1]                                                                                                                                                    ; Merged with D[1][0]                                                                                                                               ;
-; D[1][2]                                                                                                                                                    ; Merged with D[1][0]                                                                                                                               ;
-; SampleStorage:RChan|wdata_next[5,6,11..15]                                                                                                                 ; Merged with SampleStorage:RChan|wdata_next[3]                                                                                                     ;
-; SampleStorage:RChan|wdata[3,5,6,11..14]                                                                                                                    ; Merged with SampleStorage:RChan|wdata[15]                                                                                                         ;
 ; SampleStorage:LChan|busy_last                                                                                                                              ; Merged with SampleStorage:RChan|busy_last                                                                                                         ;
-; SampleStorage:RChan|wdata_next[7..10]                                                                                                                      ; Merged with SampleStorage:RChan|wdata_next[4]                                                                                                     ;
-; SampleStorage:LChan|wdata_next[2,5,6,9,10,12..14]                                                                                                          ; Merged with SampleStorage:LChan|wdata_next[3]                                                                                                     ;
-; SampleStorage:LChan|wdata[2,3,5,6,9,10,12,13]                                                                                                              ; Merged with SampleStorage:LChan|wdata[14]                                                                                                         ;
-; SampleStorage:LChan|wdata_next[7,8,11,15]                                                                                                                  ; Merged with SampleStorage:LChan|wdata_next[4]                                                                                                     ;
 ; sdram_controller:u4|command[2,6]                                                                                                                           ; Merged with sdram_controller:u4|command[1]                                                                                                        ;
 ; AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|address_for_transfer[0..6]                                                          ; Merged with AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|address_for_transfer[7]                                        ;
 ; AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|device_for_transfer[0]                                                              ; Merged with AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|device_for_transfer[1]                                         ;
-; SampleStorage:RChan|wdata_next[4]                                                                                                                          ; Merged with SampleStorage:RChan|wdata_next[3]                                                                                                     ;
-; SampleStorage:RChan|wdata_next[0]                                                                                                                          ; Merged with SampleStorage:RChan|wdata_next[1]                                                                                                     ;
-; SampleStorage:RChan|wdata[4,7..10]                                                                                                                         ; Merged with SampleStorage:RChan|wdata[15]                                                                                                         ;
-; SampleStorage:RChan|wdata[0]                                                                                                                               ; Merged with SampleStorage:RChan|wdata[1]                                                                                                          ;
-; SampleStorage:LChan|wdata_next[4]                                                                                                                          ; Merged with SampleStorage:LChan|wdata_next[3]                                                                                                     ;
-; SampleStorage:LChan|wdata[4,7,8,11,14]                                                                                                                     ; Merged with SampleStorage:LChan|wdata[15]                                                                                                         ;
-; writedata[3..9,11..15]                                                                                                                                     ; Merged with writedata[10]                                                                                                                         ;
 ; waddress[23]                                                                                                                                               ; Merged with raddress[23]                                                                                                                          ;
-; sdram_controller:u4|wr_data_r[3..9,11..15]                                                                                                                 ; Merged with sdram_controller:u4|wr_data_r[10]                                                                                                     ;
-; SampleStorage:RChan|wdata_next[3]                                                                                                                          ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; SampleStorage:RChan|wdata[15]                                                                                                                              ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; SampleStorage:LChan|wdata_next[3]                                                                                                                          ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; SampleStorage:LChan|wdata[15]                                                                                                                              ; Stuck at GND due to stuck port data_in                                                                                                            ;
 ; sdram_controller:u4|command[1]                                                                                                                             ; Stuck at GND due to stuck port data_in                                                                                                            ;
 ; AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|address_for_transfer[7]                                                             ; Stuck at GND due to stuck port data_in                                                                                                            ;
 ; AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|device_for_transfer[1]                                                              ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; writedata[10]                                                                                                                                              ; Stuck at GND due to stuck port data_in                                                                                                            ;
-; sdram_controller:u4|wr_data_r[10]                                                                                                                          ; Stuck at GND due to stuck port data_in                                                                                                            ;
 ; AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|external_read_transfer                                                              ; Lost fanout                                                                                                                                       ;
 ; AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init:AV_Config_Auto_Init|data_out[19,20,22,26]             ; Stuck at GND due to stuck port data_in                                                                                                            ;
 ; AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|start_external_transfer                                                             ; Stuck at GND due to stuck port data_in                                                                                                            ;
@@ -741,7 +691,7 @@ Encoding Type:  One-Hot
 ; AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|s_serial_transfer.STATE_3_POST_WRITE                                                ; Lost fanout                                                                                                                                       ;
 ; AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|s_serial_transfer.STATE_5_READ_TRANSFER                                             ; Lost fanout                                                                                                                                       ;
 ; AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|s_serial_transfer.STATE_6_POST_READ                                                 ; Lost fanout                                                                                                                                       ;
-; Total Number of Removed Registers = 197                                                                                                                    ;                                                                                                                                                   ;
+; Total Number of Removed Registers = 85                                                                                                                     ;                                                                                                                                                   ;
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -750,10 +700,6 @@ Encoding Type:  One-Hot
 +--------------------------------------------------------------------------------------------------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------+
 ; Register name                                                                                                                        ; Reason for Removal        ; Registers Removed due to This Register                                                                           ;
 +--------------------------------------------------------------------------------------------------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------+
-; D[1][3]                                                                                                                              ; Stuck at GND              ; SampleStorage:RChan|wdata_next[3], SampleStorage:RChan|wdata[15], writedata[10],                                 ;
-;                                                                                                                                      ; due to stuck port data_in ; sdram_controller:u4|wr_data_r[10]                                                                                ;
-; D[0][3]                                                                                                                              ; Stuck at GND              ; SampleStorage:LChan|wdata_next[3], SampleStorage:LChan|wdata[15]                                                 ;
-;                                                                                                                                      ; due to stuck port data_in ;                                                                                                                  ;
 ; AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|s_serial_transfer~2                                           ; Lost Fanouts              ; AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|s_serial_transfer.STATE_2_WRITE_TRANSFER, ;
 ;                                                                                                                                      ;                           ; AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|s_serial_transfer.STATE_5_READ_TRANSFER   ;
 ; AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|address_reg[17]                                               ; Lost Fanouts              ; AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|readdata[0]                               ;
@@ -771,12 +717,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 2982  ;
-; Number of registers using Synchronous Clear  ; 630   ;
-; Number of registers using Synchronous Load   ; 408   ;
+; Total registers                              ; 3060  ;
+; Number of registers using Synchronous Clear  ; 673   ;
+; Number of registers using Synchronous Load   ; 422   ;
 ; Number of registers using Asynchronous Clear ; 676   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1107  ;
+; Number of registers using Clock Enable       ; 1133  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -812,32 +758,32 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |AudioFX|DAC_Data[1][0]                                                                                                                                                  ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |AudioFX|sdram_controller:u4|rd_data_r[5]                                                                                                                                ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |AudioFX|AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init:AV_Config_Auto_Init|rom_address[3]                         ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |AudioFX|SampleStorage:LChan|wdata_next[0]                                                                                                                               ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |AudioFX|SampleStorage:RChan|wdata_next[1]                                                                                                                               ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |AudioFX|SampleStorage:LChan|odata_next[15]                                                                                                                              ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |AudioFX|SampleStorage:RChan|odata_next[15]                                                                                                                              ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |AudioFX|sdram_controller:u4|refresh_cnt[4]                                                                                                                              ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|data_in_shift_reg[8]                                             ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |AudioFX|DAC_Data[1][7]                                                                                                                                                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |AudioFX|sdram_controller:u4|rd_data_r[6]                                                                                                                                ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |AudioFX|AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init:AV_Config_Auto_Init|rom_address[1]                         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |AudioFX|SampleStorage:LChan|wdata_next[14]                                                                                                                              ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |AudioFX|SampleStorage:RChan|wdata_next[8]                                                                                                                               ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |AudioFX|SampleStorage:LChan|odata_next[3]                                                                                                                               ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |AudioFX|SampleStorage:RChan|odata_next[7]                                                                                                                               ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |AudioFX|sdram_controller:u4|refresh_cnt[0]                                                                                                                              ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|data_in_shift_reg[7]                                             ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |AudioFX|sdram_controller:u4|state_cnt[1]                                                                                                                                ;
-; 4:1                ; 23 bits   ; 46 LEs        ; 0 LEs                ; 46 LEs                 ; Yes        ; |AudioFX|sdram_controller:u4|haddr_r[22]                                                                                                                                 ;
-; 4:1                ; 23 bits   ; 46 LEs        ; 0 LEs                ; 46 LEs                 ; Yes        ; |AudioFX|SampleStorage:RChan|waddress[18]                                                                                                                                ;
-; 4:1                ; 23 bits   ; 46 LEs        ; 0 LEs                ; 46 LEs                 ; Yes        ; |AudioFX|SampleStorage:LChan|waddress[16]                                                                                                                                ;
-; 4:1                ; 23 bits   ; 46 LEs        ; 0 LEs                ; 46 LEs                 ; Yes        ; |AudioFX|SampleStorage:RChan|raddress[20]                                                                                                                                ;
-; 4:1                ; 23 bits   ; 46 LEs        ; 0 LEs                ; 46 LEs                 ; Yes        ; |AudioFX|SampleStorage:LChan|raddress[11]                                                                                                                                ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_audio_bit_counter:Audio_Out_Bit_Counter|bit_counter[4] ;
+; 4:1                ; 23 bits   ; 46 LEs        ; 0 LEs                ; 46 LEs                 ; Yes        ; |AudioFX|sdram_controller:u4|haddr_r[9]                                                                                                                                  ;
+; 4:1                ; 23 bits   ; 46 LEs        ; 0 LEs                ; 46 LEs                 ; Yes        ; |AudioFX|SampleStorage:RChan|waddress[2]                                                                                                                                 ;
+; 4:1                ; 23 bits   ; 46 LEs        ; 0 LEs                ; 46 LEs                 ; Yes        ; |AudioFX|SampleStorage:LChan|waddress[12]                                                                                                                                ;
+; 4:1                ; 23 bits   ; 46 LEs        ; 0 LEs                ; 46 LEs                 ; Yes        ; |AudioFX|SampleStorage:RChan|raddress[15]                                                                                                                                ;
+; 4:1                ; 23 bits   ; 46 LEs        ; 0 LEs                ; 46 LEs                 ; Yes        ; |AudioFX|SampleStorage:LChan|raddress[6]                                                                                                                                 ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_audio_bit_counter:Audio_Out_Bit_Counter|bit_counter[0] ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |AudioFX|sdram_controller:u4|state[2]                                                                                                                                    ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |AudioFX|sdram_controller:u4|command[0]                                                                                                                                  ;
-; 5:1                ; 37 bits   ; 111 LEs       ; 74 LEs               ; 37 LEs                 ; Yes        ; |AudioFX|AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_serial_bus_controller:Serial_Bus_Controller|shiftreg_mask[19]        ;
-; 6:1                ; 20 bits   ; 80 LEs        ; 40 LEs               ; 40 LEs                 ; Yes        ; |AudioFX|AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_serial_bus_controller:Serial_Bus_Controller|shiftreg_data[12]        ;
-; 6:1                ; 15 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|data_out_shift_reg[11]                                             ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |AudioFX|sdram_controller:u4|state[3]                                                                                                                                    ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |AudioFX|sdram_controller:u4|wr_data_r[0]                                                                                                                                ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |AudioFX|sdram_controller:u4|addr[11]                                                                                                                                    ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |AudioFX|sdram_controller:u4|bank_addr[0]                                                                                                                                ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |AudioFX|sdram_controller:u4|addr[6]                                                                                                                                     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |AudioFX|sdram_controller:u4|state[0]                                                                                                                                    ;
+; 5:1                ; 37 bits   ; 111 LEs       ; 74 LEs               ; 37 LEs                 ; Yes        ; |AudioFX|AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_serial_bus_controller:Serial_Bus_Controller|shiftreg_mask[17]        ;
+; 6:1                ; 20 bits   ; 80 LEs        ; 40 LEs               ; 40 LEs                 ; Yes        ; |AudioFX|AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_serial_bus_controller:Serial_Bus_Controller|shiftreg_data[21]        ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|data_out_shift_reg[10]                                             ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |AudioFX|sdram_controller:u4|command[5]                                                                                                                                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |AudioFX|sdram_controller:u4|wr_data_r[10]                                                                                                                               ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |AudioFX|sdram_controller:u4|addr[12]                                                                                                                                    ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |AudioFX|sdram_controller:u4|bank_addr[1]                                                                                                                                ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |AudioFX|sdram_controller:u4|addr[2]                                                                                                                                     ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |AudioFX|sdram_controller:u4|addr[4]                                                                                                                                     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -2026,35 +1972,35 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 724                         ;
-;     ENA               ; 47                          ;
-;     ENA SCLR          ; 314                         ;
+; arriav_ff             ; 802                         ;
+;     ENA               ; 41                          ;
+;     ENA SCLR          ; 346                         ;
 ;     ENA SCLR SLD      ; 23                          ;
-;     SCLR              ; 123                         ;
+;     SCLR              ; 134                         ;
 ;     SCLR SLD          ; 34                          ;
-;     SLD               ; 77                          ;
-;     plain             ; 106                         ;
+;     SLD               ; 91                          ;
+;     plain             ; 133                         ;
 ; arriav_io_obuf        ; 20                          ;
-; arriav_lcell_comb     ; 720                         ;
-;     arith             ; 264                         ;
-;         1 data inputs ; 212                         ;
-;         2 data inputs ; 52                          ;
+; arriav_lcell_comb     ; 694                         ;
+;     arith             ; 232                         ;
+;         1 data inputs ; 208                         ;
+;         2 data inputs ; 24                          ;
 ;     extend            ; 11                          ;
 ;         7 data inputs ; 11                          ;
-;     normal            ; 445                         ;
+;     normal            ; 451                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 6                           ;
-;         2 data inputs ; 39                          ;
-;         3 data inputs ; 26                          ;
-;         4 data inputs ; 104                         ;
-;         5 data inputs ; 115                         ;
-;         6 data inputs ; 153                         ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 34                          ;
+;         3 data inputs ; 41                          ;
+;         4 data inputs ; 100                         ;
+;         5 data inputs ; 113                         ;
+;         6 data inputs ; 159                         ;
 ; boundary_port         ; 144                         ;
 ; generic_pll           ; 3                           ;
 ; stratixv_ram_block    ; 64                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.50                        ;
-; Average LUT depth     ; 1.73                        ;
+; Average LUT depth     ; 1.65                        ;
 +-----------------------+-----------------------------+
 
 
@@ -2227,18 +2173,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; GPIO_0[9]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sdram_controller:u4|rd_data_r[9]                                                                                                                    ; N/A     ;
 ; GPIO_1[0]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; writedata[0]                                                                                                                                        ; N/A     ;
 ; GPIO_1[0]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; writedata[0]                                                                                                                                        ; N/A     ;
-; GPIO_1[10]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                                                ; N/A     ;
-; GPIO_1[10]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                                                ; N/A     ;
-; GPIO_1[11]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                                                ; N/A     ;
-; GPIO_1[11]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                                                ; N/A     ;
-; GPIO_1[12]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                                                ; N/A     ;
-; GPIO_1[12]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                                                ; N/A     ;
-; GPIO_1[13]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                                                ; N/A     ;
-; GPIO_1[13]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                                                ; N/A     ;
-; GPIO_1[14]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                                                ; N/A     ;
-; GPIO_1[14]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                                                ; N/A     ;
-; GPIO_1[15]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                                                ; N/A     ;
-; GPIO_1[15]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                                                ; N/A     ;
+; GPIO_1[10]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; writedata[10]                                                                                                                                       ; N/A     ;
+; GPIO_1[10]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; writedata[10]                                                                                                                                       ; N/A     ;
+; GPIO_1[11]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; writedata[11]                                                                                                                                       ; N/A     ;
+; GPIO_1[11]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; writedata[11]                                                                                                                                       ; N/A     ;
+; GPIO_1[12]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; writedata[12]                                                                                                                                       ; N/A     ;
+; GPIO_1[12]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; writedata[12]                                                                                                                                       ; N/A     ;
+; GPIO_1[13]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; writedata[13]                                                                                                                                       ; N/A     ;
+; GPIO_1[13]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; writedata[13]                                                                                                                                       ; N/A     ;
+; GPIO_1[14]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; writedata[14]                                                                                                                                       ; N/A     ;
+; GPIO_1[14]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; writedata[14]                                                                                                                                       ; N/A     ;
+; GPIO_1[15]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; writedata[15]                                                                                                                                       ; N/A     ;
+; GPIO_1[15]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; writedata[15]                                                                                                                                       ; N/A     ;
 ; GPIO_1[16]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SampleStorage:LChan|odata[0]                                                                                                                        ; N/A     ;
 ; GPIO_1[16]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SampleStorage:LChan|odata[0]                                                                                                                        ; N/A     ;
 ; GPIO_1[17]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SampleStorage:LChan|odata[1]                                                                                                                        ; N/A     ;
@@ -2275,20 +2221,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; GPIO_1[30]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SampleStorage:RChan|odata[6]                                                                                                                        ; N/A     ;
 ; GPIO_1[31]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SampleStorage:RChan|odata[7]                                                                                                                        ; N/A     ;
 ; GPIO_1[31]           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SampleStorage:RChan|odata[7]                                                                                                                        ; N/A     ;
-; GPIO_1[3]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                                                ; N/A     ;
-; GPIO_1[3]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                                                ; N/A     ;
-; GPIO_1[4]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                                                ; N/A     ;
-; GPIO_1[4]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                                                ; N/A     ;
-; GPIO_1[5]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                                                ; N/A     ;
-; GPIO_1[5]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                                                ; N/A     ;
-; GPIO_1[6]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                                                ; N/A     ;
-; GPIO_1[6]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                                                ; N/A     ;
-; GPIO_1[7]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                                                ; N/A     ;
-; GPIO_1[7]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                                                ; N/A     ;
-; GPIO_1[8]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                                                ; N/A     ;
-; GPIO_1[8]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                                                ; N/A     ;
-; GPIO_1[9]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                                                ; N/A     ;
-; GPIO_1[9]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; ~GND                                                                                                                                                ; N/A     ;
+; GPIO_1[3]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; writedata[3]                                                                                                                                        ; N/A     ;
+; GPIO_1[3]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; writedata[3]                                                                                                                                        ; N/A     ;
+; GPIO_1[4]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; writedata[4]                                                                                                                                        ; N/A     ;
+; GPIO_1[4]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; writedata[4]                                                                                                                                        ; N/A     ;
+; GPIO_1[5]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; writedata[5]                                                                                                                                        ; N/A     ;
+; GPIO_1[5]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; writedata[5]                                                                                                                                        ; N/A     ;
+; GPIO_1[6]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; writedata[6]                                                                                                                                        ; N/A     ;
+; GPIO_1[6]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; writedata[6]                                                                                                                                        ; N/A     ;
+; GPIO_1[7]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; writedata[7]                                                                                                                                        ; N/A     ;
+; GPIO_1[7]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; writedata[7]                                                                                                                                        ; N/A     ;
+; GPIO_1[8]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; writedata[8]                                                                                                                                        ; N/A     ;
+; GPIO_1[8]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; writedata[8]                                                                                                                                        ; N/A     ;
+; GPIO_1[9]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; writedata[9]                                                                                                                                        ; N/A     ;
+; GPIO_1[9]            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; writedata[9]                                                                                                                                        ; N/A     ;
 ; LEDR[0]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; LEDR[0]~reg0                                                                                                                                        ; N/A     ;
 ; LEDR[0]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; LEDR[0]~reg0                                                                                                                                        ; N/A     ;
 ; SW[1]                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; SW[1]                                                                                                                                               ; N/A     ;
@@ -2356,19 +2302,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sat Aug 10 18:24:07 2019
+    Info: Processing started: Sun Aug 11 13:37:27 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off AudioFX -c AudioFX
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12248): Elaborating Platform Designer system entity "SDRAMPLL.qsys"
-Info (12250): 2019.08.10.18:24:52 Progress: Loading De1-SoC-Verilog-Audio-Loopback/SDRAMPLL.qsys
-Info (12250): 2019.08.10.18:24:52 Progress: Reading input file
-Info (12250): 2019.08.10.18:24:53 Progress: Adding sys_sdram_pll_0 [altera_up_avalon_sys_sdram_pll 17.1]
-Info (12250): 2019.08.10.18:24:53 Progress: Parameterizing module sys_sdram_pll_0
-Info (12250): 2019.08.10.18:24:53 Progress: Building connections
-Info (12250): 2019.08.10.18:24:53 Progress: Parameterizing connections
-Info (12250): 2019.08.10.18:24:53 Progress: Validating
-Info (12250): 2019.08.10.18:24:57 Progress: Done reading input file
+Info (12250): 2019.08.11.13:38:16 Progress: Loading De1-SoC-Verilog-Audio-Loopback/SDRAMPLL.qsys
+Info (12250): 2019.08.11.13:38:17 Progress: Reading input file
+Info (12250): 2019.08.11.13:38:17 Progress: Adding sys_sdram_pll_0 [altera_up_avalon_sys_sdram_pll 17.1]
+Info (12250): 2019.08.11.13:38:17 Progress: Parameterizing module sys_sdram_pll_0
+Info (12250): 2019.08.11.13:38:17 Progress: Building connections
+Info (12250): 2019.08.11.13:38:17 Progress: Parameterizing connections
+Info (12250): 2019.08.11.13:38:17 Progress: Validating
+Info (12250): 2019.08.11.13:38:22 Progress: Done reading input file
 Info (12250): SDRAMPLL.sys_sdram_pll_0: Refclk Freq: 50.0
 Info (12250): SDRAMPLL: Generating SDRAMPLL "SDRAMPLL" for QUARTUS_SYNTH
 Info (12250): Sys_sdram_pll_0: "SDRAMPLL" instantiated altera_up_avalon_sys_sdram_pll "sys_sdram_pll_0"
@@ -2377,28 +2323,28 @@ Info (12250): Reset_from_locked: "sys_sdram_pll_0" instantiated altera_up_avalon
 Info (12250): SDRAMPLL: Done "SDRAMPLL" with 4 modules, 5 files
 Info (12249): Finished elaborating Platform Designer system entity "SDRAMPLL.qsys"
 Info (12248): Elaborating Platform Designer system entity "AVConfig.qsys"
-Info (12250): 2019.08.10.18:25:09 Progress: Loading De1-SoC-Verilog-Audio-Loopback/AVConfig.qsys
-Info (12250): 2019.08.10.18:25:10 Progress: Reading input file
-Info (12250): 2019.08.10.18:25:10 Progress: Adding audio_and_video_config_0 [altera_up_avalon_audio_and_video_config 17.1]
-Info (12250): 2019.08.10.18:25:12 Progress: Parameterizing module audio_and_video_config_0
-Info (12250): 2019.08.10.18:25:12 Progress: Building connections
-Info (12250): 2019.08.10.18:25:12 Progress: Parameterizing connections
-Info (12250): 2019.08.10.18:25:12 Progress: Validating
-Info (12250): 2019.08.10.18:25:12 Progress: Done reading input file
+Info (12250): 2019.08.11.13:38:34 Progress: Loading De1-SoC-Verilog-Audio-Loopback/AVConfig.qsys
+Info (12250): 2019.08.11.13:38:34 Progress: Reading input file
+Info (12250): 2019.08.11.13:38:35 Progress: Adding audio_and_video_config_0 [altera_up_avalon_audio_and_video_config 17.1]
+Info (12250): 2019.08.11.13:38:36 Progress: Parameterizing module audio_and_video_config_0
+Info (12250): 2019.08.11.13:38:36 Progress: Building connections
+Info (12250): 2019.08.11.13:38:36 Progress: Parameterizing connections
+Info (12250): 2019.08.11.13:38:36 Progress: Validating
+Info (12250): 2019.08.11.13:38:37 Progress: Done reading input file
 Info (12250): AVConfig: Generating AVConfig "AVConfig" for QUARTUS_SYNTH
 Info (12250): Audio_and_video_config_0: Starting Generation of Audio and Video Config
 Info (12250): Audio_and_video_config_0: "AVConfig" instantiated altera_up_avalon_audio_and_video_config "audio_and_video_config_0"
 Info (12250): AVConfig: Done "AVConfig" with 2 modules, 16 files
 Info (12249): Finished elaborating Platform Designer system entity "AVConfig.qsys"
 Info (12248): Elaborating Platform Designer system entity "AudioPLL.qsys"
-Info (12250): 2019.08.10.18:25:21 Progress: Loading De1-SoC-Verilog-Audio-Loopback/AudioPLL.qsys
-Info (12250): 2019.08.10.18:25:21 Progress: Reading input file
-Info (12250): 2019.08.10.18:25:22 Progress: Adding audio_pll_0 [altera_up_avalon_audio_pll 17.1]
-Info (12250): 2019.08.10.18:25:22 Progress: Parameterizing module audio_pll_0
-Info (12250): 2019.08.10.18:25:22 Progress: Building connections
-Info (12250): 2019.08.10.18:25:22 Progress: Parameterizing connections
-Info (12250): 2019.08.10.18:25:22 Progress: Validating
-Info (12250): 2019.08.10.18:25:26 Progress: Done reading input file
+Info (12250): 2019.08.11.13:38:45 Progress: Loading De1-SoC-Verilog-Audio-Loopback/AudioPLL.qsys
+Info (12250): 2019.08.11.13:38:46 Progress: Reading input file
+Info (12250): 2019.08.11.13:38:46 Progress: Adding audio_pll_0 [altera_up_avalon_audio_pll 17.1]
+Info (12250): 2019.08.11.13:38:46 Progress: Parameterizing module audio_pll_0
+Info (12250): 2019.08.11.13:38:46 Progress: Building connections
+Info (12250): 2019.08.11.13:38:46 Progress: Parameterizing connections
+Info (12250): 2019.08.11.13:38:46 Progress: Validating
+Info (12250): 2019.08.11.13:38:50 Progress: Done reading input file
 Info (12250): AudioPLL: Generating AudioPLL "AudioPLL" for QUARTUS_SYNTH
 Info (12250): Audio_pll_0: "AudioPLL" instantiated altera_up_avalon_audio_pll "audio_pll_0"
 Info (12250): Audio_pll: "audio_pll_0" instantiated altera_pll "audio_pll"
@@ -2406,14 +2352,14 @@ Info (12250): Reset_from_locked: "audio_pll_0" instantiated altera_up_avalon_res
 Info (12250): AudioPLL: Done "AudioPLL" with 4 modules, 5 files
 Info (12249): Finished elaborating Platform Designer system entity "AudioPLL.qsys"
 Info (12248): Elaborating Platform Designer system entity "AudioCodec.qsys"
-Info (12250): 2019.08.10.18:25:37 Progress: Loading De1-SoC-Verilog-Audio-Loopback/AudioCodec.qsys
-Info (12250): 2019.08.10.18:25:37 Progress: Reading input file
-Info (12250): 2019.08.10.18:25:37 Progress: Adding audio_0 [altera_up_avalon_audio 17.1]
-Info (12250): 2019.08.10.18:25:39 Progress: Parameterizing module audio_0
-Info (12250): 2019.08.10.18:25:39 Progress: Building connections
-Info (12250): 2019.08.10.18:25:39 Progress: Parameterizing connections
-Info (12250): 2019.08.10.18:25:39 Progress: Validating
-Info (12250): 2019.08.10.18:25:39 Progress: Done reading input file
+Info (12250): 2019.08.11.13:39:01 Progress: Loading De1-SoC-Verilog-Audio-Loopback/AudioCodec.qsys
+Info (12250): 2019.08.11.13:39:02 Progress: Reading input file
+Info (12250): 2019.08.11.13:39:02 Progress: Adding audio_0 [altera_up_avalon_audio 17.1]
+Info (12250): 2019.08.11.13:39:03 Progress: Parameterizing module audio_0
+Info (12250): 2019.08.11.13:39:03 Progress: Building connections
+Info (12250): 2019.08.11.13:39:03 Progress: Parameterizing connections
+Info (12250): 2019.08.11.13:39:03 Progress: Validating
+Info (12250): 2019.08.11.13:39:04 Progress: Done reading input file
 Info (12250): AudioCodec: Generating AudioCodec "AudioCodec" for QUARTUS_SYNTH
 Info (12250): Audio_0: Starting Generation of Audio Controller
 Info (12250): Audio_0: "AudioCodec" instantiated altera_up_avalon_audio "audio_0"
@@ -2552,6 +2498,7 @@ Info (12021): Found 0 design units, including 0 entities, in source file db/ip/a
 Info (15248): File "d:/documents/github/de1-soc-verilog-audio-loopback/db/ip/audiocodec/submodules/altera_up_sync_fifo.v" is a duplicate of already analyzed file "D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioCodec/synthesis/submodules/altera_up_sync_fifo.v" (same filename, same library name and same md5 digest). Skipping analysis of this file.
 Info (12021): Found 0 design units, including 0 entities, in source file db/ip/audiocodec/submodules/altera_up_sync_fifo.v
 Info (12127): Elaborating entity "AudioFX" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at AudioFX.sv(102): object "D" assigned a value but never read File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 102
 Warning (10230): Verilog HDL assignment warning at AudioFX.sv(266): truncated value with size 5 to match size of target (4) File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 266
 Warning (10230): Verilog HDL assignment warning at AudioFX.sv(267): truncated value with size 5 to match size of target (4) File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 267
 Warning (10230): Verilog HDL assignment warning at AudioFX.sv(280): truncated value with size 32 to match size of target (23) File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 280
@@ -2774,7 +2721,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_99c File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/cmpr_99c.tdf Line: 22
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2019.08.10.18:26:01 Progress: Loading sld30451bca/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2019.08.11.13:39:26 Progress: Loading sld30451bca/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -2810,19 +2757,6 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[6]" is stuck at GND File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 62
     Warning (13410): Pin "LEDR[7]" is stuck at GND File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 62
     Warning (13410): Pin "LEDR[8]" is stuck at GND File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 62
-    Warning (13410): Pin "GPIO_1[3]" is stuck at GND File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 64
-    Warning (13410): Pin "GPIO_1[4]" is stuck at GND File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 64
-    Warning (13410): Pin "GPIO_1[5]" is stuck at GND File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 64
-    Warning (13410): Pin "GPIO_1[6]" is stuck at GND File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 64
-    Warning (13410): Pin "GPIO_1[7]" is stuck at GND File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 64
-    Warning (13410): Pin "GPIO_1[8]" is stuck at GND File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 64
-    Warning (13410): Pin "GPIO_1[9]" is stuck at GND File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 64
-    Warning (13410): Pin "GPIO_1[10]" is stuck at GND File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 64
-    Warning (13410): Pin "GPIO_1[11]" is stuck at GND File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 64
-    Warning (13410): Pin "GPIO_1[12]" is stuck at GND File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 64
-    Warning (13410): Pin "GPIO_1[13]" is stuck at GND File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 64
-    Warning (13410): Pin "GPIO_1[14]" is stuck at GND File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 64
-    Warning (13410): Pin "GPIO_1[15]" is stuck at GND File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 64
     Warning (13410): Pin "GPIO_1[32]" is stuck at GND File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 64
     Warning (13410): Pin "GPIO_1[33]" is stuck at GND File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 64
     Warning (13410): Pin "GPIO_1[34]" is stuck at GND File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 64
@@ -2839,18 +2773,18 @@ Warning (21074): Design contains 3 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[1]" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 50
     Warning (15610): No output dependent on input pin "KEY[2]" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 50
     Warning (15610): No output dependent on input pin "KEY[3]" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 50
-Info (21057): Implemented 3867 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3947 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 19 input pins
     Info (21059): Implemented 109 output pins
     Info (21060): Implemented 20 bidirectional pins
-    Info (21061): Implemented 3409 logic cells
+    Info (21061): Implemented 3489 logic cells
     Info (21064): Implemented 306 RAM segments
     Info (21065): Implemented 3 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 45 warnings
-    Info: Peak virtual memory: 5001 megabytes
-    Info: Processing ended: Sat Aug 10 18:26:21 2019
-    Info: Elapsed time: 00:02:14
-    Info: Total CPU time (on all processors): 00:03:15
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 33 warnings
+    Info: Peak virtual memory: 5005 megabytes
+    Info: Processing ended: Sun Aug 11 13:39:45 2019
+    Info: Elapsed time: 00:02:18
+    Info: Total CPU time (on all processors): 00:03:19
 
 
 +------------------------------------------+
