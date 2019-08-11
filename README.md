@@ -21,6 +21,8 @@ Here is what the whole system looks like.
 * [x] Get audio codec working
 * [x] Integrate SDRAM into design
 * [x] Create FSM for SDRAM between codec FIFOs
+* [x] Test SDRAM read and write
+* [x] Test delayed audio
 * [ ] Work on delayed audio effect
 
 ## Contact Me
