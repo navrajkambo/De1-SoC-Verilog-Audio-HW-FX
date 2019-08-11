@@ -1,6 +1,5 @@
 module SampleStorage (
 		clk50,
-		clk100,
 		rst,
 		idata,
 		odata,
@@ -21,10 +20,10 @@ module SampleStorage (
 		state
 	);
 	
-	parameter      ADDR_W             =     25;
+	parameter      ADDR_W             =     24;
 	parameter      DATA_W             =     16;
 
-	input logic clk50, clk100, rst, busy, ivalid, oready, read_ready;
+	input logic clk50, rst, busy, ivalid, oready, read_ready;
 	input logic signed [DATA_W-1:0]  idata;
 	input logic [DATA_W-1:0] rdata;
 	input logic channel, lrclk;
@@ -49,15 +48,15 @@ module SampleStorage (
 	assign waddr = {channel,waddress};
 	assign raddr = {channel,raddress};
 	
-	always@(posedge clk100) begin
+	always@(posedge clk50) begin
 		if(rst) begin
 			wmax_next <= 0;
 		end else begin
-			if(waddress > 'd96000)
+			if(waddress > 'd48000)
 				wmax_next <= 1;
 		end
 	end
-	always@(posedge clk100)	begin
+	always@(posedge clk50)	begin
 		if(rst) begin
 			state <= 'd0;
 			
@@ -147,9 +146,10 @@ module SampleStorage (
 							else
 								raddress <= raddress + 1'd1;
 						end
-						if(ovalid && oready)
+						if(ovalid && oready) begin
+							ovalid_next <= '0;
 							state <= 0;
-						else
+						end else
 							state <= 8;
 					end else state <= 8;
 				end
@@ -161,11 +161,11 @@ module SampleStorage (
 			endcase
 		end
 	end
-	always@(posedge clk100) begin //100MHz clock?
+	always@(posedge clk50) begin //50MHz clock
 		wmax <= wmax_next;
 		busy_last <= busy;
 	end
-	always@(posedge clk100) begin //50MHz clock
+	always@(posedge clk50) begin //50MHz clock
 		iready <= iready_next;
 		ovalid <= ovalid_next;
 		odata <= odata_next;

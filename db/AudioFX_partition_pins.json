@@ -176,6 +176,82 @@
 					"strict" : false
 				},
 				{
+					"name" : "GPIO_1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[16]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[17]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[18]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[19]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[20]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[21]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[22]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[23]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[24]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[25]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[26]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[27]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[28]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[29]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[30]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[31]",
+					"strict" : false
+				},
+				{
 					"name" : "DRAM_ADDR[0]",
 					"strict" : false
 				},

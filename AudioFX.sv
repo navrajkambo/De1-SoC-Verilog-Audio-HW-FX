@@ -27,6 +27,7 @@ module AudioFX(
 	LEDR,
 	FPGA_I2C_SCLK,
 	GPIO_0,
+	GPIO_1,
 	DRAM_ADDR,
 	DRAM_BA,
 	DRAM_CAS_N, 
@@ -41,7 +42,7 @@ module AudioFX(
 	
 	// params
 	parameter DATA_W = 16;
-	parameter ADDR_W = 25;
+	parameter ADDR_W = 24;
 	
 	// signals				
 	input [9:0] SW;
@@ -60,6 +61,7 @@ module AudioFX(
 	output FPGA_I2C_SCLK;
 	output [9:0] LEDR;
 	output [35:0] GPIO_0;
+	output [35:0] GPIO_1;
 	
 	output [12:0] DRAM_ADDR;
 	output [1:0] DRAM_BA;
@@ -94,8 +96,32 @@ module AudioFX(
  	
 	// logic for Effects
 	logic signed [1:0][DATA_W-1:0] FX_AUD_OUT, Latched_Data;
+	logic cnt[1:0];
 	
-	
+	// debugging read command
+	logic [1:0] [15:0] D;
+	always@(posedge AUD_ADCLRCK) begin
+		if(reset_out[1])
+			cnt[0] = '0;
+		else begin
+			cnt[0] =~cnt[0];
+				if(cnt[0])
+				D[0] = 'h0001;
+			else
+				D[0] = 'h0002;
+		end
+	end
+	always@(negedge AUD_ADCLRCK) begin
+		if(reset_out[1])
+			cnt[1] = '0;
+		else begin
+			cnt[1] =~cnt[1];
+			if(cnt[1])
+				D[1] = 'h0003;
+			else
+				D[1] = 'h0004;
+		end
+	end
 	
 	// instantiations
 	
@@ -182,9 +208,8 @@ module AudioFX(
 	//Left and Right channel effects
 	SampleStorage LChan(
 		.clk50(CLOCK_50_D),
-		.clk100(CLOCK_50_D),
 		.rst(reset_out[1]),
-		.idata(ADC_Data[0]),
+		.idata(D[0]),//.idata(ADC_Data[0]),//
 		.odata(FX_AUD_OUT[0]),
 		.iready(ADC_Ready[0]),
 		.ivalid(ADC_Valid[0]),
@@ -204,9 +229,8 @@ module AudioFX(
 	);
 	SampleStorage RChan(
 		.clk50(CLOCK_50_D),
-		.clk100(CLOCK_50_D),
 		.rst(reset_out[1]),
-		.idata(ADC_Data[1]),
+		.idata(D[1]),//.idata(ADC_Data[1]),//
 		.odata(FX_AUD_OUT[1]),
 		.iready(ADC_Ready[1]),
 		.ivalid(ADC_Valid[1]),
@@ -241,6 +265,11 @@ module AudioFX(
 	assign GPIO_0[25] = DAC_Valid[1];
 	assign GPIO_0[31:28] = state[0];
 	assign GPIO_0[35:32] = state[1];
+	
+	//
+	assign GPIO_1[DATA_W-1:0] = writedata;
+	assign GPIO_1[23:16] = FX_AUD_OUT[0][7:0];
+	assign GPIO_1[31:24] = FX_AUD_OUT[1][7:0];
 	
 	// Logic for blinking LED on Switch 0
 	always@(posedge(CLOCK_50_D)) begin
