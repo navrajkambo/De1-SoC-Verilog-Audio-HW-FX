@@ -1,11 +1,11 @@
-# De1-SoC-Verilog-Audio-Loopback
+# De1-SoC-Verilog-Audio-HW-FX
 
-This is a simple project which is meant to generate hardware nessessary to loopback the ADC and DAC from the DE1-SoC audio codec. The project is supposed to be a starting point for hardware audio DSP. The Audio codec is initialized for 16-bit audio, 48kHz left justified, but can be changed using QSYS. Also, the ADC and DAC are configured to be using the streaming interface rather than 
+This is a simple project which is meant to generate hardware nessessary to have an audio echo effect between the ADC and DAC from the DE1-SoC audio codec. The project is supposed to be a starting point for hardware audio DSP. The Audio codec is initialized for 16-bit audio, 48kHz left justified, but can be changed using QSYS. Also, the ADC and DAC are configured to be using the streaming interface rather than 
 the memory-mapped interface so that you don't need to mess around with the Avalon bus. 
 
 Custom hardware has been created that saves data to the on-board SDRAM using an SDRAM controller project I managed to find on GitHub. What makes this project special is that you don't need to instantiate the NIOS II softcore or HPS hardcore processors to get the system to work. Everything is done in hardware!
 
-For a simple template to start a new hardware project on, that has the codec configured already, check out [`audio-loopback-only`](https://github.com/navrajkambo/De1-SoC-Verilog-Audio-HW-FX/tree/audio-loopback-only) branch of this repo.
+For a simple template to start a new hardware project on, that has the codec configured already in a loop-back configuration, check out [`audio-loopback-only`](https://github.com/navrajkambo/De1-SoC-Verilog-Audio-HW-FX/tree/audio-loopback-only) branch of this repo.
 
 ## Getting Started
 
