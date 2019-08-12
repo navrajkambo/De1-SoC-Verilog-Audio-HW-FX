@@ -34,7 +34,8 @@ Here is what the whole system looks like.
 * [x] Test SDRAM read and write
 * [x] Test delayed audio
 * [x] Work on delayed audio effect
-* [ ] Create an audio codec PCB for use on DE0-Nano
+* [x] Test on the DE1-SoC
+* [ ] Create an audio codec PCB for use on the DE0-Nano
 
 ## Contact Me
 - You can contact me at `nkambo1@my.bcit.ca`
