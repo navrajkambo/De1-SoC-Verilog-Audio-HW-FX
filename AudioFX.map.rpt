@@ -1,5 +1,5 @@
 Analysis & Synthesis report for AudioFX
-Sun Aug 11 13:39:45 2019
+Sun Aug 11 17:32:19 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -93,13 +93,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Aug 11 13:39:45 2019       ;
+; Analysis & Synthesis Status     ; Successful - Sun Aug 11 17:32:19 2019       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; AudioFX                                     ;
 ; Top-level Entity Name           ; AudioFX                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 3060                                        ;
+; Total registers                 ; 3093                                        ;
 ; Total pins                      ; 144                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 1,990,656                                   ;
@@ -330,16 +330,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 1673           ;
+; Estimate of Logic utilization (ALMs needed) ; 1683           ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 1310           ;
-;     -- 7 input functions                    ; 11             ;
-;     -- 6 input functions                    ; 241            ;
-;     -- 5 input functions                    ; 305            ;
-;     -- 4 input functions                    ; 138            ;
-;     -- <=3 input functions                  ; 615            ;
+; Combinational ALUT usage for logic          ; 1362           ;
+;     -- 7 input functions                    ; 9              ;
+;     -- 6 input functions                    ; 233            ;
+;     -- 5 input functions                    ; 339            ;
+;     -- 4 input functions                    ; 134            ;
+;     -- <=3 input functions                  ; 647            ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 3060           ;
+; Dedicated logic registers                   ; 3093           ;
 ;                                             ;                ;
 ; I/O pins                                    ; 144            ;
 ; Total MLAB memory bits                      ; 0              ;
@@ -352,8 +352,8 @@ refer to the applicable agreement for further details.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 1695           ;
-; Total fan-out                               ; 22905          ;
-; Average fan-out                             ; 4.58           ;
+; Total fan-out                               ; 23092          ;
+; Average fan-out                             ; 4.54           ;
 +---------------------------------------------+----------------+
 
 
@@ -362,7 +362,7 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                 ; Entity Name                               ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+--------------+
-; |AudioFX                                                                                                                                ; 1310 (47)           ; 3060 (155)                ; 1990656           ; 0          ; 144  ; 0            ; |AudioFX                                                                                                                                                                                                                                                                                                                                            ; AudioFX                                   ; work         ;
+; |AudioFX                                                                                                                                ; 1362 (97)           ; 3093 (188)                ; 1990656           ; 0          ; 144  ; 0            ; |AudioFX                                                                                                                                                                                                                                                                                                                                            ; AudioFX                                   ; work         ;
 ;    |AVConfig:u2|                                                                                                                        ; 121 (0)             ; 107 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |AudioFX|AVConfig:u2                                                                                                                                                                                                                                                                                                                                ; AVConfig                                  ; AVConfig     ;
 ;       |AVConfig_audio_and_video_config_0:audio_and_video_config_0|                                                                      ; 121 (0)             ; 107 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |AudioFX|AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0                                                                                                                                                                                                                                                                     ; AVConfig_audio_and_video_config_0         ; AVConfig     ;
 ;          |altera_up_av_config_auto_init:AV_Config_Auto_Init|                                                                            ; 11 (11)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |AudioFX|AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init:AV_Config_Auto_Init                                                                                                                                                                                                                   ; altera_up_av_config_auto_init             ; AVConfig     ;
@@ -418,8 +418,8 @@ refer to the applicable agreement for further details.
 ;       |SDRAMPLL_sys_sdram_pll_0:sys_sdram_pll_0|                                                                                        ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |AudioFX|SDRAMPLL:u1|SDRAMPLL_sys_sdram_pll_0:sys_sdram_pll_0                                                                                                                                                                                                                                                                                       ; SDRAMPLL_sys_sdram_pll_0                  ; SDRAMPLL     ;
 ;          |SDRAMPLL_sys_sdram_pll_0_sys_pll:sys_pll|                                                                                     ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |AudioFX|SDRAMPLL:u1|SDRAMPLL_sys_sdram_pll_0:sys_sdram_pll_0|SDRAMPLL_sys_sdram_pll_0_sys_pll:sys_pll                                                                                                                                                                                                                                              ; SDRAMPLL_sys_sdram_pll_0_sys_pll          ; SDRAMPLL     ;
 ;             |altera_pll:altera_pll_i|                                                                                                   ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |AudioFX|SDRAMPLL:u1|SDRAMPLL_sys_sdram_pll_0:sys_sdram_pll_0|SDRAMPLL_sys_sdram_pll_0_sys_pll:sys_pll|altera_pll:altera_pll_i                                                                                                                                                                                                                      ; altera_pll                                ; work         ;
-;    |SampleStorage:LChan|                                                                                                                ; 86 (86)             ; 123 (123)                 ; 0                 ; 0          ; 0    ; 0            ; |AudioFX|SampleStorage:LChan                                                                                                                                                                                                                                                                                                                        ; SampleStorage                             ; work         ;
-;    |SampleStorage:RChan|                                                                                                                ; 86 (86)             ; 124 (124)                 ; 0                 ; 0          ; 0    ; 0            ; |AudioFX|SampleStorage:RChan                                                                                                                                                                                                                                                                                                                        ; SampleStorage                             ; work         ;
+;    |SampleStorage:LChan|                                                                                                                ; 87 (87)             ; 123 (123)                 ; 0                 ; 0          ; 0    ; 0            ; |AudioFX|SampleStorage:LChan                                                                                                                                                                                                                                                                                                                        ; SampleStorage                             ; work         ;
+;    |SampleStorage:RChan|                                                                                                                ; 87 (87)             ; 124 (124)                 ; 0                 ; 0          ; 0    ; 0            ; |AudioFX|SampleStorage:RChan                                                                                                                                                                                                                                                                                                                        ; SampleStorage                             ; work         ;
 ;    |sdram_controller:u4|                                                                                                                ; 87 (87)             ; 81 (81)                   ; 0                 ; 0          ; 0    ; 0            ; |AudioFX|sdram_controller:u4                                                                                                                                                                                                                                                                                                                        ; sdram_controller                          ; work         ;
 ;    |sld_hub:auto_hub|                                                                                                                   ; 92 (1)              ; 91 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |AudioFX|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                                   ; altera_sld   ;
 ;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 91 (0)              ; 91 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |AudioFX|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input               ; altera_sld   ;
@@ -717,9 +717,9 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 3060  ;
+; Total registers                              ; 3093  ;
 ; Number of registers using Synchronous Clear  ; 673   ;
-; Number of registers using Synchronous Load   ; 422   ;
+; Number of registers using Synchronous Load   ; 390   ;
 ; Number of registers using Asynchronous Clear ; 676   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 1133  ;
@@ -758,33 +758,33 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |AudioFX|DAC_Data[1][7]                                                                                                                                                  ;
 ; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |AudioFX|sdram_controller:u4|rd_data_r[6]                                                                                                                                ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |AudioFX|AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init:AV_Config_Auto_Init|rom_address[1]                         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |AudioFX|SampleStorage:LChan|wdata_next[14]                                                                                                                              ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |AudioFX|SampleStorage:RChan|wdata_next[8]                                                                                                                               ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |AudioFX|SampleStorage:LChan|odata_next[3]                                                                                                                               ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |AudioFX|SampleStorage:RChan|odata_next[7]                                                                                                                               ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |AudioFX|sdram_controller:u4|refresh_cnt[0]                                                                                                                              ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|data_in_shift_reg[7]                                             ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |AudioFX|AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init:AV_Config_Auto_Init|rom_address[4]                         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |AudioFX|SampleStorage:LChan|wdata_next[12]                                                                                                                              ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |AudioFX|SampleStorage:LChan|odata_next[1]                                                                                                                               ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |AudioFX|SampleStorage:RChan|wdata_next[10]                                                                                                                              ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |AudioFX|SampleStorage:RChan|odata_next[10]                                                                                                                              ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |AudioFX|sdram_controller:u4|refresh_cnt[7]                                                                                                                              ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|data_in_shift_reg[8]                                             ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |AudioFX|sdram_controller:u4|state_cnt[1]                                                                                                                                ;
-; 4:1                ; 23 bits   ; 46 LEs        ; 0 LEs                ; 46 LEs                 ; Yes        ; |AudioFX|sdram_controller:u4|haddr_r[9]                                                                                                                                  ;
-; 4:1                ; 23 bits   ; 46 LEs        ; 0 LEs                ; 46 LEs                 ; Yes        ; |AudioFX|SampleStorage:RChan|waddress[2]                                                                                                                                 ;
-; 4:1                ; 23 bits   ; 46 LEs        ; 0 LEs                ; 46 LEs                 ; Yes        ; |AudioFX|SampleStorage:LChan|waddress[12]                                                                                                                                ;
-; 4:1                ; 23 bits   ; 46 LEs        ; 0 LEs                ; 46 LEs                 ; Yes        ; |AudioFX|SampleStorage:RChan|raddress[15]                                                                                                                                ;
-; 4:1                ; 23 bits   ; 46 LEs        ; 0 LEs                ; 46 LEs                 ; Yes        ; |AudioFX|SampleStorage:LChan|raddress[6]                                                                                                                                 ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_audio_bit_counter:Audio_Out_Bit_Counter|bit_counter[0] ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |AudioFX|sdram_controller:u4|state[2]                                                                                                                                    ;
+; 4:1                ; 23 bits   ; 46 LEs        ; 0 LEs                ; 46 LEs                 ; Yes        ; |AudioFX|sdram_controller:u4|haddr_r[16]                                                                                                                                 ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |AudioFX|DAC_Data[0][0]                                                                                                                                                  ;
+; 4:1                ; 23 bits   ; 46 LEs        ; 0 LEs                ; 46 LEs                 ; Yes        ; |AudioFX|SampleStorage:RChan|waddress[10]                                                                                                                                ;
+; 4:1                ; 23 bits   ; 46 LEs        ; 0 LEs                ; 46 LEs                 ; Yes        ; |AudioFX|SampleStorage:LChan|waddress[20]                                                                                                                                ;
+; 4:1                ; 23 bits   ; 46 LEs        ; 0 LEs                ; 46 LEs                 ; Yes        ; |AudioFX|SampleStorage:RChan|raddress[11]                                                                                                                                ;
+; 4:1                ; 23 bits   ; 46 LEs        ; 0 LEs                ; 46 LEs                 ; Yes        ; |AudioFX|SampleStorage:LChan|raddress[19]                                                                                                                                ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_audio_bit_counter:Audio_Out_Bit_Counter|bit_counter[4] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |AudioFX|sdram_controller:u4|state[1]                                                                                                                                    ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |AudioFX|sdram_controller:u4|state[0]                                                                                                                                    ;
-; 5:1                ; 37 bits   ; 111 LEs       ; 74 LEs               ; 37 LEs                 ; Yes        ; |AudioFX|AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_serial_bus_controller:Serial_Bus_Controller|shiftreg_mask[17]        ;
-; 6:1                ; 20 bits   ; 80 LEs        ; 40 LEs               ; 40 LEs                 ; Yes        ; |AudioFX|AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_serial_bus_controller:Serial_Bus_Controller|shiftreg_data[21]        ;
-; 6:1                ; 15 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|data_out_shift_reg[10]                                             ;
+; 5:1                ; 37 bits   ; 111 LEs       ; 74 LEs               ; 37 LEs                 ; Yes        ; |AudioFX|AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_serial_bus_controller:Serial_Bus_Controller|shiftreg_mask[19]        ;
+; 6:1                ; 20 bits   ; 80 LEs        ; 40 LEs               ; 40 LEs                 ; Yes        ; |AudioFX|AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_serial_bus_controller:Serial_Bus_Controller|shiftreg_data[1]         ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |AudioFX|AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer|data_out_shift_reg[5]                                              ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |AudioFX|sdram_controller:u4|command[5]                                                                                                                                  ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |AudioFX|sdram_controller:u4|wr_data_r[10]                                                                                                                               ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |AudioFX|sdram_controller:u4|wr_data_r[11]                                                                                                                               ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |AudioFX|sdram_controller:u4|addr[12]                                                                                                                                    ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |AudioFX|sdram_controller:u4|bank_addr[1]                                                                                                                                ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |AudioFX|sdram_controller:u4|addr[2]                                                                                                                                     ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |AudioFX|sdram_controller:u4|addr[4]                                                                                                                                     ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |AudioFX|sdram_controller:u4|bank_addr[0]                                                                                                                                ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |AudioFX|sdram_controller:u4|addr[1]                                                                                                                                     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |AudioFX|sdram_controller:u4|addr[5]                                                                                                                                     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -1972,35 +1972,35 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 802                         ;
+; arriav_ff             ; 835                         ;
 ;     ENA               ; 41                          ;
 ;     ENA SCLR          ; 346                         ;
 ;     ENA SCLR SLD      ; 23                          ;
-;     SCLR              ; 134                         ;
-;     SCLR SLD          ; 34                          ;
+;     SCLR              ; 166                         ;
+;     SCLR SLD          ; 2                           ;
 ;     SLD               ; 91                          ;
-;     plain             ; 133                         ;
+;     plain             ; 166                         ;
 ; arriav_io_obuf        ; 20                          ;
-; arriav_lcell_comb     ; 694                         ;
-;     arith             ; 232                         ;
+; arriav_lcell_comb     ; 746                         ;
+;     arith             ; 264                         ;
 ;         1 data inputs ; 208                         ;
-;         2 data inputs ; 24                          ;
-;     extend            ; 11                          ;
-;         7 data inputs ; 11                          ;
-;     normal            ; 451                         ;
+;         2 data inputs ; 56                          ;
+;     extend            ; 9                           ;
+;         7 data inputs ; 9                           ;
+;     normal            ; 473                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 2                           ;
 ;         2 data inputs ; 34                          ;
 ;         3 data inputs ; 41                          ;
-;         4 data inputs ; 100                         ;
-;         5 data inputs ; 113                         ;
-;         6 data inputs ; 159                         ;
+;         4 data inputs ; 96                          ;
+;         5 data inputs ; 147                         ;
+;         6 data inputs ; 151                         ;
 ; boundary_port         ; 144                         ;
 ; generic_pll           ; 3                           ;
 ; stratixv_ram_block    ; 64                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.50                        ;
-; Average LUT depth     ; 1.65                        ;
+; Average LUT depth     ; 1.64                        ;
 +-----------------------+-----------------------------+
 
 
@@ -2302,19 +2302,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Aug 11 13:37:27 2019
+    Info: Processing started: Sun Aug 11 17:30:03 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off AudioFX -c AudioFX
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12248): Elaborating Platform Designer system entity "SDRAMPLL.qsys"
-Info (12250): 2019.08.11.13:38:16 Progress: Loading De1-SoC-Verilog-Audio-Loopback/SDRAMPLL.qsys
-Info (12250): 2019.08.11.13:38:17 Progress: Reading input file
-Info (12250): 2019.08.11.13:38:17 Progress: Adding sys_sdram_pll_0 [altera_up_avalon_sys_sdram_pll 17.1]
-Info (12250): 2019.08.11.13:38:17 Progress: Parameterizing module sys_sdram_pll_0
-Info (12250): 2019.08.11.13:38:17 Progress: Building connections
-Info (12250): 2019.08.11.13:38:17 Progress: Parameterizing connections
-Info (12250): 2019.08.11.13:38:17 Progress: Validating
-Info (12250): 2019.08.11.13:38:22 Progress: Done reading input file
+Info (12250): 2019.08.11.17:30:48 Progress: Loading De1-SoC-Verilog-Audio-Loopback/SDRAMPLL.qsys
+Info (12250): 2019.08.11.17:30:49 Progress: Reading input file
+Info (12250): 2019.08.11.17:30:49 Progress: Adding sys_sdram_pll_0 [altera_up_avalon_sys_sdram_pll 17.1]
+Info (12250): 2019.08.11.17:30:49 Progress: Parameterizing module sys_sdram_pll_0
+Info (12250): 2019.08.11.17:30:49 Progress: Building connections
+Info (12250): 2019.08.11.17:30:49 Progress: Parameterizing connections
+Info (12250): 2019.08.11.17:30:49 Progress: Validating
+Info (12250): 2019.08.11.17:30:54 Progress: Done reading input file
 Info (12250): SDRAMPLL.sys_sdram_pll_0: Refclk Freq: 50.0
 Info (12250): SDRAMPLL: Generating SDRAMPLL "SDRAMPLL" for QUARTUS_SYNTH
 Info (12250): Sys_sdram_pll_0: "SDRAMPLL" instantiated altera_up_avalon_sys_sdram_pll "sys_sdram_pll_0"
@@ -2323,28 +2323,28 @@ Info (12250): Reset_from_locked: "sys_sdram_pll_0" instantiated altera_up_avalon
 Info (12250): SDRAMPLL: Done "SDRAMPLL" with 4 modules, 5 files
 Info (12249): Finished elaborating Platform Designer system entity "SDRAMPLL.qsys"
 Info (12248): Elaborating Platform Designer system entity "AVConfig.qsys"
-Info (12250): 2019.08.11.13:38:34 Progress: Loading De1-SoC-Verilog-Audio-Loopback/AVConfig.qsys
-Info (12250): 2019.08.11.13:38:34 Progress: Reading input file
-Info (12250): 2019.08.11.13:38:35 Progress: Adding audio_and_video_config_0 [altera_up_avalon_audio_and_video_config 17.1]
-Info (12250): 2019.08.11.13:38:36 Progress: Parameterizing module audio_and_video_config_0
-Info (12250): 2019.08.11.13:38:36 Progress: Building connections
-Info (12250): 2019.08.11.13:38:36 Progress: Parameterizing connections
-Info (12250): 2019.08.11.13:38:36 Progress: Validating
-Info (12250): 2019.08.11.13:38:37 Progress: Done reading input file
+Info (12250): 2019.08.11.17:31:06 Progress: Loading De1-SoC-Verilog-Audio-Loopback/AVConfig.qsys
+Info (12250): 2019.08.11.17:31:07 Progress: Reading input file
+Info (12250): 2019.08.11.17:31:07 Progress: Adding audio_and_video_config_0 [altera_up_avalon_audio_and_video_config 17.1]
+Info (12250): 2019.08.11.17:31:09 Progress: Parameterizing module audio_and_video_config_0
+Info (12250): 2019.08.11.17:31:09 Progress: Building connections
+Info (12250): 2019.08.11.17:31:09 Progress: Parameterizing connections
+Info (12250): 2019.08.11.17:31:09 Progress: Validating
+Info (12250): 2019.08.11.17:31:09 Progress: Done reading input file
 Info (12250): AVConfig: Generating AVConfig "AVConfig" for QUARTUS_SYNTH
 Info (12250): Audio_and_video_config_0: Starting Generation of Audio and Video Config
 Info (12250): Audio_and_video_config_0: "AVConfig" instantiated altera_up_avalon_audio_and_video_config "audio_and_video_config_0"
 Info (12250): AVConfig: Done "AVConfig" with 2 modules, 16 files
 Info (12249): Finished elaborating Platform Designer system entity "AVConfig.qsys"
 Info (12248): Elaborating Platform Designer system entity "AudioPLL.qsys"
-Info (12250): 2019.08.11.13:38:45 Progress: Loading De1-SoC-Verilog-Audio-Loopback/AudioPLL.qsys
-Info (12250): 2019.08.11.13:38:46 Progress: Reading input file
-Info (12250): 2019.08.11.13:38:46 Progress: Adding audio_pll_0 [altera_up_avalon_audio_pll 17.1]
-Info (12250): 2019.08.11.13:38:46 Progress: Parameterizing module audio_pll_0
-Info (12250): 2019.08.11.13:38:46 Progress: Building connections
-Info (12250): 2019.08.11.13:38:46 Progress: Parameterizing connections
-Info (12250): 2019.08.11.13:38:46 Progress: Validating
-Info (12250): 2019.08.11.13:38:50 Progress: Done reading input file
+Info (12250): 2019.08.11.17:31:18 Progress: Loading De1-SoC-Verilog-Audio-Loopback/AudioPLL.qsys
+Info (12250): 2019.08.11.17:31:19 Progress: Reading input file
+Info (12250): 2019.08.11.17:31:19 Progress: Adding audio_pll_0 [altera_up_avalon_audio_pll 17.1]
+Info (12250): 2019.08.11.17:31:19 Progress: Parameterizing module audio_pll_0
+Info (12250): 2019.08.11.17:31:19 Progress: Building connections
+Info (12250): 2019.08.11.17:31:19 Progress: Parameterizing connections
+Info (12250): 2019.08.11.17:31:19 Progress: Validating
+Info (12250): 2019.08.11.17:31:23 Progress: Done reading input file
 Info (12250): AudioPLL: Generating AudioPLL "AudioPLL" for QUARTUS_SYNTH
 Info (12250): Audio_pll_0: "AudioPLL" instantiated altera_up_avalon_audio_pll "audio_pll_0"
 Info (12250): Audio_pll: "audio_pll_0" instantiated altera_pll "audio_pll"
@@ -2352,14 +2352,14 @@ Info (12250): Reset_from_locked: "audio_pll_0" instantiated altera_up_avalon_res
 Info (12250): AudioPLL: Done "AudioPLL" with 4 modules, 5 files
 Info (12249): Finished elaborating Platform Designer system entity "AudioPLL.qsys"
 Info (12248): Elaborating Platform Designer system entity "AudioCodec.qsys"
-Info (12250): 2019.08.11.13:39:01 Progress: Loading De1-SoC-Verilog-Audio-Loopback/AudioCodec.qsys
-Info (12250): 2019.08.11.13:39:02 Progress: Reading input file
-Info (12250): 2019.08.11.13:39:02 Progress: Adding audio_0 [altera_up_avalon_audio 17.1]
-Info (12250): 2019.08.11.13:39:03 Progress: Parameterizing module audio_0
-Info (12250): 2019.08.11.13:39:03 Progress: Building connections
-Info (12250): 2019.08.11.13:39:03 Progress: Parameterizing connections
-Info (12250): 2019.08.11.13:39:03 Progress: Validating
-Info (12250): 2019.08.11.13:39:04 Progress: Done reading input file
+Info (12250): 2019.08.11.17:31:34 Progress: Loading De1-SoC-Verilog-Audio-Loopback/AudioCodec.qsys
+Info (12250): 2019.08.11.17:31:35 Progress: Reading input file
+Info (12250): 2019.08.11.17:31:35 Progress: Adding audio_0 [altera_up_avalon_audio 17.1]
+Info (12250): 2019.08.11.17:31:36 Progress: Parameterizing module audio_0
+Info (12250): 2019.08.11.17:31:36 Progress: Building connections
+Info (12250): 2019.08.11.17:31:36 Progress: Parameterizing connections
+Info (12250): 2019.08.11.17:31:36 Progress: Validating
+Info (12250): 2019.08.11.17:31:37 Progress: Done reading input file
 Info (12250): AudioCodec: Generating AudioCodec "AudioCodec" for QUARTUS_SYNTH
 Info (12250): Audio_0: Starting Generation of Audio Controller
 Info (12250): Audio_0: "AudioCodec" instantiated altera_up_avalon_audio "audio_0"
@@ -2498,13 +2498,13 @@ Info (12021): Found 0 design units, including 0 entities, in source file db/ip/a
 Info (15248): File "d:/documents/github/de1-soc-verilog-audio-loopback/db/ip/audiocodec/submodules/altera_up_sync_fifo.v" is a duplicate of already analyzed file "D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioCodec/synthesis/submodules/altera_up_sync_fifo.v" (same filename, same library name and same md5 digest). Skipping analysis of this file.
 Info (12021): Found 0 design units, including 0 entities, in source file db/ip/audiocodec/submodules/altera_up_sync_fifo.v
 Info (12127): Elaborating entity "AudioFX" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at AudioFX.sv(102): object "D" assigned a value but never read File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 102
-Warning (10230): Verilog HDL assignment warning at AudioFX.sv(266): truncated value with size 5 to match size of target (4) File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 266
-Warning (10230): Verilog HDL assignment warning at AudioFX.sv(267): truncated value with size 5 to match size of target (4) File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 267
-Warning (10230): Verilog HDL assignment warning at AudioFX.sv(280): truncated value with size 32 to match size of target (23) File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 280
-Warning (10034): Output port "LEDR[8..4]" at AudioFX.sv(62) has no driver File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 62
+Warning (10036): Verilog HDL or VHDL warning at AudioFX.sv(106): object "D" assigned a value but never read File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 106
+Warning (10230): Verilog HDL assignment warning at AudioFX.sv(270): truncated value with size 5 to match size of target (4) File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 270
+Warning (10230): Verilog HDL assignment warning at AudioFX.sv(271): truncated value with size 5 to match size of target (4) File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 271
+Warning (10230): Verilog HDL assignment warning at AudioFX.sv(284): truncated value with size 32 to match size of target (23) File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 284
+Warning (10034): Output port "LEDR[8..3]" at AudioFX.sv(62) has no driver File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 62
 Warning (10034): Output port "GPIO_1[35..32]" at AudioFX.sv(64) has no driver File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 64
-Info (12128): Elaborating entity "AudioPLL" for hierarchy "AudioPLL:u0" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 134
+Info (12128): Elaborating entity "AudioPLL" for hierarchy "AudioPLL:u0" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 138
 Info (12128): Elaborating entity "AudioPLL_audio_pll_0" for hierarchy "AudioPLL:u0|AudioPLL_audio_pll_0:audio_pll_0" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioPLL/synthesis/AudioPLL.v Line: 18
 Info (12128): Elaborating entity "AudioPLL_audio_pll_0_audio_pll" for hierarchy "AudioPLL:u0|AudioPLL_audio_pll_0:audio_pll_0|AudioPLL_audio_pll_0_audio_pll:audio_pll" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioPLL/synthesis/submodules/AudioPLL_audio_pll_0.v Line: 23
 Info (12128): Elaborating entity "altera_pll" for hierarchy "AudioPLL:u0|AudioPLL_audio_pll_0:audio_pll_0|AudioPLL_audio_pll_0_audio_pll:audio_pll|altera_pll:altera_pll_i" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioPLL/synthesis/submodules/AudioPLL_audio_pll_0_audio_pll.v Line: 85
@@ -2572,7 +2572,7 @@ Info (12133): Instantiated megafunction "AudioPLL:u0|AudioPLL_audio_pll_0:audio_
     Info (12134): Parameter "pll_type" = "General"
     Info (12134): Parameter "pll_subtype" = "General"
 Info (12128): Elaborating entity "altera_up_avalon_reset_from_locked_signal" for hierarchy "AudioPLL:u0|AudioPLL_audio_pll_0:audio_pll_0|altera_up_avalon_reset_from_locked_signal:reset_from_locked" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioPLL/synthesis/submodules/AudioPLL_audio_pll_0.v Line: 28
-Info (12128): Elaborating entity "SDRAMPLL" for hierarchy "SDRAMPLL:u1" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 142
+Info (12128): Elaborating entity "SDRAMPLL" for hierarchy "SDRAMPLL:u1" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 146
 Info (12128): Elaborating entity "SDRAMPLL_sys_sdram_pll_0" for hierarchy "SDRAMPLL:u1|SDRAMPLL_sys_sdram_pll_0:sys_sdram_pll_0" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/SDRAMPLL/synthesis/SDRAMPLL.v Line: 20
 Info (12128): Elaborating entity "SDRAMPLL_sys_sdram_pll_0_sys_pll" for hierarchy "SDRAMPLL:u1|SDRAMPLL_sys_sdram_pll_0:sys_sdram_pll_0|SDRAMPLL_sys_sdram_pll_0_sys_pll:sys_pll" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/SDRAMPLL/synthesis/submodules/SDRAMPLL_sys_sdram_pll_0.v Line: 25
 Info (12128): Elaborating entity "altera_pll" for hierarchy "SDRAMPLL:u1|SDRAMPLL_sys_sdram_pll_0:sys_sdram_pll_0|SDRAMPLL_sys_sdram_pll_0_sys_pll:sys_pll|altera_pll:altera_pll_i" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/SDRAMPLL/synthesis/submodules/SDRAMPLL_sys_sdram_pll_0_sys_pll.v Line: 88
@@ -2640,7 +2640,7 @@ Info (12133): Instantiated megafunction "SDRAMPLL:u1|SDRAMPLL_sys_sdram_pll_0:sy
     Info (12134): Parameter "pll_type" = "General"
     Info (12134): Parameter "pll_subtype" = "General"
 Info (12128): Elaborating entity "altera_up_avalon_reset_from_locked_signal" for hierarchy "SDRAMPLL:u1|SDRAMPLL_sys_sdram_pll_0:sys_sdram_pll_0|altera_up_avalon_reset_from_locked_signal:reset_from_locked" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/SDRAMPLL/synthesis/submodules/SDRAMPLL_sys_sdram_pll_0.v Line: 30
-Info (12128): Elaborating entity "AVConfig" for hierarchy "AVConfig:u2" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 156
+Info (12128): Elaborating entity "AVConfig" for hierarchy "AVConfig:u2" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 160
 Info (12128): Elaborating entity "AVConfig_audio_and_video_config_0" for hierarchy "AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AVConfig/synthesis/AVConfig.v Line: 32
 Info (12128): Elaborating entity "altera_up_av_config_auto_init" for hierarchy "AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_auto_init:AV_Config_Auto_Init" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AVConfig/synthesis/submodules/AVConfig_audio_and_video_config_0.v Line: 412
 Warning (10230): Verilog HDL assignment warning at altera_up_av_config_auto_init.v(137): truncated value with size 32 to match size of target (6) File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AVConfig/synthesis/submodules/altera_up_av_config_auto_init.v Line: 137
@@ -2651,7 +2651,7 @@ Info (12128): Elaborating entity "altera_up_av_config_serial_bus_controller" for
 Warning (10230): Verilog HDL assignment warning at altera_up_av_config_serial_bus_controller.v(241): truncated value with size 32 to match size of target (5) File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AVConfig/synthesis/submodules/altera_up_av_config_serial_bus_controller.v Line: 241
 Info (12128): Elaborating entity "altera_up_slow_clock_generator" for hierarchy "AVConfig:u2|AVConfig_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_serial_bus_controller:Serial_Bus_Controller|altera_up_slow_clock_generator:Serial_Config_Clock_Generator" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AVConfig/synthesis/submodules/altera_up_av_config_serial_bus_controller.v Line: 294
 Warning (10230): Verilog HDL assignment warning at altera_up_slow_clock_generator.v(109): truncated value with size 32 to match size of target (11) File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AVConfig/synthesis/submodules/altera_up_slow_clock_generator.v Line: 109
-Info (12128): Elaborating entity "AudioCodec" for hierarchy "AudioCodec:u3" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 178
+Info (12128): Elaborating entity "AudioCodec" for hierarchy "AudioCodec:u3" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 182
 Info (12128): Elaborating entity "AudioCodec_audio_0" for hierarchy "AudioCodec:u3|AudioCodec_audio_0:audio_0" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioCodec/synthesis/AudioCodec.v Line: 48
 Info (12128): Elaborating entity "altera_up_clock_edge" for hierarchy "AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_clock_edge:Bit_Clock_Edges" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioCodec/synthesis/submodules/AudioCodec_audio_0.v Line: 190
 Info (12128): Elaborating entity "altera_up_audio_in_deserializer" for hierarchy "AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioCodec/synthesis/submodules/AudioCodec_audio_0.v Line: 245
@@ -2693,8 +2693,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cntr
     Info (12023): Found entity 1: cntr_i2b File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/cntr_i2b.tdf Line: 25
 Info (12128): Elaborating entity "cntr_i2b" for hierarchy "AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_in_deserializer:Audio_In_Deserializer|altera_up_sync_fifo:Audio_In_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_9ba1:auto_generated|a_dpfifo_s2a1:dpfifo|cntr_i2b:wr_ptr" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/a_dpfifo_s2a1.tdf Line: 58
 Info (12128): Elaborating entity "altera_up_audio_out_serializer" for hierarchy "AudioCodec:u3|AudioCodec_audio_0:audio_0|altera_up_audio_out_serializer:Audio_Out_Serializer" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioCodec/synthesis/submodules/AudioCodec_audio_0.v Line: 273
-Info (12128): Elaborating entity "sdram_controller" for hierarchy "sdram_controller:u4" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 206
-Info (12128): Elaborating entity "SampleStorage" for hierarchy "SampleStorage:LChan" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 229
+Info (12128): Elaborating entity "sdram_controller" for hierarchy "sdram_controller:u4" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 210
+Info (12128): Elaborating entity "SampleStorage" for hierarchy "SampleStorage:LChan" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 233
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_0o84.tdf
     Info (12023): Found entity 1: altsyncram_0o84 File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/altsyncram_0o84.tdf Line: 31
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_5la.tdf
@@ -2721,7 +2721,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_99c File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/db/cmpr_99c.tdf Line: 22
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2019.08.11.13:39:26 Progress: Loading sld30451bca/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2019.08.11.17:32:00 Progress: Loading sld30451bca/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -2752,6 +2752,7 @@ Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "AUD_ADCLRCK" has no driver File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 54
     Warning (13040): bidirectional pin "AUD_DACLRCK" has no driver File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 55
 Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 62
     Warning (13410): Pin "LEDR[4]" is stuck at GND File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 62
     Warning (13410): Pin "LEDR[5]" is stuck at GND File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 62
     Warning (13410): Pin "LEDR[6]" is stuck at GND File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 62
@@ -2773,18 +2774,18 @@ Warning (21074): Design contains 3 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[1]" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 50
     Warning (15610): No output dependent on input pin "KEY[2]" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 50
     Warning (15610): No output dependent on input pin "KEY[3]" File: D:/Documents/GitHub/De1-SoC-Verilog-Audio-Loopback/AudioFX.sv Line: 50
-Info (21057): Implemented 3947 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3968 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 19 input pins
     Info (21059): Implemented 109 output pins
     Info (21060): Implemented 20 bidirectional pins
-    Info (21061): Implemented 3489 logic cells
+    Info (21061): Implemented 3510 logic cells
     Info (21064): Implemented 306 RAM segments
     Info (21065): Implemented 3 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 33 warnings
-    Info: Peak virtual memory: 5005 megabytes
-    Info: Processing ended: Sun Aug 11 13:39:45 2019
-    Info: Elapsed time: 00:02:18
-    Info: Total CPU time (on all processors): 00:03:19
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 34 warnings
+    Info: Peak virtual memory: 5010 megabytes
+    Info: Processing ended: Sun Aug 11 17:32:19 2019
+    Info: Elapsed time: 00:02:16
+    Info: Total CPU time (on all processors): 00:03:11
 
 
 +------------------------------------------+

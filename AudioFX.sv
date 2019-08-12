@@ -75,7 +75,8 @@ module AudioFX(
 	
 	// logic & wires for ADC/DAC
 	logic [1:0] reset_out;
-	logic signed [1:0][DATA_W-1:0] DAC_Data, ADC_Data;
+	logic signed [DATA_W-1:0] DAC_Data [1:0];
+	logic signed [DATA_W-1:0] ADC_Data [1:0];
 	logic [1:0] DAC_Ready, ADC_Ready, DAC_Valid, ADC_Valid;
 	
 	// These signals are for the Avalon Bus (not used in streaming interface)
@@ -86,16 +87,19 @@ module AudioFX(
 	
 	// logic for RAM
 	logic [1:0][ADDR_W-1:0] waddr, raddr;
-	logic [1:0][DATA_W-1:0] wdata;
+	logic signed [DATA_W-1:0] wdata [1:0];
 	logic [ADDR_W-1:0] waddress, raddress;
-	logic signed [DATA_W-1:0] writedata, readdata;
+	logic signed [DATA_W-1:0] writedata; 
+	logic signed [DATA_W-1:0] readdata;
 	logic [1:0] write, read;
 	logic read_ready, busy, we, re;
 	logic CLOCK_50_D;
 	logic [1:0][4:0] state;
  	
 	// logic for Effects
-	logic signed [1:0][DATA_W-1:0] FX_AUD_OUT, Latched_Data;
+	logic signed [DATA_W-1:0] FX_AUD_OUT [1:0];
+	logic signed [DATA_W-1:0] Latched_Data [1:0];
+	logic signed [DATA_W-1:0] Mx_Data [1:0];
 	logic cnt[1:0];
 	
 	// debugging read command
@@ -284,9 +288,6 @@ module AudioFX(
 		end
 	end
 	
-	assign LEDR[2] = (Latched_Data[0] && wdata[0]);
-	assign LEDR[3] = (Latched_Data[1] && wdata[1]); 
-	
 	// Logic for using SDRAM
 	always@(posedge CLOCK_50_D) begin
 		if(ADC_Ready[0] && ADC_Valid[0])
@@ -294,24 +295,44 @@ module AudioFX(
 		if(ADC_Ready[1] && ADC_Valid[1])
 			Latched_Data[1] <= ADC_Data[1];
 	end
+	
+	always@(posedge CLOCK_50_D) begin
+		Mx_Data[0] <= Latched_Data[0] + (FX_AUD_OUT[0] >>> 1);
+		Mx_Data[1] <= Latched_Data[1] + (FX_AUD_OUT[1] >>> 1);
+	end
 	always@(posedge CLOCK_50_D) begin
 		LEDR[1] = SW[1];
 		LEDR[9] = SW[9];
-		
+		LEDR[2] = SW[2];
 		if(SW[9]) begin
 			DAC_Data[0] <= '0;
 			DAC_Data[1] <= '0;
 		end else begin
-			if(SW[1]) begin
-				//DAC_Data[0] <= Latched_Data[0] + (FX_AUD_OUT[0] >>> 2);
-				//DAC_Data[1] <= Latched_Data[1] + (FX_AUD_OUT[1] >>> 2);
-				DAC_Data[0] <= (signed'(FX_AUD_OUT[0]) >>> 1);
-				DAC_Data[1] <= (signed'(FX_AUD_OUT[1]) >>> 1);
-			end else begin
-				DAC_Data[0] <= Latched_Data[0];
-				DAC_Data[1] <= Latched_Data[1];
-			end
+			case({SW[2],SW[1]})
+				2'b00: begin
+					DAC_Data[0] <= Latched_Data[0];
+					DAC_Data[1] <= Latched_Data[1];
+				end
+				2'b01: begin
+					DAC_Data[0] <= (FX_AUD_OUT[0] >>> 1);
+					DAC_Data[1] <= (FX_AUD_OUT[1] >>> 1);
+				end
+				
+				2'b10: begin
+					DAC_Data[0] <= Mx_Data[0];
+					DAC_Data[1] <= Mx_Data[1];
+				end
+				2'b11: begin
+					DAC_Data[0] <= Latched_Data[0];
+					DAC_Data[1] <= Latched_Data[1];
+				end
+				default: begin
+					DAC_Data[0] <= Latched_Data[0];
+					DAC_Data[1] <= Latched_Data[1];
+				end
+			endcase
 		end
+		
 		if(AUD_ADCLRCK) begin
 			re <=	read[0];
 			we <=	write[0];
