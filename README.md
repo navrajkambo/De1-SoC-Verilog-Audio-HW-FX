@@ -43,7 +43,7 @@ Here is what the whole system looks like.
 
 ## Contact Me
 - You can contact me at `nkambo1@my.bcit.ca`
-- Check out my website -> `https://navrajkambo.github.io`
+- Check out my website -> [`https://navrajkambo.github.io`](https://navrajkambo.github.io)
 
 ## Links
 - [`SDRAM controller`](https://github.com/stffrdhrn/sdram-controller)
