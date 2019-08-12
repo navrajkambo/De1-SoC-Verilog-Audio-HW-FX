@@ -21,9 +21,9 @@ To synchronize the audio and audio effects between the audio codec and SDRAM, a 
 ## Hardware Output
 
 Here is what the whole system looks like.
-<object data="https://github.com/navrajkambo/De1-SoC-Verilog-Audio-Loopback/blob/SDRAM-audio-interface/netlists.PDF" type="application/pdf" width="700px" height="700px">
-    <embed src="https://github.com/navrajkambo/De1-SoC-Verilog-Audio-Loopback/blob/SDRAM-audio-interface/netlists.PDF">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/navrajkambo/De1-SoC-Verilog-Audio-Loopback/blob/SDRAM-audio-interface/netlists.PDF">Download PDF</a>.</p>
+<object data="https://github.com/navrajkambo/De1-SoC-Verilog-Audio-Loopback/blob/SDRAM-audio-interface/netlists.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="https://github.com/navrajkambo/De1-SoC-Verilog-Audio-Loopback/blob/SDRAM-audio-interface/netlists.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/navrajkambo/De1-SoC-Verilog-Audio-Loopback/blob/SDRAM-audio-interface/netlists.pdf">Download PDF</a>.</p>
     </embed>
 </object> 
 
@@ -38,7 +38,7 @@ Here is what the whole system looks like.
 
 ## Contact Me
 - You can contact me at `nkambo1@my.bcit.ca`
-- Check out my resume -> 'https://navrajkambo.github.io'
+- Check out my website -> `https://navrajkambo.github.io`
 
 ## Links
 - SDRAM controller `https://github.com/stffrdhrn/sdram-controller`
