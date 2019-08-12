@@ -12,6 +12,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "LEDR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[2]",
+					"strict" : false
+				},
+				{
 					"name" : "LEDR[9]",
 					"strict" : false
 				},
@@ -116,6 +124,262 @@
 					"strict" : false
 				},
 				{
+					"name" : "GPIO_0[24]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_0[25]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_0[26]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_0[27]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_0[28]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_0[29]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_0[30]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_0[31]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_0[32]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_0[33]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_0[34]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_0[35]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[7]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[8]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[9]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[10]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[11]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[12]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[13]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[14]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[15]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[16]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[17]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[18]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[19]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[20]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[21]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[22]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[23]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[24]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[25]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[26]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[27]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[28]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[29]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[30]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[31]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_ADDR[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_ADDR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_ADDR[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_ADDR[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_ADDR[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_ADDR[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_ADDR[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_ADDR[7]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_ADDR[8]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_ADDR[9]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_ADDR[10]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_ADDR[11]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_ADDR[12]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_BA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_BA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_CAS_N",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_RAS_N",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_WE_N",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_UDQM",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_LDQM",
+					"strict" : false
+				},
+				{
 					"name" : "AUD_BCLK",
 					"strict" : false
 				},
@@ -132,15 +396,79 @@
 					"strict" : false
 				},
 				{
-					"name" : "CLOCK_50",
+					"name" : "DRAM_DQ[0]",
 					"strict" : false
 				},
 				{
-					"name" : "KEY[0]",
+					"name" : "DRAM_DQ[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_DQ[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_DQ[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_DQ[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_DQ[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_DQ[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_DQ[7]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_DQ[8]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_DQ[9]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_DQ[10]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_DQ[11]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_DQ[12]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_DQ[13]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_DQ[14]",
+					"strict" : false
+				},
+				{
+					"name" : "DRAM_DQ[15]",
 					"strict" : false
 				},
 				{
 					"name" : "SW[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[2]",
 					"strict" : false
 				},
 				{

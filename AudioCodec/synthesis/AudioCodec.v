@@ -4,17 +4,17 @@
 
 `timescale 1 ps / 1 ps
 module AudioCodec (
-		input  wire [23:0] to_dac_left_channel_data,     //    avalon_left_channel_sink.data
+		input  wire [15:0] to_dac_left_channel_data,     //    avalon_left_channel_sink.data
 		input  wire        to_dac_left_channel_valid,    //                            .valid
 		output wire        to_dac_left_channel_ready,    //                            .ready
 		input  wire        from_adc_left_channel_ready,  //  avalon_left_channel_source.ready
-		output wire [23:0] from_adc_left_channel_data,   //                            .data
+		output wire [15:0] from_adc_left_channel_data,   //                            .data
 		output wire        from_adc_left_channel_valid,  //                            .valid
-		input  wire [23:0] to_dac_right_channel_data,    //   avalon_right_channel_sink.data
+		input  wire [15:0] to_dac_right_channel_data,    //   avalon_right_channel_sink.data
 		input  wire        to_dac_right_channel_valid,   //                            .valid
 		output wire        to_dac_right_channel_ready,   //                            .ready
 		input  wire        from_adc_right_channel_ready, // avalon_right_channel_source.ready
-		output wire [23:0] from_adc_right_channel_data,  //                            .data
+		output wire [15:0] from_adc_right_channel_data,  //                            .data
 		output wire        from_adc_right_channel_valid, //                            .valid
 		input  wire        clk,                          //                         clk.clk
 		input  wire        AUD_ADCDAT,                   //          external_interface.ADCDAT

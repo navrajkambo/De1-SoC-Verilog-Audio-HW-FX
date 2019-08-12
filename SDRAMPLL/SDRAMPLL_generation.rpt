@@ -1,0 +1,32 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate D:\Documents\GitHub\De1-SoC-Verilog-Audio-Loopback\SDRAMPLL.qsys --block-symbol-file --output-directory=D:\Documents\GitHub\De1-SoC-Verilog-Audio-Loopback\SDRAMPLL --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading De1-SoC-Verilog-Audio-Loopback/SDRAMPLL.qsys
+Progress: Reading input file
+Progress: Adding sys_sdram_pll_0 [altera_up_avalon_sys_sdram_pll 17.1]
+Progress: Parameterizing module sys_sdram_pll_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: SDRAMPLL.sys_sdram_pll_0: Refclk Freq: 50.0
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate D:\Documents\GitHub\De1-SoC-Verilog-Audio-Loopback\SDRAMPLL.qsys --synthesis=VERILOG --output-directory=D:\Documents\GitHub\De1-SoC-Verilog-Audio-Loopback\SDRAMPLL\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading De1-SoC-Verilog-Audio-Loopback/SDRAMPLL.qsys
+Progress: Reading input file
+Progress: Adding sys_sdram_pll_0 [altera_up_avalon_sys_sdram_pll 17.1]
+Progress: Parameterizing module sys_sdram_pll_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: SDRAMPLL.sys_sdram_pll_0: Refclk Freq: 50.0
+Info: SDRAMPLL: Generating SDRAMPLL "SDRAMPLL" for QUARTUS_SYNTH
+Info: sys_sdram_pll_0: "SDRAMPLL" instantiated altera_up_avalon_sys_sdram_pll "sys_sdram_pll_0"
+Info: sys_pll: "sys_sdram_pll_0" instantiated altera_pll "sys_pll"
+Info: reset_from_locked: "sys_sdram_pll_0" instantiated altera_up_avalon_reset_from_locked_signal "reset_from_locked"
+Info: SDRAMPLL: Done "SDRAMPLL" with 4 modules, 5 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

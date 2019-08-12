@@ -2,7 +2,7 @@ set_global_assignment -entity "AVConfig" -library "AVConfig" -name IP_TOOL_NAME 
 set_global_assignment -entity "AVConfig" -library "AVConfig" -name IP_TOOL_VERSION "17.1"
 set_global_assignment -entity "AVConfig" -library "AVConfig" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "AVConfig" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../../AVConfig.sopcinfo"]
-set_global_assignment -entity "AVConfig" -library "AVConfig" -name SLD_INFO "QSYS_NAME AVConfig HAS_SOPCINFO 1 GENERATION_ID 1565153198"
+set_global_assignment -entity "AVConfig" -library "AVConfig" -name SLD_INFO "QSYS_NAME AVConfig HAS_SOPCINFO 1 GENERATION_ID 1565569870"
 set_global_assignment -library "AVConfig" -name SLD_FILE [file join $::quartus(qip_path) "AVConfig.debuginfo"]
 set_global_assignment -entity "AVConfig" -library "AVConfig" -name IP_TARGETED_DEVICE_FAMILY "Cyclone V"
 set_global_assignment -entity "AVConfig" -library "AVConfig" -name IP_GENERATED_DEVICE_FAMILY "{Cyclone V}"
@@ -14,7 +14,7 @@ set_global_assignment -entity "AVConfig" -library "AVConfig" -name IP_COMPONENT_
 set_global_assignment -entity "AVConfig" -library "AVConfig" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "AVConfig" -library "AVConfig" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "AVConfig" -library "AVConfig" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "AVConfig" -library "AVConfig" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU2NTE1MzE5OA==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "AVConfig" -library "AVConfig" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU2NTU2OTg3MA==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "AVConfig" -library "AVConfig" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "AVConfig" -library "AVConfig" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::NUNTRU1BNUYzMUM2::QXV0byBERVZJQ0U="
 set_global_assignment -entity "AVConfig" -library "AVConfig" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Ng==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
@@ -37,7 +37,7 @@ set_global_assignment -entity "AVConfig_audio_and_video_config_0" -library "AVCo
 set_global_assignment -entity "AVConfig_audio_and_video_config_0" -library "AVConfig" -name IP_COMPONENT_PARAMETER "bGluZV9pbl9ieXBhc3M=::ZmFsc2U=::QXVkaW8gT3V0IC0gTGluZSBJbiBCeXBhc3M="
 set_global_assignment -entity "AVConfig_audio_and_video_config_0" -library "AVConfig" -name IP_COMPONENT_PARAMETER "bWljX2F0dGVudWF0aW9u::LTZkQg==::TWljcm9waG9uZSBBdHRlbnVhdGlvbg=="
 set_global_assignment -entity "AVConfig_audio_and_video_config_0" -library "AVConfig" -name IP_COMPONENT_PARAMETER "ZGF0YV9mb3JtYXQ=::TGVmdCBKdXN0aWZpZWQ=::RGF0YSBGb3JtYXQ="
-set_global_assignment -entity "AVConfig_audio_and_video_config_0" -library "AVConfig" -name IP_COMPONENT_PARAMETER "Yml0X2xlbmd0aA==::MjQ=::Qml0IExlbmd0aA=="
+set_global_assignment -entity "AVConfig_audio_and_video_config_0" -library "AVConfig" -name IP_COMPONENT_PARAMETER "Yml0X2xlbmd0aA==::MTY=::Qml0IExlbmd0aA=="
 set_global_assignment -entity "AVConfig_audio_and_video_config_0" -library "AVConfig" -name IP_COMPONENT_PARAMETER "c2FtcGxpbmdfcmF0ZQ==::NDgga0h6::U2FtcGxpbmcgUmF0ZQ=="
 set_global_assignment -entity "AVConfig_audio_and_video_config_0" -library "AVConfig" -name IP_COMPONENT_PARAMETER "Ym9zcg==::MjUwZnMvMjU2ZnM=::QmFzZSBPdmVyLVNhbXBsaW5nIFJhdGU="
 set_global_assignment -entity "AVConfig_audio_and_video_config_0" -library "AVConfig" -name IP_COMPONENT_PARAMETER "c3JfcmVnaXN0ZXI=::MA==::U2FtcGxpbmcgUmF0ZSBSZWdpc3RlciBTZXR0aW5n"

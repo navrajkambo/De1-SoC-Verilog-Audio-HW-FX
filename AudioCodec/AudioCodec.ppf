@@ -9,7 +9,7 @@
   <pin name="reset" direction="input" scope="external" />
   <pin name="from_adc_left_channel_ready" direction="input" scope="external" />
   <pin
-     name="from_adc_left_channel_data[23..0]"
+     name="from_adc_left_channel_data[15..0]"
      direction="output"
      scope="external" />
   <pin
@@ -21,7 +21,7 @@
      direction="input"
      scope="external" />
   <pin
-     name="from_adc_right_channel_data[23..0]"
+     name="from_adc_right_channel_data[15..0]"
      direction="output"
      scope="external" />
   <pin
@@ -29,13 +29,13 @@
      direction="output"
      scope="external" />
   <pin
-     name="to_dac_left_channel_data[23..0]"
+     name="to_dac_left_channel_data[15..0]"
      direction="input"
      scope="external" />
   <pin name="to_dac_left_channel_valid" direction="input" scope="external" />
   <pin name="to_dac_left_channel_ready" direction="output" scope="external" />
   <pin
-     name="to_dac_right_channel_data[23..0]"
+     name="to_dac_right_channel_data[15..0]"
      direction="input"
      scope="external" />
   <pin name="to_dac_right_channel_valid" direction="input" scope="external" />

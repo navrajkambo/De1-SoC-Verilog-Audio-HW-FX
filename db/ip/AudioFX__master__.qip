@@ -1,3 +1,4 @@
+set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) SDRAMPLL/SDRAMPLL.qip]
 set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) AVConfig/AVConfig.qip]
 set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) AudioPLL/AudioPLL.qip]
 set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) AudioCodec/AudioCodec.qip]
