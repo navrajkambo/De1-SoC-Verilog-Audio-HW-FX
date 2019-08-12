@@ -20,7 +20,8 @@ Clone this repo, and then open the project in Quartus. You should be able to com
 
 ## Custom Modules
 
-To synchronize the audio and audio effects between the audio codec and SDRAM, a module is needed which generates the appropriate `ready-valid` handshake for the codec ADC and DAC, and the `read-write-ack` handshake for the SDRAM. The module is also responsible for generating the delay in the audio by indexing the read and write addresses with a bias.
+To synchronize the audio and audio effects between the audio codec and SDRAM, a module is needed which generates the appropriate `ready-valid` handshake for the codec ADC and DAC, and the `read-write-ack` handshake for the SDRAM. The module is also responsible for generating the delay in the audio by indexing the read and write addresses with a bias. Shown below are the waveforms of the module testbench.
+![TB Waveforms](https://github.com/navrajkambo/De1-SoC-Verilog-Audio-Loopback/blob/master/cap3.PNG "ModelSim Generated waveforms for main controller")
 
 ## Hardware Output
 
