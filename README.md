@@ -1,8 +1,11 @@
 # De1-SoC-Verilog-Audio-Loopback
 
 This is a simple project which is meant to generate hardware nessessary to loopback the ADC and DAC from the DE1-SoC audio codec. The project is supposed to be a starting point for hardware audio DSP. The Audio codec is initialized for 16-bit audio, 48kHz left justified, but can be changed using QSYS. Also, the ADC and DAC are configured to be using the streaming interface rather than 
-the memory-mapped interface so that you don't need to mess around with the Avalon bus. There is also hardware that saves data to the on-board SDRAM using an SDRAM controller. What makes this project special is that you don't need to instantiate the NIOS II softcore or HPS hardcore processors to get the system to work. Everything is done in hardware!
+the memory-mapped interface so that you don't need to mess around with the Avalon bus. 
 
+Custom hardware has been created that saves data to the on-board SDRAM using an SDRAM controller project I managed to find on GitHub. What makes this project special is that you don't need to instantiate the NIOS II softcore or HPS hardcore processors to get the system to work. Everything is done in hardware!
+
+For a simple template to start a new hardware project on, that has the codec configured already, check out [`audio-loopback-only`](https://github.com/navrajkambo/De1-SoC-Verilog-Audio-Loopback/tree/audio-loopback-only) branch of this repo.
 
 ## Getting Started
 
@@ -43,8 +46,8 @@ Here is what the whole system looks like.
 - Check out my website -> `https://navrajkambo.github.io`
 
 ## Links
-- SDRAM controller `https://github.com/stffrdhrn/sdram-controller`
-- Avalon bridge `http://people.ece.cornell.edu/land/courses/ece5760/DE1_SOC/External_Bus_to_Avalon_Bridge.pdf`
-- Altera Audio IP `https://fpgauniversity.intel.com/redirect/materials?id=/pub/Intel_Material/18.1/University_Program_IP_Cores/Audio_Video/Audio.pdf`
-- Altera Audio/Video Config IP `https://fpgauniversity.intel.com/redirect/materials?id=/pub/Intel_Material/18.1/University_Program_IP_Cores/Audio_Video/Audio_and_Video_Config.pdf`
-- Wolfson Audio Codec `http://www1.cs.columbia.edu/~sedwards/classes/2011/4840/Wolfson-WM8731-audio-CODEC.pdf`
+- [`SDRAM controller`](https://github.com/stffrdhrn/sdram-controller)
+- [`Avalon bridge`](http://people.ece.cornell.edu/land/courses/ece5760/DE1_SOC/External_Bus_to_Avalon_Bridge.pdf)
+- [`Altera Audio IP`](https://fpgauniversity.intel.com/redirect/materials?id=/pub/Intel_Material/18.1/University_Program_IP_Cores/Audio_Video/Audio.pdf)
+- [`Altera Audio/Video Config IP`](https://fpgauniversity.intel.com/redirect/materials?id=/pub/Intel_Material/18.1/University_Program_IP_Cores/Audio_Video/Audio_and_Video_Config.pdf)
+- [`Wolfson WM8731 Audio Codec`](http://www1.cs.columbia.edu/~sedwards/classes/2011/4840/Wolfson-WM8731-audio-CODEC.pdf)
