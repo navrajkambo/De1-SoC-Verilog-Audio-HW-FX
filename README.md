@@ -3,6 +3,7 @@
 This is a simple project which is meant to generate hardware nessessary to loopback the ADC and DAC from the DE1-SoC audio codec. The project is supposed to be a starting point for hardware audio DSP. The Audio codec is initialized for 16-bit audio, 48kHz left justified, but can be changed using QSYS. Also, the ADC and DAC are configured to be using the streaming interface rather than 
 the memory-mapped interface so that you don't need to mess around with the Avalon bus. There is also hardware that saves data to the on-board SDRAM using an SDRAM controller. What makes this project special is that you don't need to instantiate the NIOS II softcore or HPS hardcore processors to get the system to work. Everything is done in hardware!
 
+
 ## Getting Started
 
 Clone this repo, and then open the project in Quartus. You should be able to compile and program your DE1-SoC without needing to change anything. 
@@ -21,9 +22,9 @@ To synchronize the audio and audio effects between the audio codec and SDRAM, a 
 ## Hardware Output
 
 Here is what the whole system looks like.
-<object data="https://github.com/navrajkambo/De1-SoC-Verilog-Audio-Loopback/blob/SDRAM-audio-interface/netlists.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="https://github.com/navrajkambo/De1-SoC-Verilog-Audio-Loopback/blob/SDRAM-audio-interface/netlists.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/navrajkambo/De1-SoC-Verilog-Audio-Loopback/blob/SDRAM-audio-interface/netlists.pdf">Download PDF</a>.</p>
+<object data="https://github.com/navrajkambo/De1-SoC-Verilog-Audio-Loopback/blob/master/netlists.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="https://github.com/navrajkambo/De1-SoC-Verilog-Audio-Loopback/blob/master/netlists.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/navrajkambo/De1-SoC-Verilog-Audio-Loopback/blob/master/netlists.pdf">Download PDF</a>.</p>
     </embed>
 </object> 
 
