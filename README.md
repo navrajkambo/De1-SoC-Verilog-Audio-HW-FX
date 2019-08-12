@@ -9,7 +9,7 @@ Clone this repo, and then open the project in Quartus. You should be able to com
 
 ## Features
 1) Mute audio using switch 9 (`SW[9]`)
-2) Listen to delayed audio effect using switch 1 (`SW[1]`)
+2) Listen to delayed audio using switch 1 (`SW[1]`)
 2) Add delayed audio effect using switch 2 (`SW[2]`)
 3) Blink LED 0 (`LEDR[0]`) using switch 0 (`SW[0]`)
 4) Save audio samples to 64MB SDRAM chip (only using 32MB)
